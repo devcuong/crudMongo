@@ -1,36 +1,39 @@
 <h3>{{viewTitle}}</h3>
 
 
-<form autocomplete="off" action="/truyen">
+<form autocomplete="off" action="/truyen" method="post">
 	<div class="form-group">
 		<label>
 			Tên truyện
 		</label>
-		<input type="text" class="form-control" name="tenTruyen" placeholder="Tên Truyện">
+		<input type="text" class="form-control" name="tenTruyen" placeholder="Tên Truyện" value="{{truyen.ten_truyen}}">
+		<div class="text-danger">
+			{{truyen.tenTruyenError}}
+		</div>
 	</div>
 	<div class="form-group">
 		<label>
 			Url truyện
 		</label>
-		<input type="text" class="form-control" name="urlTruyen" placeholder="Url truyện">
+		<input type="text" class="form-control" name="urlTruyen" placeholder="Url truyện" value="{{truyen.url_truyen}}">
 	</div>
 	<div class="form-group">
 		<label>
 		    Số chương
 		</label>
-		<input type="text" class="form-control" name="soChuong" placeholder="Số Chương">
+		<input type="text" class="form-control" name="soChuong" placeholder="Số Chương" value="{{truyen.so_chuong}}">
 	</div>
 	<div class="form-group">
 		<label>
 			Trạng thái
 		</label>
-		<input type="text" class="form-control" name="trangThai" placeholder="Trạng Thái">
+		<input type="text" class="form-control" name="trangThai" placeholder="Trạng Thái" value="{{truyen.trang_thai}}">
 	</div>
 	<div class="form-group">
 		<label>
 			Url hình
 		</label>
-		<input type="text" class="form-control" name="urlHinh" placeholder="Url Hình">
+		<input type="text" class="form-control" name="urlHinh" placeholder="Url Hình" value="{{truyen.url_hinh}}">
 	</div>
 	<div class="form-group">
 		<button type="submit" class="btn btn-info"><i class="fa fa-database"></i>submit</button>

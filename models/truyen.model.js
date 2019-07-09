@@ -2,7 +2,8 @@ const mongoose = require('mongoose');
 
 var truyenSchema = new mongoose.Schema({
 	ten_truyen:{
-		type: String
+		type: String,
+		required: "this file is required"
 	},
 	url_truyen:{
 		type: String
@@ -14,10 +15,11 @@ var truyenSchema = new mongoose.Schema({
 		type: String
 	},
 	so_chuong:{
-		type: Number
-	},
-	
-});
+		type: String
+	}
+}, {
+	versionKey: false // You should be aware of the outcome after set to false
+});	
 
 mongoose.model("Truyen", truyenSchema);
 

@@ -1,0 +1,27 @@
+<table class="table table-striped" >
+    <thead>
+        <tr>
+            <th>Tên Truyện</th>
+            <th>Url Truyện</th>
+            <th>Số Chương</th>
+            <th>Trạng Thái</th>
+            <th>Url Hinh</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each list}}
+        <tr>
+            <td>{{this.ten_truyen}}</td>
+            <td>{{this.url_truyen}}</td>
+            <td>{{this.so_chuong}}</td>
+            <td>{{this.trang_thai}}</td>
+            <td>{{this.url_hinh}}</td>
+            <td>
+                <a><i class="fa fa-pencil fa-lg" arial-hidden="true"></i></a>
+                <a> <i class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
