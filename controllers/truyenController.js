@@ -122,4 +122,17 @@ router.get("/:id",(req,res)=>{
 	});
 });
 
+router.get("/delete/:id",(req, res) => {
+	Truyen.findByIdAndRemove(req.params.id, (err, doc)=>{
+		if(!err){
+			res.redirect("/truyen/list");
+		}
+		else
+		{
+			console.log("Error in employee delete: " + err);
+		}
+	});
+});
+
+
 module.exports = router;
