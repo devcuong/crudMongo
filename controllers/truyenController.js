@@ -17,9 +17,32 @@ router.post("/", (req,res) => {
 });
 
 function updateRecord(req,res){
-	Truyen.findOneAndUpdate({_id: req.body._id}, req.body, {new:true}, function(err, doc) {
+	var foundTruyen = new Truyen();
+	if(req.body._id){
+		foundTruyen._id = req.body._id;
+	}
+	if(req.body.tenTruyen){
+		foundTruyen.ten_truyen = req.body.tenTruyen;
+	}
+
+	if(req.body.urlTruyen){
+		foundTruyen.url_truyen = req.body.urlTruyen;
+	}
+
+	if(req.body.trangThai){
+		foundTruyen.trang_thai = req.body.trangThai;
+	}
+
+	if(req.body.soChuong){
+		foundTruyen.so_chuong = req.body.soChuong;
+	}
+
+	if(req.body.urlHinh){
+		foundTruyen.url_hinh = req.body.urlHinh;
+	}
+	Truyen.findOneAndUpdate({_id: req.body._id},foundTruyen, { new: true,strict: false, setDefaultsOnInsert: true }, function(err, doc) {
 		if(!err){
-			//console.log(doc);
+			console.log(req.body);
 			res.redirect("truyen/list");
 		}
 		else
