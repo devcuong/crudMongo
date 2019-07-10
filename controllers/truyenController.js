@@ -10,8 +10,32 @@ router.get("/",(req,res)=>{
 });
 
 router.post("/", (req,res) => {
-	insertRecord(req, res);
+	if(req.body._id == "")
+		insertRecord(req, res);
+	else
+		updateRecord(req, res);
 });
+
+function updateRecord(req,res){
+	Truyen.findOneAndUpdate({_id: req.body._id}, req.body, {new:true}, function(err, doc) {
+		if(!err){
+			//console.log(doc);
+			res.redirect("truyen/list");
+		}
+		else
+		{
+			if(err.name == "ValidationError"){
+				handleValidationError(err, req.body);
+					res.render("truyen/addOrEdit",{
+						viewTitle: "Update Truyen",
+						truyen: req.body
+					});
+			}
+			else
+				console.log("Error during record update: " + err);
+		}
+	});
+}
 
 function insertRecord(req, res){
 	var truyen = new Truyen();
@@ -63,5 +87,16 @@ function handleValidationError(err, body){
 		}
 	}
 }
+
+router.get("/:id",(req,res)=>{
+	Truyen.findById(req.params.id, (err, doc) => {
+		if (!err) {
+			res.render("truyen/addOrEdit",{
+				viewTitle: "Update Truyen",
+				truyen: doc
+			});
+		}
+	});
+});
 
 module.exports = router;

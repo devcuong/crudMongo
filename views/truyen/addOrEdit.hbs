@@ -2,6 +2,7 @@
 
 
 <form autocomplete="off" action="/truyen" method="post">
+<input type="hidden" name="_id" value="{{truyen._id}}">
 	<div class="form-group">
 		<label>
 			Tên truyện
@@ -37,5 +38,6 @@
 	</div>
 	<div class="form-group">
 		<button type="submit" class="btn btn-info"><i class="fa fa-database"></i>submit</button>
+        <a href="/truyen/list" class="btn btn-secondary"><i class="fa fa-list-alt"></i>View all</a>
 	</div>
 </form>

@@ -21,6 +21,8 @@ var truyenSchema = new mongoose.Schema({
 	versionKey: false // You should be aware of the outcome after set to false
 });	
 
-mongoose.model("Truyen", truyenSchema);
+mongoose.model("Truyen", truyenSchema, "truyen");
+
+
 
 
