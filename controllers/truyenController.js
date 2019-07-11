@@ -42,7 +42,6 @@ function updateRecord(req,res){
 	}
 	Truyen.findOneAndUpdate({_id: req.body._id},foundTruyen, { new: true,strict: false, setDefaultsOnInsert: true }, function(err, doc) {
 		if(!err){
-			console.log(req.body);
 			res.redirect("truyen/list");
 		}
 		else
@@ -84,7 +83,7 @@ function insertRecord(req, res){
 		}
 	})
 }
-
+const page = 1;
 router.get("/list",(req,res)=>{
 	Truyen.find((err, docs) => {
 		if(!err){
