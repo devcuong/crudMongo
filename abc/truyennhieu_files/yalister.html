@@ -1,0 +1,38 @@
+
+<!-- saved from url=(0040)https://saltcdn2.yandex.ru/yalister.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head>
+<body>
+<script>
+    (function () {
+        var yaUrl = 'https://music.yandex.ru',
+            listener = function (event) {
+                if (event.origin !== yaUrl) {
+                    return;
+                }
+                try {
+                    var request = new XMLHttpRequest(), d = event.data ? JSON.parse(event.data) : null;
+                    if (d && d.yf && d.url) {
+                        request.open('POST', d.url, true);
+                        request.onreadystatechange = function () {
+                            if (request.readyState === 4 && request.status === 200) {
+                                var res = {
+                                    yf: d.yf,
+                                    res: JSON.parse(request.responseText)
+                                };
+                                event.source.postMessage(JSON.stringify(res), yaUrl);
+                            }
+                        };
+                        request.send();
+                    } else if (d && d.log && d.url) {
+                        request.open('POST', d.url, true);
+                        request.send(JSON.stringify(d.log));
+                    }
+                } catch (e) {
+                }
+            };
+        window.addEventListener("message", listener);
+    })();
+</script>
+<iframe src="./saved_resource.html"></iframe>
+
+</body></html>

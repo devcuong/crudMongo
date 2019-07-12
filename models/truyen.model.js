@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-var mongoosePaginate = require('mongoose-paginate');
 var truyenSchema = new mongoose.Schema({
 
 	
@@ -22,7 +21,6 @@ var truyenSchema = new mongoose.Schema({
 }, {
 	versionKey: false // You should be aware of the outcome after set to false
 });	
-truyenSchema.plugin(mongoosePaginate);
 mongoose.model("Truyen", truyenSchema, "truyen");
 
 

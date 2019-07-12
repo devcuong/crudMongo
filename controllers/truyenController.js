@@ -98,21 +98,28 @@ router.get("/list",(req,res)=>{
 });
 
  router.get("/list/:page", (req,res)=>{
-	var perPage = 2;
-    var page = req.params.page || 1;
+	var perPage = 1;
+	var page = req.params.page || 1;
 	Truyen.find({})
 	.limit(perPage)
 	.skip((perPage * page) - perPage)
 	.exec(function (err, truyens){
-		Truyen.count().exec(function(err, count){
-			if(!err)
+	Truyen.count().exec(function(err, count){
+		if(!err)
+		{
 				res.render("truyen/list",{
 					list:truyens,
 					current: page,
 					pages: Math.ceil(count / perPage),
-					navRender: utils.getNavRender(page, Math.ceil(count / perPage))
-				})
-		})
+					navRender: utils.getNavRender(page, Math.ceil(count / perPage)),
+				})	
+		}
+		else
+		{
+			console.log(err);
+			
+		}
+	})
 	})
 });
 
