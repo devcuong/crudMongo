@@ -83,7 +83,6 @@ function insertRecord(req, res){
 		}
 	})
 }
-const page = 1;
 router.get("/list",(req,res)=>{
 	Truyen.find((err, docs) => {
 		if(!err){
@@ -95,6 +94,25 @@ router.get("/list",(req,res)=>{
 			console.log("Error in retrieving employee list: " + err);
 		}
 	});
+});
+
+ router.get("/list/:page", (req,res)=>{
+	var perPage = 1
+    var page = req.params.page || 1
+	var limit = 3;
+	Truyen.find({})
+	.limit(perPage)
+	.skip((perPage * page) - perPage)
+	.exec(function (err, truyens){
+		Truyen.count().exec(function(err, count){
+			if(!err)
+				res.render("truyen/list",{
+					list:truyens,
+					current: page,
+					pages: Math.ceil(count / perPage)
+				})
+		})
+	})
 });
 
 function handleValidationError(err, body){
@@ -116,7 +134,7 @@ router.get("/:id",(req,res)=>{
 			res.render("truyen/addOrEdit",{
 				viewTitle: "Update Truyen",
 				truyen: doc
-			});
+			}); 
 		}
 	});
 });
