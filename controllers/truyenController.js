@@ -2,6 +2,7 @@ const express = require("express");
 var router = express.Router();
 const mongoose = require("mongoose");
 const Truyen = mongoose.model("Truyen");
+const utils = require("../utils/navRender.js");
 
 router.get("/",(req,res)=>{
 	res.render("truyen/addOrEdit",{
@@ -97,9 +98,8 @@ router.get("/list",(req,res)=>{
 });
 
  router.get("/list/:page", (req,res)=>{
-	var perPage = 1
-    var page = req.params.page || 1
-	var limit = 3;
+	var perPage = 2;
+    var page = req.params.page || 1;
 	Truyen.find({})
 	.limit(perPage)
 	.skip((perPage * page) - perPage)
@@ -109,7 +109,8 @@ router.get("/list",(req,res)=>{
 				res.render("truyen/list",{
 					list:truyens,
 					current: page,
-					pages: Math.ceil(count / perPage)
+					pages: Math.ceil(count / perPage),
+					navRender: utils.getNavRender(page, Math.ceil(count / perPage))
 				})
 		})
 	})
