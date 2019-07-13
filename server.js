@@ -5,6 +5,7 @@ const path = require("path");
 const exphbs = require("express-handlebars");
 const bodyparser = require("body-parser");
 const truyenController = require("./controllers/truyenController");
+const trangChuController = require("./controllers/trangChuController.js");
 
 
 var app = express();
@@ -18,7 +19,7 @@ app.set("views", path.join(__dirname, "/views/"));
 app.engine("hbs", exphbs({
 	extname: "hbs",
 	defaultLayout:"mainLayout",
-	layoutsDir: __dirname + "/views/layouts/",
+	//layoutsDir: __dirname + "/views/layouts/",
 	helpers: {
 		if: function(operand_1, operator, operand_2, options) {
 			var operators = {
@@ -46,4 +47,7 @@ app.listen(3000, ()=>{
 	console.log("Express server started at port : 3000");
 });
 
+
+
 app.use("/truyen", truyenController);
+app.use("/", trangChuController);
