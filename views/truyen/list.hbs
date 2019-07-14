@@ -8,6 +8,7 @@
             <th>Số Chương</th>
             <th>Trạng Thái</th>
             <th>Url Hinh</th>
+            <th>Số Views</th>
             <th></th>
         </tr>
     </thead>
@@ -19,6 +20,7 @@
             <td>{{this.so_chuong}}</td>
             <td>{{this.trang_thai}}</td>
             <td>{{this.url_hinh}}</td>
+             <td>{{this.views}}</td>
             <td>
                 <a href="/truyen/{{this._id}}"><i class="fa fa-pencil fa-lg" arial-hidden="true"></i></a>
                 <a href="/truyen/delete/{{this._id}}" onclick="return confirm('Are you sure to delete this record ?');"> <i class="fa fa-trash fa-lg" aria-hidden="true"></i></a>

@@ -5,9 +5,10 @@ const Truyen = mongoose.model("Truyen");
 const utils = require("../utils/navRender.js");
 
 router.get("/",(req,res)=>{
-    res.render("truyen/homePage",{
+    res.render("home/homePage",{
 		layout: 'defaultLayout.hbs'
 	});
 });
+
 
 module.exports = router;

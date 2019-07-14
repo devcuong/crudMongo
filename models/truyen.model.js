@@ -17,6 +17,9 @@ var truyenSchema = new mongoose.Schema({
 	},
 	so_chuong:{
 		type: String
+	},
+	views:{
+		type: String
 	}
 }, {
 	versionKey: false // You should be aware of the outcome after set to false

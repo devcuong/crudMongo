@@ -41,6 +41,10 @@ function updateRecord(req,res){
 	if(req.body.urlHinh){
 		foundTruyen.url_hinh = req.body.urlHinh;
 	}
+
+	if(req.body.soViews){
+		foundTruyen.views = req.body.soViews;
+	}
 	Truyen.findOneAndUpdate({_id: req.body._id},foundTruyen, { new: true,strict: false, setDefaultsOnInsert: true }, function(err, doc) {
 		if(!err){
 			res.redirect("truyen/list");
@@ -67,6 +71,7 @@ function insertRecord(req, res){
 	truyen.trang_thai = req.body.trangThai;
 	truyen.so_chuong = req.body.soChuong;
 	truyen.url_hinh = req.body.urlHinh;
+	truyen.views = req.body.soViews;
 	truyen.save((err, doc) => {
 		if(!err)
 			res.redirect("truyen/list");

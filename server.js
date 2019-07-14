@@ -15,6 +15,7 @@ app.use(bodyparser.urlencoded({
 app.use(bodyparser.json());
 
 app.set("views", path.join(__dirname, "/views/"));
+app.use(express.static(path.join(__dirname, "/public" )));
 
 app.engine("hbs", exphbs({
 	extname: "hbs",
