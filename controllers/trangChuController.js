@@ -5,7 +5,7 @@ const Truyen = mongoose.model("Truyen");
 const utils = require("../utils/navRender.js");
 
 router.get("/",(req,res)=>{
-	var q = Truyen.find({danh_gia: 1}).limit(2);
+	var q = Truyen.find({danh_gia: 1}).limit(13);
 		q.exec(function(err, docs) {
 			if(!err)
 			{

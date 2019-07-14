@@ -36,7 +36,10 @@ app.engine("hbs", exphbs({
 		  
 			if (result) return options.fn(this);
 			else  return options.inverse(this);
-	}
+	},
+		inc: function(value, options){
+			return parseInt(value) + 1;
+		}
 	
 	}
 }));

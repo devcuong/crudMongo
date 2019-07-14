@@ -1436,6 +1436,42 @@
     <link rel="apple-touch-icon" sizes="180x180"
         href="https://cdnaz.truyenfull.vn/favicons/apple-touch-icon-180x180.png">
     <link rel="stylesheet" type="text/css" href="css/maincss-2806-2.css">
+    <script>
+        function layTruyenHotTheoTheLoai(){
+        var theLoai = document.getElementById("hot-select").value;
+        var xmlhttp = new XMLHttpRequest();
+        var url = "/truyen/api/" + theLoai;
+
+        xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            var myArr = JSON.parse(this.responseText);
+            myFunction(myArr);
+        }
+        };
+        xmlhttp.open("GET", url, true);
+        xmlhttp.send();
+        }
+        function myFunction(arr) {
+        var out = "";
+        var i;
+        for(i = 0; i < arr.length; i++) {
+            var t = i + 1;
+            out +="<div class='item top-" + t +"'";
+            out +="<a href=''"+ arr[i].url_truyen + "' itemprop='url'>";
+                if(arr[i].trang_thai == "Full")
+                {
+                    <span class="full-label"></span>
+                }
+            out +="<img";
+            out +="src='"+arr[i].url_hinh+"'" + "alt='"+ arr[i].ten_truyen +"' class="+"'img-responsive item-img'" + "itemprop='image'>";
+            out +="<div class='title'>";
+            out +="<h3 itemprop='"+arr[i].ten_truyen+"'></h3>";
+            out +="</div>";
+            out +="</a></div>";
+        }
+        document.getElementsByClassName("index-intro").html(out);
+        }
+    </script>
 </head>
 
 <body id="body_home">

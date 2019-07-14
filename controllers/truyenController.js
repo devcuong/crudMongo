@@ -17,6 +17,25 @@ router.post("/", (req,res) => {
 		updateRecord(req, res);
 });
 
+router.get("/api/:tl", (req, res) => {
+	var tl = req.params.tl;
+	console.log(tl);
+	if(tl != ""){
+		var q = Truyen.find({the_loai: tl}).limit(13);
+		q.exec(function(err, docs) {
+			if(!err)
+			{
+				res.json(docs);
+			}
+			else{
+				console.log(err);
+				
+			}
+			
+		});
+	}
+})
+
 function updateRecord(req,res){
 	var foundTruyen = new Truyen();
 	if(req.body._id){

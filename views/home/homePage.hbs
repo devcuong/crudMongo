@@ -166,9 +166,9 @@
                 <h2><a href="https://truyenfull.vn/danh-sach/truyen-hot/" title="Truyện hot">Truyện hot</a></h2><a
                     href="https://truyenfull.vn/danh-sach/truyen-hot/" title="Truyện hot"><span
                         class="glyphicon glyphicon-fire"></span></a><select id="hot-select"
-                    class="form-control new-select" aria-label="Chọn thể loại">
+                    class="form-control new-select" aria-label="Chọn thể loại" onchange="layTruyenHotTheoTheLoai()">
                     <option value="all">Tất cả</option>
-                    <option value="1">Tiên Hiệp</option>
+                    <option value="tien_hiep">Tiên Hiệp</option>
                     <option value="2">Kiếm Hiệp</option>
                     <option value="3">Ngôn Tình</option>
                     <option value="4">Đô Thị</option>
@@ -208,115 +208,21 @@
                 </select>
             </div>
             <div class="index-intro">
-                    {{{list}}}
-                <div class="item top-1" ><a
-                        href="https://truyenfull.vn/doc-ton-tam-gioi/"
-                        itemprop="url"><span class="full-label"></span><img
-                            src="https://res.cloudinary.com/truyennhieu-images/image/upload/v1544573020/truyen/than-dao-dan-ton.jpg"
-                            alt="Chọc Tức Vợ Yêu - Mua Một Tặng Một" class="img-responsive item-img" itemprop="image">
+                    {{#each list}}
+                        <div class="item top-{{inc @index}}" ><a
+                        href="{{ this.url_truyen }}"
+                        itemprop="url">
+                        {{#if this.trang_thai "eq" "Full" }}
+                        <span class="full-label"></span>
+                        {{/if}}
+                        <img
+                            src="{{ this.url_hinh }}"
+                            alt="{{ this.ten_truyen }}" class="img-responsive item-img" itemprop="image">
                         <div class="title">
-                            <h3 itemprop="name">Chọc Tức Vợ Yêu - Mua Một Tặng Một</h3>
+                            <h3 itemprop="name">{{ this.ten_truyen }}</h3>
                         </div>
                     </a></div>
-                <div class="item top-2"  ><a
-                        href="https://truyenfull.vn/doc-ton-tam-gioi/" itemprop="url"><span
-                            class="full-label"></span><img src="https://res.cloudinary.com/truyennhieu-images/image/upload/v1544724771/truyen/linh-vu-thien-ha.jpg"
-                            alt="Độc Tôn Tam Giới" class="img-responsive item-img" itemprop="image">
-                        <div class="title">
-                            <h3 itemprop="name">Độc Tôn Tam Giới</h3>
-                        </div>
-                    </a></div>
-                <div class="item top-3"  ><a
-                        href="https://truyenfull.vn/ngon-tinh-boss-hung-du-ong-xa-ket-hon-di-full/" itemprop="url"><span
-                            class="full-label"></span><img
-                            src="https://res.cloudinary.com/truyennhieu-images/image/upload/v1544573020/truyen/vo-thuong-sat-than.jpg"
-                            alt="Boss Hung Dữ - Ông Xã Kết Hôn Đi" class="img-responsive item-img" itemprop="image">
-                        <div class="title">
-                            <h3 itemprop="name">Boss Hung Dữ - Ông Xã Kết Hôn Đi</h3>
-                        </div>
-                    </a></div>
-                <div class="item top-4"  ><a
-                        href="https://truyenfull.vn/huyen-thien-hon-ton/" itemprop="url"><span
-                            class="full-label"></span><img src="https://res.cloudinary.com/truyennhieu-images/image/upload/v1544573020/truyen/dau-pha-thuong-khung.jpg"
-                            alt="Huyền Thiên Hồn Tôn" class="img-responsive item-img" itemprop="image">
-                        <div class="title">
-                            <h3 itemprop="name">Huyền Thiên Hồn Tôn</h3>
-                        </div>
-                    </a></div>
-                <div class="item top-5"  ><a
-                        href="https://truyenfull.vn/linh-vu-thien-ha/" itemprop="url"><span
-                            class="full-label"></span><img src="https://res.cloudinary.com/truyennhieu-images/image/upload/v1544711852/truyen/than-khong-thien-ha.jpg"
-                            alt="Linh Vũ Thiên Hạ" class="img-responsive item-img" itemprop="image">
-                        <div class="title">
-                            <h3 itemprop="name">Linh Vũ Thiên Hạ</h3>
-                        </div>
-                    </a></div>
-                <div class="item top-6"  ><a
-                        href="https://truyenfull.vn/ca-muc-ham-mat/" itemprop="url"><span class="full-label"></span><img
-                            src="https://res.cloudinary.com/truyennhieu-images/image/upload/v1544711659/truyen/nhat-niem-vinh-hang.jpg" alt="Cá Mực Hầm Mật"
-                            class="img-responsive item-img" itemprop="image">
-                        <div class="title">
-                            <h3 itemprop="name">Cá Mực Hầm Mật</h3>
-                        </div>
-                    </a></div>
-                <div class="item top-7"  ><a
-                        href="https://truyenfull.vn/thi-thien-dao/" itemprop="url"><span class="full-label"></span><img
-                            src="https://cdnaz.truyenfull.vn/cover/o/eJzLyTDW1w11ywuITHWK988u1w8Lc8qtikhMjEz11HeEgrwoA_1C97ACX8tcs8JUA_1yI0NT3QxjIyMAbLIS5w==/nguoi-ben-goi-xa-la.jpg" alt="Thí Thiên Đao"
-                            class="img-responsive item-img" itemprop="image">
-                        <div class="title">
-                            <h3 itemprop="name">Thí Thiên Đao</h3>
-                        </div>
-                    </a></div>
-                <div class="item top-8"  ><a
-                        href="https://truyenfull.vn/yeu-sau-nang-de-thieu-am-tham-cung-chieu-vo/" itemprop="url"><span
-                            class="full-label"></span><img
-                            src="https://res.cloudinary.com/truyennhieu-images/image/upload/v1545717838/truyen/doc-y-than-nu-phuc-hac-lanh-de-cuong-sung-the.jpg"
-                            alt="Yêu Sâu Nặng: Đế Thiếu Âm Thầm Cưng Chiều Vợ" class="img-responsive item-img"
-                            itemprop="image">
-                        <div class="title">
-                            <h3 itemprop="name">Yêu Sâu Nặng: Đế Thiếu Âm Thầm Cưng Chiều Vợ</h3>
-                        </div>
-                    </a></div>
-                <div class="item top-9"  ><a
-                        href="https://truyenfull.vn/ma-dao-to-su/" itemprop="url"><span class="full-label"></span><img
-                            src="https://res.cloudinary.com/truyennhieu-images/image/upload/v1545717838/truyen/me-17-tuoi-con-trai-thien-tai-cha-phuc-hac.jpg" alt="Ma Đạo Tổ Sư"
-                            class="img-responsive item-img" itemprop="image">
-                        <div class="title">
-                            <h3 itemprop="name">Ma Đạo Tổ Sư</h3>
-                        </div>
-                    </a></div>
-                <div class="item top-10"  ><a
-                        href="https://truyenfull.vn/de-vuong-sung-ai/" itemprop="url"><span
-                            class="full-label"></span><img src="https://res.cloudinary.com/truyennhieu-images/image/upload/v1559374853/truyen/mach-thuong-nhan-nhu-ngoc.jpg"
-                            alt="Đế Vương Sủng Ái" class="img-responsive item-img" itemprop="image">
-                        <div class="title">
-                            <h3 itemprop="name">Đế Vương Sủng Ái</h3>
-                        </div>
-                    </a></div>
-                <div class="item top-11"  ><a
-                        href="https://truyenfull.vn/truyen-thien-dao-do-thu-quan/" itemprop="url"><img
-                            src="https://res.cloudinary.com/truyennhieu-images/image/upload/v1560015055/truyen/cho-soi-nho-tung-bi-choc-da-song-lai.jpg"
-                            alt="Thiên Đạo Đồ Thư Quán" class="img-responsive item-img" itemprop="image">
-                        <div class="title">
-                            <h3 itemprop="name">Thiên Đạo Đồ Thư Quán</h3>
-                        </div>
-                    </a></div>
-                <div class="item top-12"  ><a
-                        href="https://truyenfull.vn/ngon-tinh-boss-la-nu-phu-full/" itemprop="url"><span
-                            class="full-label"></span><img src="https://cdnaz.truyenfull.vn/cover/eJzLyTDWN8xzcnMsDg8yNfW38PQzCjWJSjMyMfEwCSrVrQzzd9GNMMvKSow08fEOzHHVLU2y9HM08QjwKiwvzXX3M4hMDy3xCTPM0zVzd8oP8XZ1iSz2Kc62LTcyNNXNMDYyAgCY5B1s/he-thong-dich-the-nuoc-hoa.jpg"
-                            alt="Boss Là Nữ Phụ" class="img-responsive item-img" itemprop="image">
-                        <div class="title">
-                            <h3 itemprop="name">Boss Là Nữ Phụ</h3>
-                        </div>
-                    </a></div>
-                <div class="item top-13"  ><a
-                        href="https://truyenfull.vn/phi-thien/" itemprop="url"><span class="full-label"></span><img
-                            src="https://res.cloudinary.com/truyennhieu-images/image/upload/v1556776347/truyen/nu-vuong-mommy-gia-lam.jpg" alt="Phi Thiên"
-                            class="img-responsive item-img" itemprop="image">
-                        <div class="title">
-                            <h3 itemprop="name">Phi Thiên</h3>
-                        </div>
-                    </a></div>
+                    {{/each}}
             </div>
         </div>
         <div class="container" id="list-index">
@@ -327,9 +233,9 @@
                     <h2><a href="https://truyenfull.vn/danh-sach/truyen-moi/" title="Truyện mới">Truyện mới cập nhật</a>
                     </h2><a href="https://truyenfull.vn/danh-sach/truyen-moi/" title="Truyện mới"><span
                             class="glyphicon glyphicon-menu-right"></span></a><select id="new-select"
-                        class="form-control new-select" aria-label="Chọn thể loại">
+                        class="form-control new-select" aria-label="Chọn thể loại" >
                         <option value="all">Tất cả</option>
-                        <option value="1">Tiên Hiệp</option>
+                        <option value="tien_hiep">Tiên Hiệp</option>
                         <option value="2">Kiếm Hiệp</option>
                         <option value="3">Ngôn Tình</option>
                         <option value="4">Đô Thị</option>
