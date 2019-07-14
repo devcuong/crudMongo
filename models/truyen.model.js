@@ -20,7 +20,12 @@ var truyenSchema = new mongoose.Schema({
 	},
 	views:{
 		type: String
+	},
+
+	danh_gia:{
+		type: Number
 	}
+
 }, {
 	versionKey: false // You should be aware of the outcome after set to false
 });	

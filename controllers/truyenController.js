@@ -100,6 +100,7 @@ router.get("/list",(req,res)=>{
 			console.log("Error in retrieving employee list: " + err);
 		}
 	});
+	
 });
 
  router.get("/list/:page", (req,res)=>{
