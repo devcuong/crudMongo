@@ -1456,20 +1456,20 @@
         var i;
         for(i = 0; i < arr.length; i++) {
             var t = i + 1;
-            out +="<div class='item top-" + t +"'";
+            out +="<div class='item top-" + t +"'>";
             out +="<a href=''"+ arr[i].url_truyen + "' itemprop='url'>";
                 if(arr[i].trang_thai == "Full")
                 {
-                    <span class="full-label"></span>
+                   out += "<span class='full-label'></span>";
                 }
             out +="<img";
-            out +="src='"+arr[i].url_hinh+"'" + "alt='"+ arr[i].ten_truyen +"' class="+"'img-responsive item-img'" + "itemprop='image'>";
+            out +=" src='"+arr[i].url_hinh+"'" + "alt='"+ arr[i].ten_truyen +"' class="+"'img-responsive item-img'" + "itemprop='image'>";
             out +="<div class='title'>";
             out +="<h3 itemprop='"+arr[i].ten_truyen+"'></h3>";
             out +="</div>";
             out +="</a></div>";
         }
-        document.getElementsByClassName("index-intro").html(out);
+        document.getElementsByClassName("index-intro").innerHTML = out;
         }
     </script>
 </head>
