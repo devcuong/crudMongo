@@ -24,6 +24,10 @@ var truyenSchema = new mongoose.Schema({
 
 	danh_gia:{
 		type: Number
+	},
+
+	update_time:{
+		type: String
 	}
 
 }, {

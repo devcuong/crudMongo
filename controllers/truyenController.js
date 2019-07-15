@@ -91,6 +91,7 @@ function insertRecord(req, res){
 	truyen.so_chuong = req.body.soChuong;
 	truyen.url_hinh = req.body.urlHinh;
 	truyen.views = req.body.soViews;
+	truyen.update_time = req.body.updateTime;
 	truyen.save((err, doc) => {
 		if(!err)
 			res.redirect("truyen/list");
