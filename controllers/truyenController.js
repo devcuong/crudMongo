@@ -19,7 +19,6 @@ router.post("/", (req,res) => {
 
 router.get("/api/:tl", (req, res) => {
 	var tl = req.params.tl;
-	console.log(tl);
 	if(tl != ""){
 		var q = Truyen.find({the_loai: tl}).limit(13);
 		q.exec(function(err, docs) {
