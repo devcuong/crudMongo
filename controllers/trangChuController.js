@@ -16,7 +16,6 @@ router.get("/",(req,res)=>{
 			}
 			else{
 				console.log(err);
-				
 			}
 			
 		});

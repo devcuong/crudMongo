@@ -3,10 +3,13 @@ var router = express.Router();
 const mongoose = require("mongoose");
 const Truyen = mongoose.model("Truyen");
 const utils = require("../utils/navRender.js");
+var moment = require('moment');
 
 router.get("/",(req,res)=>{
+	var tt = new Date().getTime();
 	res.render("truyen/addOrEdit",{
-		viewTitle : "Insert Truyện"
+		viewTitle : "Insert Truyện",
+		timeStamp : tt
 	});
 });
 
@@ -17,7 +20,25 @@ router.post("/", (req,res) => {
 		updateRecord(req, res);
 });
 
-router.get("/api/:tl", (req, res) => {
+router.get("/apiHot/:tl", (req, res) => {
+	var tl = req.params.tl;
+	if(tl != ""){
+		var q = Truyen.find({the_loai: tl}).limit(13);
+		q.exec(function(err, docs) {
+			if(!err)
+			{
+				res.json(docs);
+			}
+			else{
+				console.log(err);
+				
+			}
+			
+		});
+	}
+})
+
+router.get("/apiNew/:tl", (req, res) => {
 	var tl = req.params.tl;
 	if(tl != ""){
 		var q = Truyen.find({the_loai: tl}).limit(13);

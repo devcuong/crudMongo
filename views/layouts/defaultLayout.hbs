@@ -1438,20 +1438,34 @@
     <link rel="stylesheet" type="text/css" href="css/maincss-2806-2.css">
     <script>
         function layTruyenHotTheoTheLoai(){
-        var theLoai = document.getElementById("hot-select").value;
-        var xmlhttp = new XMLHttpRequest();
-        var url = "/truyen/api/" + theLoai;
+            var hot = document.getElementById("hot-select").value;
+            var url = "/truyen/apiHot/" + theLoai;
+            layData(url);
+        }
+        function layTruyenMoiCapNhat(){
+            var new = documents.getElementById("new-select").value;
+            var url = "/truyen/apiNew/" + new;
+            layData(url);
+        }
 
-        xmlhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            var myArr = JSON.parse(this.responseText);
-            myFunction(myArr);
+        function layData(url,loai)
+        {
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                var myArr = JSON.parse(this.responseText);
+                if(loai == "hot")
+                    functionLayHotTheoTheLoai(myArr);
+                if(loai == "new")
+                    functionLayNewTheoTheLoai(myArr)
+            }
+            };
+            xmlhttp.open("GET", url, true);
+            xmlhttp.send();
         }
-        };
-        xmlhttp.open("GET", url, true);
-        xmlhttp.send();
-        }
-        function myFunction(arr) {
+
+
+        function functionLayHotTheoTheLoai(arr) {
         var out = "";
         var i;
         for(i = 0; i < arr.length; i++) {
@@ -1470,6 +1484,23 @@
             out +="</a></div>";
         }
         document.getElementById("i-intro").innerHTML = out;
+        }
+
+        function functionLayNewTheoTheLoai(arr){
+            var out = "";
+            var i;
+            for(i = 0; i < arr.length; i++) {
+            out +=  "<div class='row'>";
+            out +=  "<div class='col-xs-9 col-sm-6 col-md-5 col-title'><span class='glyphicon glyphicon-chevron-right'></span>";
+            out +=  "<h3 itemprop='name'><a href='https://truyenfull.vn/dong-nhan-nu-hoang-ai-cap-ket-cuc-cua-nu-chinh/' title='[Đồng Nhân] Nữ Hoàng Ai Cập - Kết Cục Của Nữ Chính' itemprop='url'>[Đồng Nhân] Nữ";
+            out +=  "Hoàng Ai Cập - Kết Cục Của Nữ Chính</a></h3><span class='label-title label-new'></span>";
+            out +=  "</div>"
+            out +=  "<div class='hidden-xs col-sm-3 col-md-3 col-cat'><a itemprop='genre' href='https://truyenfull.vn/the-loai/ngon-tinh/' title='Ngôn Tình'>Ngôn Tình</a>, <a itemprop='genre' href='https://truyenfull.vn/the-loai/xuyen-khong/' title='Xuyên Không'>Xuyên Không</a></div>";
+            out +=  "<div class='col-xs-3 col-sm-3 col-md-2 col-chap text-info'><a href='https://truyenfull.vn/dong-nhan-nu-hoang-ai-cap-ket-cuc-cua-nu-chinh/chuong-19/' title='[Đồng Nhân] Nữ Hoàng Ai Cập - Kết Cục Của Nữ Chính - Chương 19'><span class='chapter-text'><span>Chương </span></span>19</a></div>";
+            out +=  "<div class='hidden-xs hidden-sm col-md-2 col-time'>19 phút trước </div>";
+            out +=  "</div>";
+            }
+            document.getElementById("i-intro").innerHTML = out;
         }
     </script>
 </head>
