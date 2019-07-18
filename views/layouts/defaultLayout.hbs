@@ -1438,14 +1438,14 @@
     <link rel="stylesheet" type="text/css" href="css/maincss-2806-2.css">
     <script>
         function layTruyenHotTheoTheLoai(){
-            var hot = document.getElementById("hot-select").value;
-            var url = "/truyen/apiHot/" + theLoai;
-            layData(url);
+            var hotTruyen = document.getElementById("hot-select").value;
+            var url = "/truyen/apiHot/" + hotTruyen;
+            layData(url, "hot");
         }
         function layTruyenMoiCapNhat(){
-            var new = documents.getElementById("new-select").value;
-            var url = "/truyen/apiNew/" + new;
-            layData(url);
+            var newTruyen = documents.getElementById("new-select").value;
+            var url = "/truyen/apiNew/" + newTruyen;
+            layData(url, "new");
         }
 
         function layData(url,loai)
@@ -1500,7 +1500,7 @@
             out +=  "<div class='hidden-xs hidden-sm col-md-2 col-time'>19 phút trước </div>";
             out +=  "</div>";
             }
-            document.getElementById("i-intro").innerHTML = out;
+            document.getElementById("t-list").insertAdjacentElement('afterEnd', out);
         }
     </script>
 </head>
