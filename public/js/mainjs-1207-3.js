@@ -5128,17 +5128,6 @@ $(document).ready(function() {
             })
         }
     });
-    $("#new-select").on("change", function() {
-        var a = $(this).find(":selected").val();
-        $.get("/ajax.php", {
-            type: "new_select",
-            id: a
-        }).done(function(a) {
-            $(".list-new .row").remove();
-            $(".list-new .title-list").after(a);
-            $(".list-new .row").hide().fadeIn()
-        })
-    });
     $("#contact-form").submit(function(a) {
         a.preventDefault();
         a = $("#contact-name").val();
