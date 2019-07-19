@@ -84,6 +84,9 @@ function updateRecord(req,res){
 	if(req.body.soViews){
 		foundTruyen.views = req.body.soViews;
 	}
+	if(req.body.updateTime){
+		foundTruyen.update_time = req.body.updateTime;
+	}
 	Truyen.findOneAndUpdate({_id: req.body._id},foundTruyen, { new: true,strict: false, setDefaultsOnInsert: true }, function(err, doc) {
 		if(!err){
 			res.redirect("truyen/list");
@@ -162,8 +165,7 @@ router.get("/list",(req,res)=>{
 		}
 		else
 		{
-			console.log(err);
-			
+			console.log(err);		
 		}
 	})
 	})
@@ -183,11 +185,13 @@ function handleValidationError(err, body){
 }
 
 router.get("/:id",(req,res)=>{
+	var tt = new Date().getTime();
 	Truyen.findById(req.params.id, (err, doc) => {
 		if (!err) {
 			res.render("truyen/addOrEdit",{
 				viewTitle: "Update Truyen",
-				truyen: doc
+				truyen: doc,
+				timeStamp : tt
 			}); 
 		}
 	});
