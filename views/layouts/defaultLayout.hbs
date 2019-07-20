@@ -109,10 +109,15 @@
             out +=  "<div class='col-xs-9 col-sm-6 col-md-5 col-title'><span class='glyphicon glyphicon-chevron-right'></span>";
             out +=  "<h3 itemprop='name'><a href='"+ arr[i].url_truyen +"' title='"+ arr[i].ten_truyen +"' itemprop='url'>";
             out +=  arr[i].ten_truyen + "</a></h3><span class='label-title label-new'></span>";
+            if(arr[i].danh_gia == 1)
+            {
+                out += "<span class='label-title label-hot'></span>";
+            }
+            var date = new Date(arr[i].update_time);
             out +=  "</div>"
-            out +=  "<div class='hidden-xs col-sm-3 col-md-3 col-cat'><a itemprop='genre' href='https://truyenfull.vn/the-loai/ngon-tinh/' title='"+ getconstant(arr[i].the_loai) +"'>" + getconstant(arr[i].the_loai) + "</a>, <a itemprop='genre' href='https://truyenfull.vn/the-loai/xuyen-khong/' title='Xuyên Không'>Xuyên Không</a></div>";
+            out +=  "<div class='hidden-xs col-sm-3 col-md-3 col-cat'><a itemprop='genre' href='https://truyenfull.vn/the-loai/ngon-tinh/' title='"+ getTenTruyen(arr[i].the_loai) +"'>" + getTenTruyen(arr[i].the_loai) + "</a>, <a itemprop='genre' href='https://truyenfull.vn/the-loai/xuyen-khong/' title='Xuyên Không'>Xuyên Không</a></div>";
             out +=  "<div class='col-xs-3 col-sm-3 col-md-2 col-chap text-info'><a href='"+ arr[i].url_truyen +"' title='"+ arr[i].ten_truyen +"'><span class='chapter-text'><span>Chương "+ arr[i].so_chuong +"</span></a></div>";
-            out +=  "<div class='hidden-xs hidden-sm col-md-2 col-time'>+ "+ arr[i].update_time +" +</div>";
+            out +=  "<div class='hidden-xs hidden-sm col-md-2 col-time'>+ "+ date +" +</div>";
             out +=  "</div>";
             }
             document.getElementById("t-list").insertAdjacentHTML('afterend', out);
