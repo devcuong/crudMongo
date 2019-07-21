@@ -26,6 +26,7 @@
     <link rel="preload" as="style" type="text/css" href="css/maincss-2806-2.css">
     <link rel="preload" as="script" href="js/analytics.js">
     <script type="text/javascript" src="js/constant.js"></script>
+    <script type="text/javascript" src="js/timeOutput.js"></script>
     <link rel="preload" as="image" type="image/gif" href="https://cdnaz.truyenfull.vn/img/pixel-cover.gif">
     <link rel="preload" as="image" type="image/png" href="https://cdnaz.truyenfull.vn/img/full-label.png">
     <link rel="search" type="application/opensearchdescription+xml"
@@ -113,11 +114,10 @@
             {
                 out += "<span class='label-title label-hot'></span>";
             }
-            var date = new Date(arr[i].update_time);
             out +=  "</div>"
             out +=  "<div class='hidden-xs col-sm-3 col-md-3 col-cat'><a itemprop='genre' href='https://truyenfull.vn/the-loai/ngon-tinh/' title='"+ getTenTruyen(arr[i].the_loai) +"'>" + getTenTruyen(arr[i].the_loai) + "</a>, <a itemprop='genre' href='https://truyenfull.vn/the-loai/xuyen-khong/' title='Xuyên Không'>Xuyên Không</a></div>";
             out +=  "<div class='col-xs-3 col-sm-3 col-md-2 col-chap text-info'><a href='"+ arr[i].url_truyen +"' title='"+ arr[i].ten_truyen +"'><span class='chapter-text'><span>Chương "+ arr[i].so_chuong +"</span></a></div>";
-            out +=  "<div class='hidden-xs hidden-sm col-md-2 col-time'>+ "+ date +" +</div>";
+            out +=  "<div class='hidden-xs hidden-sm col-md-2 col-time'> "+ getTimeOut(arr[i].update_time) +" </div>";
             out +=  "</div>";
             }
             document.getElementById("t-list").insertAdjacentHTML('afterend', out);
