@@ -23,7 +23,6 @@
         href="https://cdnaz.truyenfull.vn/lib/bootstrap/fonts/glyphicons-halflings-regular.woff2">
     <link rel="preload" as="image" type="image/jpeg" href="https://cdnaz.truyenfull.vn/img/bg.jpg">
     <link rel="preload" as="image" type="image/png" href="https://cdnaz.truyenfull.vn/img/spriteimg_new_white_op.png">
-    <link rel="preload" as="style" type="text/css" href="css/maincss-2806-2.css">
     <link rel="preload" as="script" href="js/analytics.js">
     <script type="text/javascript" src="js/constant.js"></script>
     <script type="text/javascript" src="js/timeOutput.js"></script>
@@ -52,7 +51,14 @@
     <link rel="apple-touch-icon" sizes="180x180"
         href="https://cdnaz.truyenfull.vn/favicons/apple-touch-icon-180x180.png">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="css/maincss-2806-2.css" />
     <script>
+
+        function loadTruyenTrangChu(){
+            layTruyenMoiCapNhat();
+            layTruyenFullMoiNhat();
+        }
+
         function layTruyenHotTheoTheLoai(){
             var hotTruyen = document.getElementById("hot-select").value;
             var url = "/truyen/apiHot/" + hotTruyen;
@@ -62,6 +68,11 @@
             var newTruyen = document.getElementById("new-select").value;
             var url = "/truyen/apiNew/" + newTruyen;
             layData(url, "new");
+        }
+
+        function layTruyenFullMoiNhat(){
+            var url = "/truyen/apiFull/all";
+            layData(url, "full");
         }
 
         function layData(url,loai)
@@ -74,6 +85,8 @@
                     functionLayHotTheoTheLoai(myArr);
                 if(loai == "new")
                     functionLayNewTheoTheLoai(myArr);
+                if(loai == "full")
+                    functionLayFullMoiNhat(myArr);
             }
             };
             xmlhttp.open("GET", url, true);
@@ -96,7 +109,7 @@
             out +=" src='"+arr[i].url_hinh+"'" + "alt='"+ arr[i].ten_truyen +"' class="+"'img-responsive item-img'" + "itemprop='image'>";
             out +="<div class='title'>";
             out +="<h3 itemprop='"+arr[i].ten_truyen+"'>"+arr[i].ten_truyen+"</h3>";
-            out +="</a></div>";
+            out +="</div>";
             out +="</a></div>";
         }
         document.getElementById("i-intro").innerHTML = out;
@@ -122,10 +135,28 @@
             }
             document.getElementById("t-list").insertAdjacentHTML('afterend', out);
         }
+
+        function functionLayFullMoiNhat(arr){
+            var out = "";
+            var i;
+            for(i = 0; i < arr.length; i++) {
+            out += "<div class='col-xs-4 col-sm-3 col-md-2'><a";
+            out += " href='"+ arr[i].url_truyen +"'";
+            out += "title='"+ arr[i].ten_truyen +"'><img";
+            out +=  " src='"+ arr[i].url_hinh +"'";
+            out +=  " alt='"+ arr[i].ten_truyen +"'>";
+            out +=  "<div class='caption'>"
+            out +=  "<h3>"+arr[i].ten_truyen+"</h3><small class='btn-xs label-primary'>Full - "+ arr[i].so_chuong +"";
+            out +=  " chương</small>";
+            out +=  "</div>";
+            out +=  "</a></div>";
+            }
+           document.getElementById("f-list").innerHTML = out;
+        }
     </script>
 </head>
 
-<body id="body_home">
+<body id="body_home" onload="loadTruyenTrangChu()">
     {{{body}}}
 </body>
 
