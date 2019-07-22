@@ -5031,7 +5031,7 @@ select[multiple].input-group-sm>.input-group-btn>.btn {
 
 .navbar-default .navbar-collapse,
 .navbar-default .navbar-form {
-    border-color: #e7e7e7
+    border-color: #DD0000
 }
 
 .navbar-default .navbar-nav>.open>a,
@@ -5380,7 +5380,7 @@ a.label:focus {
 }
 
 .label-primary {
-    background-color: #428bca
+    background-color: #BB0000;
 }
 
 .label-primary[href]:hover,
@@ -6842,7 +6842,7 @@ button.close {
 }
 
 .label-primary {
-    background-color: #2a5893
+    background-color: #BB0000
 }
 
 .col-xs-20 {
@@ -6991,7 +6991,7 @@ h4,
 }
 
 .navbar-default {
-    background-color: #14425d;
+    background-color: #bb3129;
     background-position-x: -50px;
     background-repeat: no-repeat;
     -moz-box-shadow: 0 0 6px rgba(0, 0, 0, .3);
@@ -7012,7 +7012,7 @@ h4,
 .navbar-default .navbar-nav>.open>a:hover,
 .navbar-default .navbar-nav>.open>a:focus {
     color: #fff;
-    background: #2f566d
+    background: #990000
 }
 
 .navbar-default .navbar-nav .open .dropdown-menu>li>a,
@@ -7022,7 +7022,7 @@ h4,
 
 .navbar-breadcrumb {
     background: #ececec;
-    border-top: 1px solid #476171
+    border-top: 1px solid #770000
 }
 
 .settings .form-horizontal .form-group-sm .control-label {
@@ -7104,7 +7104,7 @@ h4,
 }
 
 .navbar-nav>li>.dropdown-menu {
-    background-color: #2f566d
+    background-color: #bb3129
 }
 
 .multi-column .dropdown-menu {
@@ -7126,7 +7126,7 @@ h4,
 
 .dropdown-menu>li>a:hover,
 .dropdown-menu>li>a:focus {
-    background-color: #14425d;
+    background-color: #990000;
     color: #fff
 }
 
@@ -8259,7 +8259,7 @@ h4,
 }
 
 .bl-title {
-    background-color: #14425d;
+    background-color: #990000;
     color: #fff;
     padding: 0 2px
 }

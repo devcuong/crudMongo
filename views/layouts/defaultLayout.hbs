@@ -21,8 +21,6 @@
         href="https://cdnaz.truyenfull.vn/font/RobotoCondensed-Regular.woff">
     <link rel="preload" as="font" crossorigin="crossorigin" type="font/woff2"
         href="https://cdnaz.truyenfull.vn/lib/bootstrap/fonts/glyphicons-halflings-regular.woff2">
-    <link rel="preload" as="image" type="image/jpeg" href="https://cdnaz.truyenfull.vn/img/bg.jpg">
-    <link rel="preload" as="image" type="image/png" href="https://cdnaz.truyenfull.vn/img/spriteimg_new_white_op.png">
     <link rel="preload" as="script" href="js/analytics.js">
     <script type="text/javascript" src="js/constant.js"></script>
     <script type="text/javascript" src="js/timeOutput.js"></script>
@@ -116,7 +114,10 @@
         }
 
         function functionLayNewTheoTheLoai(arr){
-            var out = "";
+            const firstElementChild = document.getElementById("parent-t-list").firstElementChild;
+            document.getElementById("parent-t-list").innerHTML = '';
+            document.getElementById("parent-t-list").append(firstElementChild);
+            var out = ""
             var i;
             for(i = 0; i < arr.length; i++) {
             out +=  "<div class='row'>";
@@ -128,12 +129,13 @@
                 out += "<span class='label-title label-hot'></span>";
             }
             out +=  "</div>"
-            out +=  "<div class='hidden-xs col-sm-3 col-md-3 col-cat'><a itemprop='genre' href='https://truyenfull.vn/the-loai/ngon-tinh/' title='"+ getTenTruyen(arr[i].the_loai) +"'>" + getTenTruyen(arr[i].the_loai) + "</a>, <a itemprop='genre' href='https://truyenfull.vn/the-loai/xuyen-khong/' title='Xuyên Không'>Xuyên Không</a></div>";
+            out +=  "<div class='hidden-xs col-sm-3 col-md-3 col-cat'><a itemprop='genre' href='https://truyenfull.vn/the-loai/ngon-tinh/' title='"+ getTenTruyen(arr[i].the_loai) +"'>" + getTenTruyen(arr[i].the_loai) + "</a></div>";
             out +=  "<div class='col-xs-3 col-sm-3 col-md-2 col-chap text-info'><a href='"+ arr[i].url_truyen +"' title='"+ arr[i].ten_truyen +"'><span class='chapter-text'><span>Chương "+ arr[i].so_chuong +"</span></a></div>";
             out +=  "<div class='hidden-xs hidden-sm col-md-2 col-time'> "+ getTimeOut(arr[i].update_time) +" </div>";
             out +=  "</div>";
             }
             document.getElementById("t-list").insertAdjacentHTML('afterend', out);
+            
         }
 
         function functionLayFullMoiNhat(arr){

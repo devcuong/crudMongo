@@ -23,7 +23,7 @@ router.post("/", (req, res) => {
 router.get("/apiHot/:tl", (req, res) => {
     var tl = req.params.tl;
     if (tl != "") {
-        var q = Truyen.find({ the_loai: tl }).limit(13);
+        var q = Truyen.find({ the_loai: tl }).sort({_id:1}).limit(13);
         q.exec(function(err, docs) {
             if (!err) {
                 res.json(docs);
@@ -39,7 +39,7 @@ router.get("/apiHot/:tl", (req, res) => {
 router.get("/apiNew/:tl", (req, res) => {
     var tl = req.params.tl;
     if (tl != "") {
-        var q = Truyen.find().limit(16);
+        var q = Truyen.find().sort({_id:-1}).limit(16);
         if (tl != "all") {
             q = Truyen.find({ the_loai: tl }).limit(16);
         }
