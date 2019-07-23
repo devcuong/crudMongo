@@ -21,9 +21,9 @@
         href="https://cdnaz.truyenfull.vn/font/RobotoCondensed-Regular.woff">
     <link rel="preload" as="font" crossorigin="crossorigin" type="font/woff2"
         href="https://cdnaz.truyenfull.vn/lib/bootstrap/fonts/glyphicons-halflings-regular.woff2">
-    <link rel="preload" as="script" href="js/analytics.js">
-    <script type="text/javascript" src="js/constant.js"></script>
-    <script type="text/javascript" src="js/timeOutput.js"></script>
+    <link rel="preload" as="script" href="{{hostname}}/js/analytics.js">
+    <script type="text/javascript" src="{{hostname}}/js/constant.js"></script>
+    <script type="text/javascript" src="{{hostname}}/js/timeOutput.js"></script>
     <link rel="preload" as="image" type="image/gif" href="https://cdnaz.truyenfull.vn/img/pixel-cover.gif">
     <link rel="preload" as="image" type="image/png" href="https://cdnaz.truyenfull.vn/img/full-label.png">
     <link rel="search" type="application/opensearchdescription+xml"
@@ -48,44 +48,49 @@
         href="https://cdnaz.truyenfull.vn/favicons/apple-touch-icon-152x152.png">
     <link rel="apple-touch-icon" sizes="180x180"
         href="https://cdnaz.truyenfull.vn/favicons/apple-touch-icon-180x180.png">
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
-    <link rel="stylesheet" type="text/css" href="css/maincss-2806-2.css" />
+    <link rel="stylesheet" type="text/css" href="{{hostname}}/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="{{hostname}}/css/maincss-2806-2.css" />
     <script>
 
-        function loadTruyenTrangChu(){
+        function loadTruyenTrangChu() {
             layTruyenMoiCapNhat();
             layTruyenFullMoiNhat();
+            layTruyenHotAll();
         }
 
-        function layTruyenHotTheoTheLoai(){
+        function layTruyenHotTheoTheLoai() {
             var hotTruyen = document.getElementById("hot-select").value;
-            var url = "/truyen/apiHot/" + hotTruyen;
+            var url = "/apiHot/" + hotTruyen;
             layData(url, "hot");
         }
-        function layTruyenMoiCapNhat(){
+        function layTruyenMoiCapNhat() {
             var newTruyen = document.getElementById("new-select").value;
-            var url = "/truyen/apiNew/" + newTruyen;
+            var url = "/apiNew/" + newTruyen;
             layData(url, "new");
         }
 
-        function layTruyenFullMoiNhat(){
-            var url = "/truyen/apiFull/all";
+        function layTruyenHotAll() {
+            var url = "/apiHot/all";
+            layData(url, "hot");
+        }
+
+        function layTruyenFullMoiNhat() {
+            var url = "/apiFull/all";
             layData(url, "full");
         }
 
-        function layData(url,loai)
-        {
+        function layData(url, loai) {
             var xmlhttp = new XMLHttpRequest();
-            xmlhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                var myArr = JSON.parse(this.responseText);
-                if(loai == "hot")
-                    functionLayHotTheoTheLoai(myArr);
-                if(loai == "new")
-                    functionLayNewTheoTheLoai(myArr);
-                if(loai == "full")
-                    functionLayFullMoiNhat(myArr);
-            }
+            xmlhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    var myArr = JSON.parse(this.responseText);
+                    if (loai == "hot")
+                        functionLayHotTheoTheLoai(myArr);
+                    if (loai == "new")
+                        functionLayNewTheoTheLoai(myArr);
+                    if (loai == "full")
+                        functionLayFullMoiNhat(myArr);
+                }
             };
             xmlhttp.open("GET", url, true);
             xmlhttp.send();
@@ -93,67 +98,65 @@
 
 
         function functionLayHotTheoTheLoai(arr) {
-        var out = "";
-        var i;
-        for(i = 0; i < arr.length; i++) {
-            var t = i + 1;
-            out +="<div class='item top-" + t +"'>";
-            out +="<a href='"+ arr[i].url_truyen + "' itemprop='url'>";
-                if(arr[i].trang_thai == "Full")
-                {
-                   out += "<span class='full-label'></span>";
+            var out = "";
+            var i;
+            for (i = 0; i < arr.length; i++) {
+                var t = i + 1;
+                out += "<div class='item top-" + t + "'>";
+                out += "<a href='" + arr[i].url_truyen + "' itemprop='url'>";
+                if (arr[i].trang_thai == "Full") {
+                    out += "<span class='full-label'></span>";
                 }
-            out +="<img";
-            out +=" src='"+arr[i].url_hinh+"'" + "alt='"+ arr[i].ten_truyen +"' class="+"'img-responsive item-img'" + "itemprop='image'>";
-            out +="<div class='title'>";
-            out +="<h3 itemprop='"+arr[i].ten_truyen+"'>"+arr[i].ten_truyen+"</h3>";
-            out +="</div>";
-            out +="</a></div>";
-        }
-        document.getElementById("i-intro").innerHTML = out;
+                out += "<img";
+                out += " src='" + arr[i].url_hinh + "'" + "alt='" + arr[i].ten_truyen + "' class=" + "'img-responsive item-img'" + "itemprop='image'>";
+                out += "<div class='title'>";
+                out += "<h3 itemprop='" + arr[i].ten_truyen + "'>" + arr[i].ten_truyen + "</h3>";
+                out += "</div>";
+                out += "</a></div>";
+            }
+            document.getElementById("i-intro").innerHTML = out;
         }
 
-        function functionLayNewTheoTheLoai(arr){
+        function functionLayNewTheoTheLoai(arr) {
             const firstElementChild = document.getElementById("parent-t-list").firstElementChild;
             document.getElementById("parent-t-list").innerHTML = '';
             document.getElementById("parent-t-list").append(firstElementChild);
             var out = ""
             var i;
-            for(i = 0; i < arr.length; i++) {
-            out +=  "<div class='row'>";
-            out +=  "<div class='col-xs-9 col-sm-6 col-md-5 col-title'><span class='glyphicon glyphicon-chevron-right'></span>";
-            out +=  "<h3 itemprop='name'><a href='"+ arr[i].url_truyen +"' title='"+ arr[i].ten_truyen +"' itemprop='url'>";
-            out +=  arr[i].ten_truyen + "</a></h3><span class='label-title label-new'></span>";
-            if(arr[i].danh_gia == 1)
-            {
-                out += "<span class='label-title label-hot'></span>";
-            }
-            out +=  "</div>"
-            out +=  "<div class='hidden-xs col-sm-3 col-md-3 col-cat'><a itemprop='genre' href='https://truyenfull.vn/the-loai/ngon-tinh/' title='"+ getTenTruyen(arr[i].the_loai) +"'>" + getTenTruyen(arr[i].the_loai) + "</a></div>";
-            out +=  "<div class='col-xs-3 col-sm-3 col-md-2 col-chap text-info'><a href='"+ arr[i].url_truyen +"' title='"+ arr[i].ten_truyen +"'><span class='chapter-text'><span>Chương "+ arr[i].so_chuong +"</span></a></div>";
-            out +=  "<div class='hidden-xs hidden-sm col-md-2 col-time'> "+ getTimeOut(arr[i].update_time) +" </div>";
-            out +=  "</div>";
+            for (i = 0; i < arr.length; i++) {
+                out += "<div class='row'>";
+                out += "<div class='col-xs-9 col-sm-6 col-md-5 col-title'><span class='glyphicon glyphicon-chevron-right'></span>";
+                out += "<h3 itemprop='name'><a href='" + arr[i].url_truyen + "' title='" + arr[i].ten_truyen + "' itemprop='url'>";
+                out += arr[i].ten_truyen + "</a></h3><span class='label-title label-new'></span>";
+                if (arr[i].danh_gia == 1) {
+                    out += "<span class='label-title label-hot'></span>";
+                }
+                out += "</div>"
+                out += "<div class='hidden-xs col-sm-3 col-md-3 col-cat'><a itemprop='genre' href='https://truyenfull.vn/the-loai/ngon-tinh/' title='" + getTenTruyen(arr[i].the_loai) + "'>" + getTenTruyen(arr[i].the_loai) + "</a></div>";
+                out += "<div class='col-xs-3 col-sm-3 col-md-2 col-chap text-info'><a href='" + arr[i].url_truyen + "' title='" + arr[i].ten_truyen + "'><span class='chapter-text'><span>Chương " + arr[i].so_chuong + "</span></a></div>";
+                out += "<div class='hidden-xs hidden-sm col-md-2 col-time'> " + getTimeOut(arr[i].update_time) + " </div>";
+                out += "</div>";
             }
             document.getElementById("t-list").insertAdjacentHTML('afterend', out);
-            
+
         }
 
-        function functionLayFullMoiNhat(arr){
+        function functionLayFullMoiNhat(arr) {
             var out = "";
             var i;
-            for(i = 0; i < arr.length; i++) {
-            out += "<div class='col-xs-4 col-sm-3 col-md-2'><a";
-            out += " href='"+ arr[i].url_truyen +"'";
-            out += "title='"+ arr[i].ten_truyen +"'><img";
-            out +=  " src='"+ arr[i].url_hinh +"'";
-            out +=  " alt='"+ arr[i].ten_truyen +"'>";
-            out +=  "<div class='caption'>"
-            out +=  "<h3>"+arr[i].ten_truyen+"</h3><small class='btn-xs label-primary'>Full - "+ arr[i].so_chuong +"";
-            out +=  " chương</small>";
-            out +=  "</div>";
-            out +=  "</a></div>";
+            for (i = 0; i < arr.length; i++) {
+                out += "<div class='col-xs-4 col-sm-3 col-md-2'><a";
+                out += " href='" + arr[i].url_truyen + "'";
+                out += "title='" + arr[i].ten_truyen + "'><img";
+                out += " src='" + arr[i].url_hinh + "'";
+                out += " alt='" + arr[i].ten_truyen + "'>";
+                out += "<div class='caption'>"
+                out += "<h3>" + arr[i].ten_truyen + "</h3><small class='btn-xs label-primary'>Full - " + arr[i].so_chuong + "";
+                out += " chương</small>";
+                out += "</div>";
+                out += "</a></div>";
             }
-           document.getElementById("f-list").innerHTML = out;
+            document.getElementById("f-list").innerHTML = out;
         }
     </script>
 </head>

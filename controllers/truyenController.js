@@ -20,54 +20,6 @@ router.post("/", (req, res) => {
         updateRecord(req, res);
 });
 
-router.get("/apiHot/:tl", (req, res) => {
-    var tl = req.params.tl;
-    if (tl != "") {
-        var q = Truyen.find({ the_loai: tl }).sort({_id:1}).limit(13);
-        q.exec(function(err, docs) {
-            if (!err) {
-                res.json(docs);
-            } else {
-                console.log(err);
-
-            }
-
-        });
-    }
-})
-
-router.get("/apiNew/:tl", (req, res) => {
-    var tl = req.params.tl;
-    if (tl != "") {
-        var q = Truyen.find().sort({_id:-1}).limit(16);
-        if (tl != "all") {
-            q = Truyen.find({ the_loai: tl }).limit(16);
-        }
-        q.exec(function(err, docs) {
-            if (!err) {
-                res.json(docs);
-            } else {
-                console.log(err);
-
-            }
-
-        });
-    }
-})
-
-router.get("/apiFull/all", (req, res) => {
-    var q = Truyen.find({ trang_thai: "Full" }).limit(12);
-    q.exec(function(err, docs) {
-        if (!err) {
-            res.json(docs);
-        } else {
-            console.log(err);
-
-        }
-
-    });
-})
-
 function updateRecord(req, res) {
     var foundTruyen = new Truyen();
     if (req.body._id) {
@@ -99,7 +51,7 @@ function updateRecord(req, res) {
     if (req.body.updateTime) {
         foundTruyen.update_time = req.body.updateTime;
     }
-    Truyen.findOneAndUpdate({ _id: req.body._id }, foundTruyen, { new: true, strict: false, setDefaultsOnInsert: true }, function(err, doc) {
+    Truyen.findOneAndUpdate({ _id: req.body._id }, foundTruyen, { new: true, strict: false, setDefaultsOnInsert: true }, function (err, doc) {
         if (!err) {
             res.redirect("truyen/list");
         } else {
@@ -158,8 +110,8 @@ router.get("/list/:page", (req, res) => {
     Truyen.find({})
         .limit(perPage)
         .skip((perPage * page) - perPage)
-        .exec(function(err, truyens) {
-            Truyen.count().exec(function(err, count) {
+        .exec(function (err, truyens) {
+            Truyen.count().exec(function (err, count) {
                 if (!err) {
                     res.render("truyen/list", {
                         list: truyens,
