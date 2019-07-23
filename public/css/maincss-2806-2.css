@@ -7413,8 +7413,7 @@ h4,
     /* max-height: 100%;
     max-width: 100%; */
     object-fit: cover;
-    object-position: 100% 10;
-
+    object-position: 100% 0;
     width: 182px;
     height: 82px;
     border: 1px solid #e7e7e7
