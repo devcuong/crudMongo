@@ -52,10 +52,16 @@
     <link rel="stylesheet" type="text/css" href="{{hostname}}/css/maincss-2806-2.css" />
     <script>
 
-        function loadTruyenTrangChu() {
-            layTruyenMoiCapNhat();
-            layTruyenFullMoiNhat();
-            layTruyenHotAll();
+        function loadTruyen() {
+            var pathArray = window.location.pathname.split('/');
+            if (pathArray[1] == "the-loai") {
+
+            }
+            else {
+                layTruyenMoiCapNhat();
+                layTruyenFullMoiNhat();
+                layTruyenHotAll();
+            }
         }
 
         function layTruyenHotTheoTheLoai() {
@@ -161,7 +167,7 @@
     </script>
 </head>
 
-<body id="body_home" onload="loadTruyenTrangChu()">
+<body id="body_home" onload="loadTruyen()">
     {{{body}}}
 </body>
 
