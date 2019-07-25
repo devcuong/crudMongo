@@ -2,48 +2,49 @@
         {{> header }}
         <div class="container" id="intro-index">
             <div class="title-list">
-                <h2><a href="https://truyenfull.vn/danh-sach/truyen-hot/" title="Truyện hot">Truyện hot</a></h2><a
-                    href="https://truyenfull.vn/danh-sach/truyen-hot/" title="Truyện hot"><span
-                        class="glyphicon glyphicon-fire"></span></a><select id="hot-select"
+                      <a href="https://truyenfull.vn/danh-sach/truyen-hot/" title="Truyện hot"><span
+                        class="glyphicon glyphicon-fire"></span></a>
+                <h2><a href="https://truyenfull.vn/danh-sach/truyen-hot/" title="Truyện hot">Truyện hot</a></h2>
+                        <select id="hot-select"
                     class="form-control new-select" aria-label="Chọn thể loại" onchange="layTruyenHotTheoTheLoai();">
                     <option value="all">Tất cả</option>
                     <option value="tien-hiep">Tiên Hiệp</option>
-                    <option value="2">Kiếm Hiệp</option>
-                    <option value="3">Ngôn Tình</option>
-                    <option value="4">Đô Thị</option>
-                    <option value="20">Quan Trường</option>
-                    <option value="6">Võng Du</option>
-                    <option value="5">Khoa Huyễn</option>
-                    <option value="8">Huyền Huyễn</option>
-                    <option value="7">Dị Giới</option>
-                    <option value="19">Dị Năng</option>
-                    <option value="10">Quân Sự</option>
-                    <option value="11">Lịch Sử</option>
-                    <option value="15">Xuyên Không</option>
-                    <option value="17">Trọng Sinh</option>
-                    <option value="18">Trinh Thám</option>
-                    <option value="16">Thám Hiểm</option>
-                    <option value="9">Linh Dị</option>
-                    <option value="12">Sắc</option>
-                    <option value="30">Ngược</option>
-                    <option value="36">Sủng</option>
-                    <option value="21">Cung Đấu</option>
-                    <option value="22">Nữ Cường</option>
-                    <option value="24">Gia Đấu</option>
-                    <option value="23">Đông Phương</option>
-                    <option value="13">Đam Mỹ</option>
-                    <option value="14">Bách Hợp</option>
-                    <option value="25">Hài Hước</option>
-                    <option value="27">Điền Văn</option>
-                    <option value="28">Cổ Đại</option>
-                    <option value="29">Mạt Thế</option>
-                    <option value="26">Truyện Teen</option>
-                    <option value="32">Phương Tây</option>
-                    <option value="33">Nữ Phụ</option>
-                    <option value="34">Light Novel</option>
-                    <option value="35">Việt Nam</option>
-                    <option value="37">Đoản Văn</option>
-                    <option value="31">Khác</option>
+                    <option value="kiem-hiep">Kiếm Hiệp</option>
+                    <option value="ngon-tinh">Ngôn Tình</option>
+                    <option value="do-thi">Đô Thị</option>
+                    <option value="quan-truong">Quan Trường</option>
+                    <option value="vong-du">Võng Du</option>
+                    <option value="khoa-huyen">Khoa Huyễn</option>
+                    <option value="huyen-huyen">Huyền Huyễn</option>
+                    <option value="di-gioi">Dị Giới</option>
+                    <option value="di-nang">Dị Năng</option>
+                    <option value="quan-su">Quân Sự</option>
+                    <option value="lich-su">Lịch Sử</option>
+                    <option value="xuyen-khong">Xuyên Không</option>
+                    <option value="trong-sinh">Trọng Sinh</option>
+                    <option value="trinh-tham">Trinh Thám</option>
+                    <option value="tham-hiem">Thám Hiểm</option>
+                    <option value="linh-di">Linh Dị</option>
+                    <option value="sac">Sắc</option>
+                    <option value="nguoc">Ngược</option>
+                    <option value="sung">Sủng</option>
+                    <option value="cung-dau">Cung Đấu</option>
+                    <option value="nu-cuong">Nữ Cường</option>
+                    <option value="gia-dau">Gia Đấu</option>
+                    <option value="dong-phuong">Đông Phương</option>
+                    <option value="dam-my">Đam Mỹ</option>
+                    <option value="bach-hop">Bách Hợp</option>
+                    <option value="hai-huoc">Hài Hước</option>
+                    <option value="dien-van">Điền Văn</option>
+                    <option value="co-dai">Cổ Đại</option>
+                    <option value="mat-the">Mạt Thế</option>
+                    <option value="truyen-teen">Truyện Teen</option>
+                    <option value="phuong-tay">Phương Tây</option>
+                    <option value="nu-phu">Nữ Phụ</option>
+                    <option value="light-novel">Light Novel</option>
+                    <option value="viet-nam">Việt Nam</option>
+                    <option value="doan-van">Đoản Văn</option>
+                    <option value="khac">Khác</option>
                 </select>
             </div>
             <div class="index-intro" id="i-intro">
@@ -69,48 +70,49 @@
             <div class="hide" id="history-holder"></div>
             <div class="list list-truyen list-new col-xs-12 col-sm-12 col-md-8 col-truyen-main" id="parent-t-list">
                 <div class="title-list" id="t-list">
+                        <a href="https://truyenfull.vn/danh-sach/truyen-moi/" title="Truyện mới"><span class="glyphicon glyphicon-calendar"></span></a>
                     <h2><a href="https://truyenfull.vn/danh-sach/truyen-moi/" title="Truyện mới">Truyện mới cập nhật</a>
                     </h2><a href="https://truyenfull.vn/danh-sach/truyen-moi/" title="Truyện mới"><span
                             class="glyphicon glyphicon-menu-right"></span></a><select id="new-select"
                         class="form-control new-select" aria-label="Chọn thể loại" onchange="layTruyenMoiCapNhat()">
-                        <option value="all">Tất cả</option>
-                        <option value="tien-hiep">Tiên Hiệp</option>
-                        <option value="2">Kiếm Hiệp</option>
-                        <option value="3">Ngôn Tình</option>
-                        <option value="4">Đô Thị</option>
-                        <option value="20">Quan Trường</option>
-                        <option value="6">Võng Du</option>
-                        <option value="5">Khoa Huyễn</option>
-                        <option value="8">Huyền Huyễn</option>
-                        <option value="7">Dị Giới</option>
-                        <option value="19">Dị Năng</option>
-                        <option value="10">Quân Sự</option>
-                        <option value="11">Lịch Sử</option>
-                        <option value="15">Xuyên Không</option>
-                        <option value="17">Trọng Sinh</option>
-                        <option value="18">Trinh Thám</option>
-                        <option value="16">Thám Hiểm</option>
-                        <option value="9">Linh Dị</option>
-                        <option value="12">Sắc</option>
-                        <option value="30">Ngược</option>
-                        <option value="36">Sủng</option>
-                        <option value="21">Cung Đấu</option>
-                        <option value="22">Nữ Cường</option>
-                        <option value="24">Gia Đấu</option>
-                        <option value="23">Đông Phương</option>
-                        <option value="13">Đam Mỹ</option>
-                        <option value="14">Bách Hợp</option>
-                        <option value="25">Hài Hước</option>
-                        <option value="27">Điền Văn</option>
-                        <option value="28">Cổ Đại</option>
-                        <option value="29">Mạt Thế</option>
-                        <option value="26">Truyện Teen</option>
-                        <option value="32">Phương Tây</option>
-                        <option value="33">Nữ Phụ</option>
-                        <option value="34">Light Novel</option>
-                        <option value="35">Việt Nam</option>
-                        <option value="37">Đoản Văn</option>
-                        <option value="31">Khác</option>
+                      <option value="all">Tất cả</option>
+                    <option value="tien-hiep">Tiên Hiệp</option>
+                    <option value="kiem-hiep">Kiếm Hiệp</option>
+                    <option value="ngon-tinh">Ngôn Tình</option>
+                    <option value="do-thi">Đô Thị</option>
+                    <option value="quan-truong">Quan Trường</option>
+                    <option value="vong-du">Võng Du</option>
+                    <option value="khoa-huyen">Khoa Huyễn</option>
+                    <option value="huyen-huyen">Huyền Huyễn</option>
+                    <option value="di-gioi">Dị Giới</option>
+                    <option value="di-nang">Dị Năng</option>
+                    <option value="quan-su">Quân Sự</option>
+                    <option value="lich-su">Lịch Sử</option>
+                    <option value="xuyen-khong">Xuyên Không</option>
+                    <option value="trong-sinh">Trọng Sinh</option>
+                    <option value="trinh-tham">Trinh Thám</option>
+                    <option value="tham-hiem">Thám Hiểm</option>
+                    <option value="linh-di">Linh Dị</option>
+                    <option value="sac">Sắc</option>
+                    <option value="nguoc">Ngược</option>
+                    <option value="sung">Sủng</option>
+                    <option value="cung-dau">Cung Đấu</option>
+                    <option value="nu-cuong">Nữ Cường</option>
+                    <option value="gia-dau">Gia Đấu</option>
+                    <option value="dong-phuong">Đông Phương</option>
+                    <option value="dam-my">Đam Mỹ</option>
+                    <option value="bach-hop">Bách Hợp</option>
+                    <option value="hai-huoc">Hài Hước</option>
+                    <option value="dien-van">Điền Văn</option>
+                    <option value="co-dai">Cổ Đại</option>
+                    <option value="mat-the">Mạt Thế</option>
+                    <option value="truyen-teen">Truyện Teen</option>
+                    <option value="phuong-tay">Phương Tây</option>
+                    <option value="nu-phu">Nữ Phụ</option>
+                    <option value="light-novel">Light Novel</option>
+                    <option value="viet-nam">Việt Nam</option>
+                    <option value="doan-van">Đoản Văn</option>
+                    <option value="khac">Khác</option>
                     </select>
                 </div>
             </div>
@@ -206,6 +208,8 @@
         <div class="container" id="truyen-slide">
             <div class="list list-thumbnail col-xs-12">
                 <div class="title-list">
+                <a href="https://truyenfull.vn/danh-sach/truyen-full/" title="Truyện đã hoàn thành"><span
+                        class="glyphicon glyphicon-book"></span></a>
                     <h2><a href="https://truyenfull.vn/danh-sach/truyen-full/" title="Truyện full">Truyện đã hoàn
                             thành</a></h2><a href="https://truyenfull.vn/danh-sach/truyen-full/"
                         title="Truyện full"><span class="glyphicon glyphicon-menu-right"></span></a>
