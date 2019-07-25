@@ -55,13 +55,28 @@
         function loadTruyen() {
             var pathArray = window.location.pathname.split('/');
             if (pathArray[1] == "the-loai") {
-                
+                layThongTinTheLoaiTruyen(pathArray[2]);
+                layDanhSachTheLoaiCotPhai();
             }
             else {
                 layTruyenMoiCapNhat();
                 layTruyenFullMoiNhat();
                 layTruyenHotAll();
             }
+        }
+
+        function layDanhSachMenu() {
+            var url = "/apiDanhSachTheLoai/";
+            layData(url, "danhSachTheLoaiMenu");
+        }
+        function layDanhSachTheLoaiCotPhai() {
+            var url = "/apiDanhSachTheLoai/";
+            layData(url, "danhSachTheLoaiCotPhai");
+        }
+
+        function layThongTinTheLoaiTruyen(theLoai) {
+            var url = "/apiThongTinTheLoai/" + theLoai;
+            layData(url, "thongTinTheLoai");
         }
 
         function layTruyenHotTheoTheLoai() {
@@ -96,6 +111,17 @@
                         functionLayNewTheoTheLoai(myArr);
                     if (loai == "full")
                         functionLayFullMoiNhat(myArr);
+                    if (loai == "thongTinTheLoai") {
+                        functionLayThongTinTheLoai(myArr);
+                    }
+                    if (loai == "danhSachTheLoaiCotPhai") {
+                        functionLayDSTheLoaiCotPhai(myArr);
+                    }
+                    if (loai == "danhSachTheLoaiMenu") {
+                        functionLayDSTheLoaiCotPhai(myArr);
+                    }
+
+
                 }
             };
             xmlhttp.open("GET", url, true);
@@ -163,6 +189,25 @@
                 out += "</a></div>";
             }
             document.getElementById("f-list").innerHTML = out;
+        }
+
+        function functionLayThongTinTheLoai(arr) {
+            document.getElementById("t-truyen").innerHTML = "TRUYỆN " + arr[0].ten_the_loai;
+            document.getElementsByClassName("panel-body")[0].innerHTML = arr[0].mo_ta;
+        }
+
+        function functionLayDSTheLoaiCotPhai(arr) {
+            var out = "";
+            var i;
+            for (i = 0; i < arr.length; i++) {
+                out += "<div class='col-xs-6'><a href='/the-loai/" + arr[i].slug_the_loai + "'"
+                out += "title='Truyện " + arr[i].ten_the_loai + "'>" + arr[i].ten_the_loai + "</a></div>"
+            }
+            document.getElementById("l-theloai").innerHTML = out;
+        }
+
+        function functionLayDSChoMenu(arr) {
+
         }
     </script>
 </head>
