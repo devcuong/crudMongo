@@ -14,14 +14,14 @@
     <!--[if lt IE 9]><script src="https://cdnaz.truyenfull.vn/lib/css3-mediaqueries.min.js"></script><![endif]-->
     <link rel="canonical" href="https://truyenfull.vn/">
     <link rel="preconnect" href="https://cdnaz.truyenfull.vn/">
-    <link rel="preconnect" href="https://www.google-analytics.com/">
+    {{!-- <link rel="preconnect" href="https://www.google-analytics.com/"> --}}
     <link rel="preload" as="font" crossorigin="crossorigin" type="font/woff"
         href="https://cdnaz.truyenfull.vn/font/Roboto-Regular.woff">
     <link rel="preload" as="font" crossorigin="crossorigin" type="font/woff"
         href="https://cdnaz.truyenfull.vn/font/RobotoCondensed-Regular.woff">
     <link rel="preload" as="font" crossorigin="crossorigin" type="font/woff2"
         href="https://cdnaz.truyenfull.vn/lib/bootstrap/fonts/glyphicons-halflings-regular.woff2">
-    <link rel="preload" as="script" href="{{hostname}}/js/analytics.js">
+    {{!-- <link rel="preload" as="script" href="{{hostname}}/js/analytics.js"> --}}
     <script type="text/javascript" src="{{hostname}}/js/constant.js"></script>
     <script type="text/javascript" src="{{hostname}}/js/timeOutput.js"></script>
     <link rel="preload" as="image" type="image/gif" href="https://cdnaz.truyenfull.vn/img/pixel-cover.gif">
@@ -55,7 +55,7 @@
         function loadTruyen() {
             var pathArray = window.location.pathname.split('/');
             if (pathArray[1] == "the-loai") {
-
+                
             }
             else {
                 layTruyenMoiCapNhat();

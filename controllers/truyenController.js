@@ -51,7 +51,7 @@ function updateRecord(req, res) {
     if (req.body.updateTime) {
         foundTruyen.update_time = req.body.updateTime;
     }
-    Truyen.findOneAndUpdate({ _id: req.body._id }, foundTruyen, { new: true, strict: false, setDefaultsOnInsert: true }, function (err, doc) {
+    Truyen.findOneAndUpdate({ _id: req.body._id }, foundTruyen, { new: true, strict: false, setDefaultsOnInsert: true }, function(err, doc) {
         if (!err) {
             res.redirect("truyen/list");
         } else {
@@ -110,14 +110,14 @@ router.get("/list/:page", (req, res) => {
     Truyen.find({})
         .limit(perPage)
         .skip((perPage * page) - perPage)
-        .exec(function (err, truyens) {
-            Truyen.count().exec(function (err, count) {
+        .exec(function(err, truyens) {
+            Truyen.count().exec(function(err, count) {
                 if (!err) {
                     res.render("truyen/list", {
                         list: truyens,
                         current: page,
                         pages: Math.ceil(count / perPage),
-                        navRender: utils.getNavRender(page, Math.ceil(count / perPage)),
+                        navRender: utils.getNavRender(page, Math.ceil(count / perPage), "/list"),
                     })
                 } else {
                     console.log(err);
