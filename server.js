@@ -6,6 +6,7 @@ const exphbs = require("express-handlebars");
 const bodyparser = require("body-parser");
 const truyenController = require("./controllers/truyenController");
 const trangChuController = require("./controllers/trangChuController.js");
+const trangConController = require("./controllers/trangConController.js");
 require('dotenv').config()
 
 var app = express();
@@ -53,6 +54,6 @@ app.listen(3000, () => {
 });
 
 
-
+app.use("/doc-truyen", trangConController);
 app.use("/truyen", truyenController);
 app.use("/", trangChuController);
