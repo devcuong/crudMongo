@@ -6,6 +6,9 @@ var truyenSchema = new mongoose.Schema({
         type: String,
         required: "this file is required"
     },
+    slug_truyen: {
+        type: String,
+    },
     url_truyen: {
         type: String
     },

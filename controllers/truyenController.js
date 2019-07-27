@@ -3,6 +3,7 @@ var router = express.Router();
 const mongoose = require("mongoose");
 const Truyen = mongoose.model("Truyen");
 const utils = require("../utils/navRender.js");
+const stringHandle = require("../utils/stringHandle");
 var moment = require('moment');
 
 router.get("/", (req, res) => {
@@ -27,6 +28,7 @@ function updateRecord(req, res) {
     }
     if (req.body.tenTruyen) {
         foundTruyen.ten_truyen = req.body.tenTruyen;
+        foundTruyen.slug_truyen = stringHandle.changeToSlug(req.body.tenTruyen);
     }
 
     if (req.body.urlTruyen) {
@@ -70,6 +72,7 @@ function updateRecord(req, res) {
 function insertRecord(req, res) {
     var truyen = new Truyen();
     truyen.ten_truyen = req.body.tenTruyen;
+    truyen.slug_truyen = stringHandle.changeToSlug(req.body.tenTruyen);
     truyen.url_truyen = req.body.urlTruyen;
     truyen.trang_thai = req.body.trangThai;
     truyen.so_chuong = req.body.soChuong;
@@ -117,7 +120,7 @@ router.get("/list/:page", (req, res) => {
                         list: truyens,
                         current: page,
                         pages: Math.ceil(count / perPage),
-                        navRender: utils.getNavRender(page, Math.ceil(count / perPage), "/list"),
+                        navRender: utils.getNavRender(page, Math.ceil(count / perPage), "/truyen/list"),
                     })
                 } else {
                     console.log(err);

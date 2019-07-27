@@ -57,11 +57,20 @@
             if (pathArray[1] == "the-loai") {
                 layThongTinTheLoaiTruyen(pathArray[2]);
             }
-            else {
+            else if(pathArray[1] != "the-loai") {
+                layThongTinTruyen(pathArray[1]);
+            }
+            else
+            {
                 layTruyenMoiCapNhat();
                 layTruyenFullMoiNhat();
                 layTruyenHotAll();
             }
+        }
+
+        function layThongTinTruyen(slugTruyen){
+            var url = "/lay-truyen/" + slugTruyen;
+            layData(url, "thongTinTruyen");
         }
 
         function layThongTinTheLoaiTruyen(theLoai) {
@@ -103,6 +112,10 @@
                         functionLayFullMoiNhat(myArr);
                     if (loai == "thongTinTheLoai") {
                         functionLayThongTinTheLoai(myArr);
+                    }
+                    if(loai == "thongTinTruyen")
+                    {
+                        alert(this.responseText);
                     }
 
 

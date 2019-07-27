@@ -1,4 +1,5 @@
 const express = require("express");
+var request = require("request");
 var router = express.Router();
 const mongoose = require("mongoose");
 const Truyen = mongoose.model("Truyen");
@@ -19,6 +20,38 @@ router.get("/", (req, res) => {
         }
 
     });
+});
+
+router.get("/:slugTruyen", (req, res) => {
+    var slugTruyen = req.params.slugTruyen;
+    if (slugTruyen != "") {
+        q = Truyen.find({ slug_truyen: slugTruyen });
+        q.exec(function(err, docs) {
+            if (!err) {
+                res.render("home/detailPage", {
+                    layout: 'defaultLayout.hbs',
+                    tenTruyen: docs[0].ten_truyen,
+                    urlHinh: docs[0].url_hinh,
+                    urlTruyen: docs[0].url_truyen
+                });
+            }
+        });
+
+    }
+});
+
+router.get("/lay-truyen/:urlTruyen", (req, res) => {
+    var urlTruyen = req.params.urlTruyen;
+    if (urlTruyen != "") {
+        var svTruyen = "http://chauau2.herokuapp.com/lay-truyen?id=" + urlTruyen
+        request(svTruyen, function(error, response, body) {
+            if (error) {
+                return "lỗi";
+            } else {
+                res.render("trangchu", { html: body });
+            }
+        });
+    }
 });
 
 router.get("/apiHot/:tl", (req, res) => {
