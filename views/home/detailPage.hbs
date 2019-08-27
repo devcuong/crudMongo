@@ -6,13 +6,12 @@
                 <div class="title-list book-intro">
                     <h2>Thông tin truyện</h2>
                 </div>
-                <h3 class="title" itemprop="name">{{tenTruyen}}</h3>
-                <span style="display: none" id="id-url-truyen">{{urlTruyen}}</span>
+                <h3 class="title" itemprop="name" id="id-title-truyen">{{data.0.ten_truyen}}</h3>
+                <span style="display: none" id="id-url-truyen">{{data.0.url_truyen}}</span>
                 <div class="col-xs-12 col-sm-4 col-md-4 info-holder">
                     <div class="books">
-                        <div class="book"><img
-                                src="{{urlHinh}}"
-                                alt="Boss Hung Dữ - Ông Xã Kết Hôn Đi" itemprop="image"></div>
+                        <div class="book"><img src="{{data.0.url_hinh}}" alt="Boss Hung Dữ - Ông Xã Kết Hôn Đi"
+                                itemprop="image"></div>
                     </div>
                     <div class="info">
                         <div>
@@ -55,7 +54,7 @@
                 </div>
                 <div class="row">
                     <div class="col-xs-12 col-sm-6 col-md-6">
-                        <ul class="list-chapter">
+                        <ul class="list-chapter" id="content-col-1">
                             <li><span class="glyphicon glyphicon-certificate"></span> <a
                                     href="https://truyenfull.vn/ngon-tinh-boss-hung-du-ong-xa-ket-hon-di-full/chuong-1/"
                                     title="Chương 1: Cô dám chơi tôi, tôi liền lên giường với người đàn ông của cô (1)"><span
@@ -64,7 +63,7 @@
                         </ul>
                     </div>
                     <div class="col-xs-12 col-sm-6 col-md-6">
-                        <ul class="list-chapter">
+                        <ul class="list-chapter" id="content-col-2">
                             <li><span class="glyphicon glyphicon-certificate"></span> <a
                                     href="https://truyenfull.vn/ngon-tinh-boss-hung-du-ong-xa-ket-hon-di-full/chuong-26/"
                                     title="Chương 26: Trong lòng hắn tôi chỉ là con đĩ mà thôi! (2)"><span
