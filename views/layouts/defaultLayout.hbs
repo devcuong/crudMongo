@@ -63,7 +63,15 @@
                 layThongTinTheLoaiTruyen(pathArray[2]);
             }
             else {
-                layThongTinTruyen(pathArray[1]);
+                if(pathArray[3] === "")
+                {
+                    layThongTinTruyen(pathArray[1]);
+                }
+                else
+                {
+                    layThongTinTruyen(pathArray[1] + "/" + pathArray[3]);
+                }
+                
             }
         }
 
