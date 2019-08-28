@@ -22,14 +22,14 @@ router.get("/", (req, res) => {
     });
 });
 
-router.get("/:slugTruyen", (req, res) => {
+// Lấy chap truyện khi chưa phân trang
+router.get("/:slugTruyen/", (req, res) => {
     var slugTruyen = req.params.slugTruyen;
+    //console.log(page);
     if (slugTruyen != "") {
         q = Truyen.find({ slug_truyen: slugTruyen });
         q.exec(function (err, docs) {
             if (!err) {
-                console.log(docs);
-
                 res.render("home/detailPage", {
                     layout: 'defaultLayout.hbs',
                     data: docs
@@ -40,8 +40,33 @@ router.get("/:slugTruyen", (req, res) => {
     }
 });
 
+// Lấy chap truyện khi có phân trang
+router.get("/:slugTruyen/trang/:page*?", (req, res) => {
+    var slugTruyen = req.params.slugTruyen;
+    var perPage = 50;
+    var page = req.params.page || 1;
+    if (slugTruyen != "") {
+        q = Truyen.find({ slug_truyen: slugTruyen });
+        q.exec(function (err, docs) {
+            if (!err) {
+                res.render("home/detailPage", {
+                    layout: 'defaultLayout.hbs',
+                    data: docs,
+                    current: page,
+                    pages: Math.ceil(count / perPage),
+                    navRender: utils.getNavRender(page, Math.ceil(count / perPage), "/the-loai/" + tl),
+                    hostname: process.env.SERVER_NAME
+                });
+            }
+        });
+
+    }
+});
+
+// Lấy thông tin và chap truyện
 router.get("/lay-truyen/:slugTruyen", (req, res) => {
     var slugTruyen = req.params.slugTruyen;
+    console.log(slugTruyen);
     if (slugTruyen != "") {
         q = Truyen.find({ slug_truyen: slugTruyen });
         q.exec(function (err, docs) {
@@ -53,7 +78,6 @@ router.get("/lay-truyen/:slugTruyen", (req, res) => {
                         if (error) {
                             return "lỗi";
                         } else {
-                            console.log(body);
                             res.json(body);
                         }
                     });
