@@ -24,6 +24,7 @@
     {{!-- <link rel="preload" as="script" href="{{hostname}}/js/analytics.js"> --}}
     <script type="text/javascript" src="{{hostname}}/js/constant.js"></script>
     <script type="text/javascript" src="{{hostname}}/js/timeOutput.js"></script>
+    <script type="text/javascript" src="{{hostname}}/js/main.js"></script>
     <link rel="preload" as="image" type="image/gif" href="https://cdnaz.truyenfull.vn/img/pixel-cover.gif">
     <link rel="preload" as="image" type="image/png" href="https://cdnaz.truyenfull.vn/img/full-label.png">
     <link rel="search" type="application/opensearchdescription+xml"
@@ -63,15 +64,13 @@
                 layThongTinTheLoaiTruyen(pathArray[2]);
             }
             else {
-                if(pathArray[3] === "")
-                {
+                if (pathArray[3] === "") {
                     layThongTinTruyen(pathArray[1]);
                 }
-                else
-                {
+                else {
                     layThongTinTruyen(pathArray[1] + "/" + pathArray[3]);
                 }
-                
+
             }
         }
 
@@ -134,21 +133,31 @@
         function functionLaythongTinTruyen(arr) {
             document.getElementById("loading-image").innerHTML = "";
             var truyen = JSON.parse(arr);
+            var truyenTitle = changeToSlug(truyen.ten_truyen);
             var chapter = truyen.danh_sach_chuong;
             var lstChap = chapter.split("|");
             var out = "";
             var size = (lstChap.length - 1) / 2;
             for (var i = 0; i < size; i++) {
-                out += "<li><span class='glyphicon glyphicon-certificate'></span> <a ";
-                out += "href='https://truyenfull.vn/ngon-tinh-boss-hung-du-ong-xa-ket-hon-di-full/chuong-1/'";
-                out += "title='" + lstChap[i] + "'><span class='chapter-text'>" + lstChap[i] + "</span></a></li>";
+                var splitTitle = lstChap[i].split(":");
+                if (splitTitle.length > 0) {
+                    var chuongName = changeToSlug(splitTitle[0]);
+                    out += "<li><span class='glyphicon glyphicon-certificate'></span> <a ";
+                    out += "href='/" + truyenTitle + "/" + chuongName + "'";
+                    out += "title='" + lstChap[i] + "'><span class='chapter-text'>" + lstChap[i] + "</span></a></li>";
+                }
+
             }
             document.getElementById("content-col-1").innerHTML = out;
             out = "";
             for (var i = size; i < lstChap.length - 1; i++) {
-                out += "<li><span class='glyphicon glyphicon-certificate'></span> <a ";
-                out += "href='https://truyenfull.vn/ngon-tinh-boss-hung-du-ong-xa-ket-hon-di-full/chuong-1/'";
-                out += "title='" + lstChap[i] + "'><span class='chapter-text'>" + lstChap[i] + "</span></a></li>";
+                var splitTitle = lstChap[i].split(":");
+                if (splitTitle.length > 0) {
+                    var chuongName = changeToSlug(splitTitle[0]);
+                    out += "<li><span class='glyphicon glyphicon-certificate'></span> <a ";
+                    out += "href='/" + truyenTitle + "/" + chuongName + "'";
+                    out += "title='" + lstChap[i] + "'><span class='chapter-text'>" + lstChap[i] + "</span></a></li>";
+                }
             }
             document.getElementById("content-col-2").innerHTML = out;
 

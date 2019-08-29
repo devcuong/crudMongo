@@ -25,22 +25,22 @@ app.engine("hbs", exphbs({
     layoutsDir: __dirname + "/views/layouts/",
     partialsDir: __dirname + "/views/partials/",
     helpers: {
-        if: function(operand_1, operator, operand_2, options) {
+        if: function (operand_1, operator, operand_2, options) {
             var operators = {
-                    'eq': function(l, r) { return l == r; },
-                    'noteq': function(l, r) { return l != r; },
-                    'gt': function(l, r) { return Number(l) > Number(r); },
-                    'lt': function(l, r) { return Number(l) < Number(r); },
-                    'or': function(l, r) { return l || r; },
-                    'and': function(l, r) { return l && r; },
-                    '%': function(l, r) { return (l % r) === 0; }
-                },
+                'eq': function (l, r) { return l == r; },
+                'noteq': function (l, r) { return l != r; },
+                'gt': function (l, r) { return Number(l) > Number(r); },
+                'lt': function (l, r) { return Number(l) < Number(r); },
+                'or': function (l, r) { return l || r; },
+                'and': function (l, r) { return l && r; },
+                '%': function (l, r) { return (l % r) === 0; }
+            },
                 result = operators[operator](operand_1, operand_2);
 
             if (result) return options.fn(this);
             else return options.inverse(this);
         },
-        inc: function(value, options) {
+        inc: function (value, options) {
             return parseInt(value) + 1;
         }
 
@@ -53,6 +53,6 @@ app.set("view engine", "hbs");
 app.listen(3000, () => {
     console.log("Express server started at port : 3000");
 });
-
+app.use("/noi-dung", trangConController);
 app.use("/truyen", truyenController);
 app.use("/", trangChuController);

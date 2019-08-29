@@ -5,8 +5,8 @@ const Truyen = mongoose.model("Truyen");
 const TheLoai = mongoose.model("TheLoai");
 const utils = require("../utils/navRender.js");
 
-router.get("/", (req, res) => {
-    res.render("home/detailPage", {
+router.get("/:slugTruyen/:chap*?", (req, res) => {
+    res.render("home/contentPage", {
         layout: 'defaultLayout.hbs'
     });
 

@@ -9,7 +9,7 @@ require('dotenv').config()
 
 router.get("/", (req, res) => {
     var q = Truyen.find({ danh_gia: 1 }).limit(13);
-    q.exec(function(err, docs) {
+    q.exec(function (err, docs) {
         if (!err) {
             res.render("home/homePage", {
                 layout: 'defaultLayout.hbs',
@@ -28,7 +28,7 @@ router.get("/:slugTruyen/", (req, res) => {
     //console.log(page);
     if (slugTruyen != "") {
         q = Truyen.find({ slug_truyen: slugTruyen });
-        q.exec(function(err, docs) {
+        q.exec(function (err, docs) {
             if (!err) {
                 res.render("home/detailPage", {
                     layout: 'defaultLayout.hbs',
@@ -47,7 +47,7 @@ router.get("/:slugTruyen/trang/:page*?", (req, res) => {
     var page = req.params.page || 1;
     if (slugTruyen != "") {
         q = Truyen.find({ slug_truyen: slugTruyen });
-        q.exec(function(err, docs) {
+        q.exec(function (err, docs) {
             if (!err) {
                 var count = docs[0].so_chuong;
                 res.render("home/detailPage", {
@@ -69,18 +69,20 @@ router.get("/lay-truyen/:slugTruyen/:page*?", (req, res) => {
     var page = req.params.page || 1;
     if (slugTruyen != "") {
         q = Truyen.find({ slug_truyen: slugTruyen });
-        q.exec(function(err, docs) {
+        q.exec(function (err, docs) {
             if (!err) {
-                var svTruyen = "http://chauau2.herokuapp.com/lay-truyen?id=" + docs[0].url_truyen + "trang-" + page;
-                request(
-                    svTruyen,
-                    function(error, response, body) {
-                        if (error) {
-                            return "lỗi";
-                        } else {
-                            res.json(body);
-                        }
-                    });
+                if (docs.length > 0) {
+                    var svTruyen = "http://chauau2.herokuapp.com/lay-truyen?id=" + docs[0].url_truyen + "trang-" + page;
+                    request(
+                        svTruyen,
+                        function (error, response, body) {
+                            if (error) {
+                                return "lỗi";
+                            } else {
+                                res.json(body);
+                            }
+                        });
+                }
             }
 
         });
@@ -95,7 +97,7 @@ router.get("/apiHot/:tl", (req, res) => {
         if (tl != "all") {
             q = Truyen.find({ the_loai: tl }).sort({ _id: -1 }).limit(13);
         }
-        q.exec(function(err, docs) {
+        q.exec(function (err, docs) {
             if (!err) {
                 res.json(docs);
             } else {
@@ -114,7 +116,7 @@ router.get("/apiNew/:tl", (req, res) => {
         if (tl != "all") {
             q = Truyen.find({ the_loai: tl }).limit(16);
         }
-        q.exec(function(err, docs) {
+        q.exec(function (err, docs) {
             if (!err) {
                 res.json(docs);
             } else {
@@ -128,7 +130,7 @@ router.get("/apiNew/:tl", (req, res) => {
 
 router.get("/apiFull/all", (req, res) => {
     var q = Truyen.find({ trang_thai: "Full" }).limit(18);
-    q.exec(function(err, docs) {
+    q.exec(function (err, docs) {
         if (!err) {
             res.json(docs);
         } else {
@@ -142,7 +144,7 @@ router.get("/apiFull/all", (req, res) => {
 router.get("/apiThongTinTheLoai/:tl", (req, res) => {
     var tl = req.params.tl;
     var q = TheLoai.find({ slug_the_loai: tl });
-    q.exec(function(err, docs) {
+    q.exec(function (err, docs) {
         if (!err) {
             res.json(docs);
         } else {
@@ -154,7 +156,7 @@ router.get("/apiThongTinTheLoai/:tl", (req, res) => {
 
 router.get("/apiDanhSachTheLoai", (req, res) => {
     var q = TheLoai.find({}).skip(14);
-    q.exec(function(err, docs) {
+    q.exec(function (err, docs) {
         if (!err) {
             res.json(docs);
         } else {
@@ -170,8 +172,8 @@ router.get("/the-loai/:tl/:page*?", (req, res) => {
     var tl = req.params.tl;
     if (tl != "") {
         var q = Truyen.find({ the_loai: tl }).sort({ _id: -1 }).limit(perPage).skip((perPage * page) - perPage);
-        q.exec(function(err, docs) {
-            Truyen.count().exec(function(err, count) {
+        q.exec(function (err, docs) {
+            Truyen.count().exec(function (err, count) {
                 if (!err) {
                     res.render("home/catPage", {
                         layout: 'defaultLayout.hbs',
