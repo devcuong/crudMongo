@@ -11,19 +11,23 @@ router.get("/:slugTruyen/:chapTruyen", (req, res) => {
     var chapTruyen = req.params.chapTruyen
     if (slugTruyen != "") {
         q = Truyen.find({ slug_truyen: slugTruyen });
-        q.exec(function(err, docs) {
+        q.exec(function (err, docs) {
             if (!err) {
                 if (docs.length > 0) {
                     var cTruyen = "http://chauau2.herokuapp.com/noi-dung-chuong?id=" + docs[0].url_truyen + "/" + chapTruyen + "/";
-                    request(
-                        cTruyen,
-                        function(error, response, body) {
+                    request.get({
+                        url: cTruyen,
+                        json: true
+                    },
+                        function (error, response, body) {
                             if (error) {
                                 return "lỗi";
                             } else {
                                 res.render("home/contentPage", {
                                     layout: 'defaultLayout.hbs',
-                                    content: body
+                                    tenTruyen: body.ten_truyen,
+                                    tenChap: body.ten_chap,
+                                    noiDung: body.noi_dung
                                 });
                             }
                         });
